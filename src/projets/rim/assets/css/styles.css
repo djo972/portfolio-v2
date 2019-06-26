@@ -1,0 +1,498 @@
+/* Pacific Rim Project by Oudam & Djo */
+/* CSS par Dadam */
+/* Author: Oudam UY */
+/* Date: Février 2014 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+a {
+	text-decoration: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+section, header, {
+	display: block;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* FIN RESET ------------------------------ */
+@font-face {
+	font-family: "BEBAS";
+	src: url('../../assets/fonts/BEBAS.TTF');
+}
+@font-face {
+	font-family: "Gears of War";
+	src: url('../../assets/fonts/GearsofWar.ttf');
+}
+@font-face {
+	font-family: "TechnoHideo";
+	src: url('../../assets/fonts/TechnoHideo.ttf');
+}
+/* DEBUT ------------------------------ */
+html, body {
+		min-width: 840px;
+	}
+body {
+	background: #1b1b1b;
+}
+h1 {
+	font-family: "Gears of War";
+}
+/* Paramètre Global */
+#home {
+	height: 100vh;
+	text-align: center;
+}
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+}
+h1 {
+	font-size: 3em;
+	color: white;
+	padding-top: 45px;
+	margin-bottom: 90px;
+}
+span {
+	color: #b78f3a;
+}
+h2, h3, .spec-title {
+	font-size: 25px;
+	background: white;
+	width: 100%;
+	color: #3d3d3d;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+.spec-title, .nom span, .height, .weight, .kaiju-data, h2, h3 {
+	font-family: "BEBAS";
+}
+.spec-title {
+	width: 95%;
+	padding-left: 5%;
+}
+.data {
+	display: block;
+	position: absolute;
+	width: auto;
+	height: auto;
+}
+#intro, #gipsy, #crimson, #striker, #cherno, .light {
+	height: 100%;
+}
+/* HOME ------------------------------ */
+#home {
+	background: url(../../assets/img/door-bottom.jpg) top center no-repeat fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.light {
+	width: 100%;
+	background: url(../../assets/img/light.png) top no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#home img {
+	margin-top: 15%;
+}
+.logo {
+	opacity: 0;
+}
+.fleche {
+	width: 60px;
+	height: 60px;
+	background: url(../../assets/img/arrow.png) center no-repeat;
+	display: inline-block;
+	margin-top: 10%;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.bot-portrait {
+	display: block;
+	position: absolute;
+	width: 400px;
+	height: 505px;
+	background: url(../../assets/img/gipsy_danger.png) 100% 0% no-repeat;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+.bot-portrait:hover {
+	background: url(../../assets/img/gipsy_danger.png) 100% 94% no-repeat;
+	cursor: pointer;
+	-webkit-transition: ease 0.5s;
+	-moz-transition: ease 0.5s;
+	-ms-transition: ease 0.5s;
+	-o-transition: ease 0.5s;
+	transition: ease 0.5s;
+}
+/* Intro ------------------------------ */
+#intro {
+	background: url(../../assets/img/home_bg_dark.jpg) top center no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;);
+}
+#intro h1 {
+	margin-bottom: 10px;
+	margin-top: 20%;
+}
+#intro p {
+	font-family: "Roboto";
+	font-size: 20px;
+	color: white;
+	text-align: justify;
+	margin-bottom: 20px;
+	width: 30%;
+}
+/* ////////////////////////////////////////////// */
+/* GIPSY DANGER --------------------------------- */
+/* ////////////////////////////////////////////// */
+#gipsy {
+	background: url(../../assets/img/gypsy_danger_bg.jpg) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+/* --- Image du Robot --- */
+#gipsy .bot-portrait {
+	left: 0;
+}
+/* Partie données du Robot à droite OU à gauche -- */
+#gipsy .data {
+	right: 0;
+}
+/* ///////////////////////////////////////////////// */
+/* PARTIE GENERALE POUR LE BLOC DATA */
+/* ///////////////////////////////////////////////// */
+.battle-spec {
+	width: 100%;
+	height: 190px;
+	background: rgba(0,0,0,0.5);
+	/* padding: 10px 5px; */
+	position: relative;
+	margin-bottom: 26px;
+}
+.spec-title {
+	font-size: 25px;
+	background: white url(../../assets/img/gypsy_danger_spec_icon.png) no-repeat 95% 50%;
+	width: 95%;
+	padding-left: 5%;
+	color: #3d3d3d;
+	height: 45px;
+	line-height: 45px;
+	margin-bottom: 35px;
+}
+div.nom {
+	float: left;
+	margin-left: 18px;
+}
+div.competence {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.competence {
+	width: 70%;
+}
+.nom span {
+	display: block;
+	width: 68px;
+	height: 24px;
+	background: rgba(191,188,187,0.5);
+	border: solid 1px rgba(98,94,93,0.9);
+	margin-bottom: 5px;
+	text-align: center;
+	line-height: 24px;
+	font-size: 12px;
+	color: white;
+}
+div.speed, div.power, div.armor {
+	width: 100%;
+	height: 22px;
+	background: transparent;
+	border: solid 2px #afafaf;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+div.competence span {
+	display: block;
+	height: 100%;
+	background: #394581;
+}
+div.competence span.speed-bar {
+	width: 90%;
+}
+div.competence span.power-bar {
+	width: 90%;
+}
+div.competence span.armor-bar {
+	width: 70%;
+}
+/* //////////////////// */
+/* Pour le bloc Pilots */
+/* //////////////////// */
+.pilots {
+	width: 126px;
+	height: 280px;
+	background: rgba(0,0,0,0.5);
+	padding: 10px 5px;
+	margin-right: 10px;
+	float: left;
+	text-align: center;
+}
+.pilots h2 {
+	margin-bottom: 20px;
+}
+.pilot-a, .pilot-b {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+/* ///////////////////////////// */
+/* Pour le bloc Kaiju Kill Data */
+/* ///////////////////////////// */
+.kaiju-data {
+	width: auto;
+	height: auto;
+	background: rgba(0,0,0,0.5);
+	padding: 10px 5px;
+	float: right;
+}
+.kaiju-data h2 {
+	margin-bottom: 14px;
+}
+.kaiju-data h3 {
+	margin-bottom: 10px;
+}
+.kaiju-data img {
+	margin-left: 5px;
+	margin-bottom: 23px;
+}
+.height, .weight {
+	display: block;
+	width: 99%;
+	height: 26px;
+	background: rgba(191,188,187,0.5);
+	border: solid 1px rgba(98,94,93,0.9);
+	margin-bottom: 5px;
+	text-align: left;
+	line-height: 24px;
+	font-size: 16px;
+	color: white;
+}
+.weight {
+	margin-top: 5px;
+}
+.kaiju-data span {
+	font-size: 14px;
+	color: white;
+}
+/* ////////////////////////////////////////////// */
+/* CRIMSON TYPHOON ------------------------------ */
+/* ////////////////////////////////////////////// */
+#crimson {
+	background: url(../../assets/img/crimson_typhoon.jpg) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#crimson h1 {
+	text-align: right;
+}
+/* --- Image du Robot --- */
+#crimson .bot-portrait {
+	right: 0;
+	background: url(../../assets/img/crimson_typhoon.png) 100% 0% no-repeat;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+#crimson .bot-portrait:hover {
+	background: url(../../assets/img/crimson_typhoon.png) 100% 94% no-repeat;
+	cursor: pointer;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+/* Partie données du Robot à droite OU à gauche -- */
+#crimson .data {
+	left: 0;
+}
+/* Pour les couleurs du bloc Data */
+#crimson .battle-spec {
+	background: rgba(145,25,26,0.5);
+}
+#crimson .spec-title {
+	background: #e7d545 url(../../assets/img/crimson_typhoon_spec_icon.png) no-repeat 95% 50%;
+}
+#crimson .pilots {
+	background: rgba(145,25,26,0.5);
+}
+#crimson .kaiju-data {
+	background: rgba(145,25,26,0.5);
+}
+#crimson h2, #crimson h3 {
+	background: #e7d545;
+}
+#crimson div.competence span {
+	background: #91191a;
+}
+#crimson div.competence span.speed-bar {
+	width: 100%;
+}
+#crimson div.competence span.power-bar {
+	width: 70%;
+}
+#crimson div.competence span.armor-bar {
+	width: 75%;
+}
+/* ////////////////////////////////////////////// */
+/* STRIKER EUREKA ------------------------------ */
+/* ////////////////////////////////////////////// */
+#striker {
+	background: url(../../assets/img/striker_eureka_bg.jpg) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+/* --- Image du Robot --- */
+#striker .bot-portrait {
+	left: 0;
+	background: url(../../assets/img/striker_eureka.png) 100% 0% no-repeat;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+#striker .bot-portrait:hover {
+	background: url(../../assets/img/striker_eureka.png) 100% 94% no-repeat;
+	cursor: pointer;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+/* Partie données du Robot à droite OU à gauche -- */
+#striker .data {
+	right: 0;
+}
+/* Pour les couleurs du bloc Data */
+#striker .battle-spec {
+	background: rgba(23,43,97,0.5);
+}
+#striker .spec-title {
+	background: white url(../../assets/img/crimson_typhoon_spec_icon.png) no-repeat 95% 50%;
+}
+#striker .pilots {
+	background: rgba(23,43,97,0.5);
+}
+#striker .kaiju-data {
+	background: rgba(23,43,97,0.5);
+}
+#striker h2, #striker h3 {
+	background: white;
+}
+#striker div.competence span {
+	background: #172b61;
+}
+#striker div.competence span.speed-bar {
+	width: 100%;
+}
+#striker div.competence span.power-bar {
+	width: 100%;
+}
+#striker div.competence span.armor-bar {
+	width: 80%;
+}
+/* ////////////////////////////////////////////// */
+/* CHERNO ALPHA------------------------------ */
+/* ////////////////////////////////////////////// */
+#cherno {
+	background: url(../../assets/img/cherno_alpha_bg.jpg) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#cherno h1 {
+	text-align: right;
+}
+/* --- Image du Robot --- */
+#cherno .bot-portrait {
+	right: 0;
+	background: url(../../assets/img/cherno_alpha.png) 100% 0% no-repeat;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+#cherno .bot-portrait:hover {
+	background: url(../../assets/img/cherno_alpha.png) 100% 94% no-repeat;
+	cursor: pointer;
+	-webkit-transition: ease 0.7s;
+	-moz-transition: ease 0.7s;
+	-ms-transition: ease 0.7s;
+	-o-transition: ease 0.7s;
+	transition: ease 0.7s;
+}
+/* Partie données du Robot à droite OU à gauche -- */
+#cherno .data {
+	left: 0;
+}
+/* Pour les couleurs du bloc Data */
+#cherno .spec-title {
+	background: #b42c2c url(../../assets/img/cherno_alpha_spec_icon.png) no-repeat 95% 50%;
+}
+#cherno h2, #cherno h3 {
+	background: #b42c2c;
+}
+#cherno div.competence span {
+	background: #ed962f;
+}
+#cherno div.competence span.speed-bar {
+	width: 40%;
+}
+#cherno div.competence span.power-bar {
+	width: 100%;
+}
+#cherno div.competence span.armor-bar {
+	width: 100%;
+}

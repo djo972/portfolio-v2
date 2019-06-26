@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Document sans nom</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="Zoombox/zoombox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="Zoombox/zoombox.js"></script>
+
+ <script type="text/javascript" >
+jQuery(function($){
+       $('a.zoombox').zoombox();
+    });
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+ </script> 
+
+</head>
+
+
+
+
+		<body onload="MM_preloadImages('image/photo-2hover.png','image/GALAXY-Tab-31.png')">
+        	<div id="left" class="bkg">
+            		
+                    <ul id="nav">
+            			<li><a href="#home">Accueil</a></li>
+            			<li><a href="#galerie">Galerie</a></li>
+            			<li><a href="#video">Video</a></li>
+        			</ul>
+    </div>
+            
+            
+            
+            </div> 
+            <div id="right">
+            				<div id="home" class="page"><div class="logo"></div></div>
+                            <div id="galerie" class="page2">
+                              <div class="photo"><a class="zoombox zgallery1" href="image/intro/001.jpg" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','image/photo-2hover.png',1)"><img src="image/photo-2.png" width="392" height="471" id="Image1" />
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+                              </a>
+                              <a class="zoombox zgallery1" href="image/intro/002.jpg"></a>
+                              <a class="zoombox zgallery1" href="image/MMMMMM.jpg"></a>
+                              <a class="zoombox zgallery1" href="image/intro/003.jpg"></a>
+                              <a class="zoombox zgallery1" href="image/IMGS DROLE/drol05.png"></a>
+                              <a class="zoombox zgallery1" href="image/MMM.jpg"></a>
+                              <a class="zoombox zgallery1" href="image/MACPRO/01.jpg"></a>
+                            
+                              <a class="zoombox zgallery1" href="image/MACPRO/02.jpg"></a>
+                              <a class="zoombox zgallery1"  href="image/MACPRO/08.jpg"></a>
+                              <a class="zoombox zgallery1"  href="image/MACPRO/09.jpg"></a>
+                              <a class="zoombox zgallery1"  href="image/MACPRO/11.jpg"></a>
+                              
+                              <a class="zoombox zgallery1" href="image/MACPRO/iphone-5S-graphite.png"></a>
+                              <a class="zoombox zgallery1"  href="image/3D/3d01.jpg"></a>
+                              <a class="zoombox zgallery1"  href="image/Videos-Ceci-est-une-revolution-630x335.jpg"></a>
+                              <a class="zoombox zgallery1" href="image/27-image-2-OpenOffice.jpg"></a>
+                              
+                              
+                              <a class="zoombox zgallery1" href="image/HACKING/hack01.jpg"></a>
+                              <a class="zoombox zgallery1" href="image/HACKING/hack02.jpg"></a>
+                              
+                              
+                              
+                              </div></div>
+                            
+                            
+                            
+                            <div id="video" class="page3">
+                              <div class="video"><a  class="zoombox" href="video/Projet DiY v2.mp4" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','image/GALAXY-Tab-31.png',1)"><img src="image/GALAXY-Tab-3.png" width="588" height="734" id="Image2" /></a></div></div>
+                            
+            
+            
+            
+            </div>
+        
+        
+        
+        
+        
+        
+</body>
+</html>

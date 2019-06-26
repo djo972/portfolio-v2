@@ -1,0 +1,694 @@
+/* Pacific Rim Project by Oudam & Djo */
+/* CSS Animation */
+/* CSS par Dadam */
+/* Author: Oudam UY */
+/* Date: Février 2014 */
+/* Animation pour la Home */
+#home {
+	animation: fondu ease 1.7s;
+	-webkit-animation: fondu ease 1.7s;
+}
+@-webkit-keyframes fondu {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.logo {
+	animation: logo ease 1.7s;
+	-webkit-animation: logo ease 1.7s;
+	animation-delay: 0.7s;
+	-webkit-animation-delay: 0.7s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes logo {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(4);
+		-moz-transform: scale(4);
+		-ms-transform: scale(4);
+		-o-transform: scale(4);
+		transform: scale(4);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: (1);
+		-moz-transform: (1);
+		-ms-transform: (1);
+		-o-transform: (1);
+		transform: (1);
+	}
+}
+.fleche {
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%);	
+	}
+	50% {
+		transform: translateY(20%);	
+	}	
+	100% {
+		transform: translateY(0%);
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);	
+	}
+	50% {
+		-webkit-transform: translateY(20%);	
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+	}			
+}
+/* ----------------------------- */
+/* Animation pour chaque Page ! */
+/* ----------------------------- */
+.viewing-page-2 #intro p, .viewing-page-2 #intro h1 {
+	animation: intro ease 2.2s;
+	-webkit-animation: intro ease 2.2s;
+}
+@keyframes intro {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@-webkit-keyframes intro {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+/* ----------------------------- */
+/* Animation pour GIPSY DANGER ! */
+/* ----------------------------- */
+.viewing-page-3 #gipsy {
+	animation: gipsy ease 2s;
+	-webkit-animation: gipsy ease 2s;
+}
+@-webkit-keyframes gipsy {
+	from {
+		background-position: 100% 25%;
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		background-position: 100% 0%;
+	}
+}
+@keyframes gipsy {
+	from {
+		background-position: 100% 25%;
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		background-position: 100% 0%;
+	}
+}
+.viewing-page-3 #gipsy div.competence span.speed-bar {
+	animation: gipsySpeed ease 2.5s;
+	-webkit-animation: gipsySpeed ease 2.5s;
+}
+@-webkit-keyframes gipsySpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 90%;
+	}
+}
+@keyframes gipsySpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 90%;
+	}
+}
+.viewing-page-3 #gipsy div.competence span.power-bar {
+	animation: gipsypower ease 2.5s;
+	-webkit-animation: gipsypower ease 2.5s;
+}
+@-webkit-keyframes gipsypower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 90%;
+	}
+}
+@keyframes gipsypower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 90%;
+	}
+}
+.viewing-page-3 #gipsy div.competence span.armor-bar {
+	animation: gipsyarmor ease 2.5s;
+	-webkit-animation: gipsyarmor ease 2.5s;
+}
+@-webkit-keyframes gipsyarmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 70%;
+	}
+}
+@keyframes gipsyarmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 70%;
+	}
+}
+/* ----------------------------- */
+/* Animation pour CRIMSON TYPHOON ! */
+/* ----------------------------- */
+.viewing-page-4 #crimson {
+	animation: crimson ease 2s;
+	-webkit-animation: crimson ease 2s;
+}
+@-webkit-keyframes crimson {
+	from {
+		background-position: 100% 25%;
+		opacity: 0;
+	}
+	to {
+		background-position: 100% 0%;
+		opacity: 1;
+	}
+}
+.viewing-page-4 #crimson div.competence span.speed-bar {
+	animation: crimsonSpeed ease 2.5s;
+	-webkit-animation: crimsonSpeed ease 2.5s;
+}
+@-webkit-keyframes crimsonSpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes crimsonSpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+.viewing-page-4 #crimson div.competence span.power-bar {
+	animation: crimsonpower ease 2.5s;
+	-webkit-animation: crimsonpower ease 2.5s;
+}
+@-webkit-keyframes crimsonpower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 70%;
+	}
+}
+@keyframes crimsonpower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 70%;
+	}
+}
+.viewing-page-4 #crimson div.competence span.armor-bar {
+	animation: crimsonArmor ease 2.5s;
+	-webkit-animation: crimsonArmor ease 2.5s;
+}
+@-webkit-keyframes crimsonArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 75%;
+	}
+}
+@keyframes crimsonArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 75%;
+	}
+}
+/* ----------------------------- */
+/* Animation pour STRIKER EUREKA ! */
+/* ----------------------------- */
+.viewing-page-5 #striker {
+	animation: striker ease 2s;
+	-webkit-animation: striker ease 2s;
+}
+@-webkit-keyframes striker {
+	from {
+		opacity: 0;
+		background-position: 100% 25%;
+	}
+	to {
+		opacity: 1;
+		background-position: 100% 0%;
+	}
+}
+.viewing-page-5 #striker div.competence span.speed-bar {
+	animation: strikerSpeed ease 2.5s;
+	-webkit-animation: strikerSpeed ease 2.5s;
+}
+@-webkit-keyframes strikerSpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes strikerSpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+.viewing-page-5 #striker div.competence span.power-bar {
+	animation: strikerPower ease 2.5s;
+	-webkit-animation: strikerPower ease 2.5s;
+}
+@-webkit-keyframes strikerPower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes strikerPower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+.viewing-page-5 #striker div.competence span.armor-bar {
+	animation: strikerArmor ease 2.5s;
+	-webkit-animation: strikerArmor ease 2.5s;
+}
+@-webkit-keyframes strikerArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 80%;
+	}
+}
+@keyframes strikerArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 80%;
+	}
+}
+/* ----------------------------- */
+/* Animation pour CHERNO ALPHA ! */
+/* ----------------------------- */
+.viewing-page-6 #cherno {
+	animation: cherno ease 2s;
+	-webkit-animation: cherno ease 2s;
+}
+@-webkit-keyframes cherno {
+	from {
+		opacity: 0;
+		background-position: 100% 25%;
+	}
+	to {
+		opacity: 1;
+		background-position: 100% 0%;
+	}
+}
+.viewing-page-6 #cherno div.competence span.speed-bar {
+	animation: chernoSpeed ease 2.5s;
+	-webkit-animation: chernoSpeed ease 2.5s;
+}
+@-webkit-keyframes chernoSpeed {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 40%;
+	}
+}
+@keyframes strikerArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 40%;
+	}
+}
+.viewing-page-6 #cherno div.competence span.power-bar {
+	animation: chernoPower ease 2.5s;
+	-webkit-animation: chernoPower ease 2.5s;
+}
+@-webkit-keyframes chernoPower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes chernoPower {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+.viewing-page-6 #cherno div.competence span.armor-bar {
+	animation: chernoArmor ease 2.5s;
+	-webkit-animation: chernoArmor ease 2.5s;
+}
+@-webkit-keyframes chernoArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes chernoArmor {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+/* ----------------------------- */
+/* Animation GLOBALE ! */
+/* ----------------------------- */
+.viewing-page-3 #gipsy h1, .viewing-page-4 #crimson h1, .viewing-page-5 #striker h1, .viewing-page-6 #cherno h1 {
+	animation: IntroTXT ease 1s;
+	-webkit-animation: IntroTXT ease 1s;
+}
+@-webkit-keyframes IntroTXT {
+	from {
+		-webkit-transform: scale(5);
+		-moz-transform: scale(5);
+		-ms-transform: scale(5);
+		-o-transform: scale(5);
+		transform: scale(5);
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes IntroTXT {
+	from {
+		-webkit-transform: scale(5);
+		-moz-transform: scale(5);
+		-ms-transform: scale(5);
+		-o-transform: scale(5);
+		transform: scale(5);
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+.viewing-page-3 #gipsy .data, .viewing-page-4 #crimson .data, .viewing-page-5 #striker .data, .viewing-page-6 #cherno .data {
+	animation: data ease 1s;
+	-webkit-animation: data ease 1s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes data {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes data {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+.viewing-page-3 #gipsy .pilots, .viewing-page-4 #crimson .pilots, .viewing-page-5 #striker .pilots, .viewing-page-6 #cherno .pilots {
+	animation: pilots ease 1.5s;
+	-webkit-animation: pilots ease 1.5s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes pilots {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes pilots {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+.viewing-page-3 #gipsy .pilots img, .viewing-page-4 #crimson .pilots img, .viewing-page-5 #striker .pilots img, .viewing-page-6 #cherno .pilots img {
+	animation: pilotsIMG ease 1.9s;
+	-webkit-animation: pilotsIMG ease 1.9s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes pilotsIMG {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes pilotsIMG {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+.viewing-page-3 #gipsy .kaiju-data, .viewing-page-4 #crimson .kaiju-data, .viewing-page-5 #striker .kaiju-data, .viewing-page-6 #cherno .kaiju-data {
+	animation: kaiju-data ease 2.2s;
+	-webkit-animation: kaiju-data ease 2.2s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes kaiju-data {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes kaiju-data {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+.viewing-page-3 #gipsy .kaiju-data img, .viewing-page-4 #crimson .kaiju-data img, .viewing-page-5 #striker .kaiju-data img, .viewing-page-6 #cherno .kaiju-data img {
+	animation: kaijuIMG ease 2.5s;
+	-webkit-animation: kaijuIMG ease 2.5s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes kaijuIMG {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes kaijuIMG {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+		-moz-transform: scale(0.1);
+		-ms-transform: scale(0.1);
+		-o-transform: scale(0.1);
+		transform: scale(0.1);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}

@@ -1,0 +1,40 @@
+{
+  "name": "basic-html",
+  "version": "1.0.0",
+  "description": "\"# basic-html\"  \"# basic-html\"  \"# basic-html\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djo972/basic-html.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djo972/basic-html/issues"
+  },
+  "homepage": "https://github.com/djo972/basic-html#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "babel-preset-env": "^1.7.0",
+    "grunt": "^1.0.4",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-notify": "^0.4.5",
+    "grunt-text-replace": "^0.4.0",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^6.1.4"
+  }
+}

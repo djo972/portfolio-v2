@@ -1,0 +1,334 @@
+
+/*
+Site : Fondation des maladies rares
+Site URL :
+Version: 1.0
+Author: Amelie MEUNIER
+Author URL: http://
+
+*/
+
+.wrapper {width:960px;margin:0 auto;}
+a { text-decoration:none;}
+body{font-family:Arial;}
+a.more{height:15px;line-height:15px;padding:1px 4px 2px 7px;text-transform: uppercase;font-family:Verdana, Arial,Sans-serif;font-size:9px;color:white;background:#fa9a3a;border-radius:2px}
+a.more:after{content:'»';padding-left:7px;}
+
+/* -------- HEADER -------- */
+#header {
+	background:#fff;
+	border-bottom:1px solid #577a7c;
+	height:131px;
+	padding-top:10px;}
+
+#header .wrapper {position:relative;height:131px;}
+#header .log_pro {
+	float:right;
+	display:block;
+	text-transform: uppercase;
+	color:white;
+	font-size:11px;
+	font-family:Verdana,Arial,sans-serif;
+	height:24px;
+	line-height:24px;
+	width:172px;
+	padding-left:14px;
+	background:#42b49a;
+	border-radius:4px;
+	position:relative;
+}
+#header .log_pro:after{
+	content:url(../images/cadena.png);
+	position:absolute;
+	top:2px;
+	right:14px;
+}
+
+#header .logo{
+	display:block;
+	margin-bottom:21px;
+}
+
+#header .nav{position:absolute;bottom:0;}
+
+#header .nav ul li{
+	float:left;
+	padding:0 6px 5px;
+	font-size:12px;
+	font-family:Verdana;
+	text-transform: uppercase;
+	position:relative;
+	
+}
+
+
+#header .nav ul li a {
+	display:block;
+	padding-left:15px;
+	padding-right:11px;
+	height:28px;
+	line-height:28px;
+	position:relative;
+	border-radius:2px;
+}
+
+#header .nav ul li.active a,#header .nav ul li:hover a{
+	background:#f49e00;
+	color:#fff;
+}
+#header .nav ul li.active a:before, #header .nav ul li:hover a:before{
+	content:url("../images/li_actif.jpg");
+	display:block;
+	text-align:center;
+	width:100%;
+	position:absolute;
+	top:24px;
+	left:0;
+}
+
+#header .nav ul li:first-child:before{
+	content:url(../images/separation_menu.png);
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+#header .nav ul li:after{
+	content:url(../images/separation_menu.png);
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+#header .searchbox{
+	float:right;
+}
+#header .searchbox > div{
+	height:20px;
+	position:relative;
+	
+}
+
+#header .searchbox input[type=text]{
+	width:104px;
+	border-radius:3px;
+	padding-left:3px ;
+	padding-right:15px;
+	background:#fafaf9;
+	-moz-box-shadow: inset 0px 1px 1px #d7d6d2;
+	-webkit-box-shadow: inset 0px 1px 1px #d7d6d2;
+	box-shadow: inset 0px 1px 1px #d7d6d2;
+}
+ 
+#header .searchbox input[type=submit]{
+	position:absolute;
+	top:7px;
+	right:7px;
+	background:url(../images/ico_search.png) top left no-repeat;
+	border:0 ;
+	height:12px;
+	width:13px;
+}
+
+
+/* ------ CONTENT_SLIDE ------ */
+
+#content_slide{clear:both;
+background-color:#3cabb1;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#3cabb1', endColorstr = '#4a8d91');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#3cabb1', endColorstr = '#4a8d91')";
+background-image: -moz-linear-gradient(top, #3cabb1, #4a8d91);
+background-image: -ms-linear-gradient(top, #3cabb1, #4a8d91);
+background-image: -o-linear-gradient(top, #3cabb1, #4a8d91);
+background-image: -webkit-gradient(linear, center top, center bottom, from(#3cabb1), to(#4a8d91));
+background-image: -webkit-linear-gradient(top, #3cabb1, #4a8d91);
+background-image: linear-gradient(top, #3cabb1, #4a8d91);
+/*--IE9 DOES NOT SUPPORT CSS3 GRADIENT BACKGROUNDS--*/
+
+padding-top:18px;
+padding-bottom:32px;
+}
+#content_slide #slide{
+	position:relative;
+	width:960px;
+	height:487px;
+	overflow:hidden;
+	-moz-box-shadow: inset 0px 2px 5px #c6c6c6;
+	-webkit-box-shadow: inset 0px 2px 5px #c6c6c6;
+	box-shadow: inset 0px 2px 5px #000;
+}
+
+/*gestion de l'article en vue */
+#slide .article .fond{
+	display:block;
+	width:960px;
+	height:487px;
+}
+#slide .article {position:relative;}
+#slide .article .desc{
+	position:absolute;
+	bottom:168px;
+	left:90px;
+	width:175px;
+}
+#slide .article .desc h2{
+	text-transform: uppercase;
+	font:10px Tahoma;
+	color:#0099a8;
+	margin-bottom:9px
+}
+	#slide .article .desc h2:after {
+		content:'»';
+		padding-left:6px;
+	}
+
+#slide .article .desc h3 {
+	font-size:24px ;
+	font-family:'Memphis',Arial,Sans-serif;
+	font-weight:bold;
+	margin:7px 0;
+}
+#slide .article .desc p{
+	font-size:14px;
+	font-family:Arial;
+	margin:7px 0;
+	line-height:18px;
+}
+
+/* positionnement des fleches */
+#slide .arrows img{
+	display:block;
+	position:absolute;
+	width:40px;
+	height:41px;
+	bottom:220px;
+}
+
+#slide .arrows .left_arrow{	left:15px;}
+#slide .arrows .right_arrow{right:15px;}
+
+/* gestion des puces */
+
+#content_slide .puces{
+	margin: 16px auto 0;
+	width:90px;
+}
+
+#content_slide .puces li{
+	float:left;
+	width:12px;
+	height:12px;
+	margin:0 9px;
+	background:url(../images/puce.png) top left no-repeat;
+}
+
+#content_slide .puces li.active{
+	background:url(../images/puce_active.png) top left no-repeat;
+}
+
+/* gestion des 3 blocs d'informations */
+#infos {
+	background:#f2f2ed;
+	padding-top:25px;
+	height:183px;
+	padding-bottom:31px;
+}
+
+#infos .bloc{
+	float:left;
+	width:267px;
+	height:157px;
+	border:1px solid #d7d7cb;
+	margin-left:30px;
+	background:#FFF;
+	overflow:hidden;
+	padding-right:31px;
+	padding-top:24px;
+}
+#infos .bloc:first-child{margin-left:0;}
+
+#infos .bloc img{float:left;margin:0 30px 0 45px;}
+
+#infos .bloc h3{
+	font-family:'Memphis',Arial, Sans-serif;
+	font-weight:bold;
+	font-size:20px;
+}
+#infos .bloc p{
+	font-family:Georgia,Arial,Sans-serif;
+	font-size:13px;
+	margin:8px 0;
+}
+
+/* ---------FOOTER ---------------*/
+
+#footer {
+	background:#888881;
+	clear:both;
+	height:159px;
+	padding-top:33px;
+}
+/*
+#footer .wrapper > ul > li {
+	float:left;
+}
+*/
+#footer ul li.main{
+	float:left;
+	height:120px;
+	position:relative;
+}
+#footer ul li.main:after{
+	content:url(../images/barres_verticales_footer.png);
+	position:absolute;
+	right:0;
+	bottom:0;
+
+}
+#footer ul h4{
+	font-family:Verdana,Arial,Sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	text-transform: uppercase;
+	color:#e6e6e0;
+	margin-bottom:12px;
+}
+
+#footer ul li.logo_footer{
+	width:202px;
+	text-align: center;
+}
+#footer ul li.logo_footer:before{
+	content:url(../images/barres_verticales_footer.png);
+	position:absolute;left:0;bottom:0;
+}
+
+#footer ul li.nav,#footer ul li.sociaux{
+	padding:0 30px;
+}
+#footer ul li.nav li{
+	font-family:Georgia,Arial,Sans-serif;
+	font-size:13px;
+	line-height:18px;
+}
+#footer ul li a{
+	color:#e6e6e0;
+}
+
+#footer ul li.sociaux div{width:100px;margin-left: 16px;}
+#footer ul li.sociaux div a{float:left;margin: 9px 8px;}
+
+#footer ul li.newsletter{padding:0 9px;	}
+#footer ul li.newsletter form div{width:175px;height:28px;position:relative;font-family:Georgia,Arial,Sans-serif;font-size:13px;}
+#footer ul li.newsletter form input[type=text]{width:128px;height:28px;line-height:28px;padding:0 33px 0 14px;border-radius:4px;color:#888881;border:1px solid #e3e3e3;}
+#footer ul li.newsletter form input[type=submit]{
+	position:absolute;
+	right:9px;
+	bottom: 0;
+	width: 25px;
+	height: 27px;
+	line-height: 27px;
+	background:#fff;
+	border:0;
+	color:#fa9a3a;
+	text-transform: uppercase;
+}

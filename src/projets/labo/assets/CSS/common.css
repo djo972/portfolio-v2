@@ -1,0 +1,161 @@
+
+/*
+Site : Gil 
+Site URL :
+Version: 1.0
+Author: Amelie MEUNIER
+Author URL: http://
+*/
+
+/* BASE ---------------------------------------*/
+
+body {
+	font:normal 80% Helvetica, Arial, Verdana, sans-serif;
+	color: #888899;
+	text-align:center;
+}
+
+a {
+	text-decoration: none;
+}
+
+.content {
+	padding:78px 0;
+	margin:0 auto;
+	text-align:center;
+	font-size:18px;
+	line-height:35px;
+	font-family: "Arial";
+
+}
+
+strong {
+	font-weight:bold;
+}
+
+/* HEADER ------------------------------------------*/
+
+
+#header {
+	height:600px;
+	background:url("../images/header.jpg") top center no-repeat;
+	color:white;
+/* pour etendre l'image a la taille de l'écran */
+	-webkit-background-size: cover; /* pour Chrome et Safari */
+  	-moz-background-size: cover; /* pour Firefox */
+  	-o-background-size: cover; /* pour Opera */
+  	background-size: cover;
+
+}
+
+#header h1{
+	padding-top:75px;
+	margin:0 auto 0;
+	text-indent: -9999em;
+	height:170px;
+	width:170px;
+	background:url("../images/logo.png") center bottom no-repeat;
+}
+
+#header h2{
+	padding:25px;
+	text-transform: uppercase;
+	font:1.8em bold;
+}
+
+#header a{
+	display:inline-block;
+	width:155px;
+	height:40px;
+	background-color:#d05060;
+	color:white;
+	padding:7px 0;
+
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+/* -------------Introduction ------------*/
+#intro {
+	height:300px;
+	background-color:#d6e5f2;
+}
+#intro .content {
+	width:725px;
+	padding:70px 110px;;
+}
+
+/* ------------- Work  ------------*/
+#work {
+	width:960px;
+	text-align:center;
+	margin:0 auto;
+	background-color:white;
+}
+
+#work a {
+	display:inline-block;
+	margin:5px;
+}
+
+/* ------------ Social ------------*/
+#social {
+	background-color:#4e5b70;
+}
+
+#social .content {
+	padding: 85px 0 115px;
+}
+
+#social a{
+	display:inline-block;
+	width:85px;
+	height:85px;
+	margin:0 45px;
+	/*background-color:#e84f89;*/
+}
+
+
+#social a img{
+	display:block;
+	margin: 30px auto;
+}
+
+#social a{
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+a#dribble {
+	background-color:#e84f89;
+}
+
+a#twitter {
+	background-color:#41cdfd;
+}
+
+a#instagram {
+	background-color:#597ebb;
+}
+
+a#facebook {
+	background-color:#d05060;
+}
+
+
+/*   FOOTER */
+#footer {
+	background-color: #3f4551;
+	height:87px;
+	padding:29px 35px;
+}
+
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}

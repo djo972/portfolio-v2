@@ -1,0 +1,122 @@
+
+/*
+Site : Taramon Paris
+Site URL :
+Version: 1.0
+Author: Amelie MEUNIER
+Author URL: http://
+*/
+/* A Finioler : puces des liens header
+couleur gris clair de fond: #efece7;
+font-family: century;
+
+*/
+
+
+/*------- STYLE GLOBAUX ------*/
+@font-face {    font-family: 'century';   src: url('../font/century2.ttf') format('truetype') ;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {	width:980px;margin:0 auto;	font-family: Arial;}
+
+a {	text-decoration: none;}
+
+.puce {	position:relative;}
+
+.puce:before {
+	content:url(../images/puce_liens.png);
+	color:#c7ae85;
+	font-weight:bold;
+	padding-right:5px;
+}
+
+/*--------HEADER---------*/
+#header {position:relative; }
+	#header .log {	float:right;padding:11px 12px;}
+		#header .log a {color:#a49c97;}
+		#header .log .panier {	position:relative;	margin-left:60px;		}
+		#header .log .panier:before {content:url('../images/panier.png');position:absolute;	top:-2px;left:-35px;}
+	#logo {	position:absolute;	top: 41px;left:2px;}
+	#header .nav_secondaire {clear:right;float:right;margin-top:80px;margin:80px 0 15px;font-family: century}
+		#header .nav_secondaire a{	color:#a49c97;	margin-left:44px;}
+	#header .main_nav {clear:right;background-color:#efece7;height:53px;margin-bottom:10px;}
+	#header .main_nav ul,#header .main_nav ul li {	float:left;}
+		#header .main_nav li {	padding:0px 20px 0;	margin-top:10px;height:35px;}
+		#header .main_nav li:nth-child(n+2){border-left:1px solid #e4ded5;}
+		#header .main_nav ul li a {	color:#cac2bc;	font-size:12px;	}
+		#header .main_nav ul li a strong {	display:block;	color:#99928c;	font-size:15px;	}
+		#header .main_nav form {float:right;width:227px;height:28px;border:1px solid #e1e1e1;position:relative;	margin-top:10px;margin-right:10px;}
+		#header .main_nav form input[type=text] {width:217px;height:28px;padding-left:10px;color:#99928c;font-size:13px;}
+		#header .main_nav form input[type=submit] {position:absolute;top:3px;right:0px;	background:url(../images/loupe.png) center center no-repeat;
+													width:25px;	height:25px;border:none;}
+
+
+/*------- OFFRES SPECIALES ------*/
+#offres_speciales {clear:both;height:55px;border-top:1px solid #d2cbc5;border-bottom:1px solid #d2cbc5;margin-bottom:10px;}
+	#offres_speciales li {float:left;width:320px;text-align:center;font-size:14px;position:relative;margin-top:10px;}
+	#offres_speciales li:nth-child(n+2):before{	content:url(../images/barre.png);position:absolute;	left:0;	}
+		#offres_speciales li h3 {font-size:17px;color:#b1966a;font-style: italic;font-family: century;}
+		#offres_speciales li p {color:#a49c97;}
+
+/*------- BLOC SLIDE  ------*/
+.bloc_slide {height:487px;position:relative;margin-bottom:58px;border:1px solid #e1e1e1;}
+	.bloc_slide .slide p , .bloc_slide .puces_slide , .bloc_slide .slide_left, .bloc_slide .slide_right {position:absolute;	}
+		.bloc_slide .slide p {	bottom:260px;left:140px;height:60px;width:300px;line-height: 60px;	position:relative;
+								font-size:16px;	text-align: right;}
+		.bloc_slide .slide a.more {	position:absolute;bottom:-21px;	right:0;font-size:13px;	color:#a09891;}
+			.bloc_slide .puces_slide {bottom:-27px;	left:452px;	}
+				.bloc_slide .puces_slide li {float:left;width:13px;height:13px;background:url('../images/puce.png') no-repeat top left;padding:0 9px;}
+				.bloc_slide .puces_slide li.active{background:url(../images/puce_active.png) no-repeat top left;}
+			.bloc_slide .slide_left {left:10px;	top:224px;}
+			.bloc_slide .slide_right {right:10px;top:224px;	}
+			.bloc_slide .slide_left:hover,.bloc_slide .slide_right:hover { 
+					-webkit-transition:all 0.3s ease-in-out;
+					-moz-transition:all 0.3s ease-in-out;
+					-ms-transition:all 0.3s ease-in-out;
+					-o-transition:all 0.3s ease-in-out;
+					transition:all 0.3s ease-in-out;
+					-webkit-transform:scale(0.8);
+					-moz-transform:scale(0.8);
+					-ms-transform:scale(0.8);
+					-o-transform:scale(0.8);
+					transform:scale(0.8);}
+.bloc_slide .slide{display:none;}
+	.bloc_slide .slide.active {display:block;}
+/*------- AVANTAGES ------*/
+#avantages {margin-bottom:20px;float:left;}
+	#avantages .bloc {float:left;width: 213px;height:40px;padding:10px 0 0 17px;background-color:#efece7;font-size:14px;color:#a49c97;}
+	#avantages .bloc h3 strong {display:block;font-weight:bold;	}
+	#avantages .bloc:nth-child(n+2) {margin-left:19px;}
+
+
+/*------- FOOTER ------*/
+#footer {clear:both;}
+
+	/*------- FOOTER - PARTIE PRINCIPALE ------*/
+	#footer .main_nav .nav,#footer .main_nav .nav>li {	float:left;	}
+
+	#footer .main_nav {	border-top: 1px solid #d2cbc5;	border-bottom: 1px solid #d2cbc5;float:left; width:980px;margin-bottom:10px;}
+	#footer .main_nav .nav{	margin-top:25px ;font-size:12px;}
+		#footer .main_nav .nav>li {	padding-left:13px;	margin-right:125px;	margin-bottom:10px;	height:165px;}
+		#footer .main_nav .nav>li:nth-child(n+2) {	border-left:1px solid #d2cbc5;}
+		#footer .main_nav .nav li ul li {height:18px;line-height:18px;	}
+		#footer .main_nav .nav li ul li:first-child {height:25px;line-height: 25px;	}
+		#footer .main_nav .nav li ul:nth-child(2) {	margin-top:15px;}
+		#footer .main_nav a{color:#99928c;}
+		#footer .main_nav h2 {font-size:16px;font-family:Century;color: #b1966a;margin-bottom:12px;}
+	#footer .main_nav .social {float:right;	width:230px;}
+		#footer .social fieldset {background-color: #faf8f6;height:78px;border:1px #f3f0eb solid;position:relative;	margin-top:20px;}
+			#footer .social fieldset legend {font-size: 16px ;font-family: century;color:#b1966a;position:absolute;	top:10px;left:0;width:230px;text-align: center;}
+				#footer .social fieldset legend img {margin-right:6px;}
+			#footer  .social fieldset input[type=text]{position:absolute;bottom:5px;right:9px;width:205px;height:30px;padding-left:5px;	background-color:white;	color:#a49c97;	font-size:13px;}
+			#footer  .social fieldset input[type=submit]{position:absolute;	bottom:11px;right:9px;background: white;border:none;text-transform: uppercase;font:14px black Century ;	}
+		#footer .social .reseaux_soc{margin:10px 0;	border:1px solid #d2cbc5;height:51px;	padding-top: 18px;text-align: center;}
+			#footer .social .reseaux_soc img {	margin:0 11px;	}
+
+
+	/*------- FOOTER - PARTIE DU BAS ------*/	
+	#footer .nav_secondaire {clear:both;height:90px;line-height: 90px ;text-align: center;}
+		#footer .nav_secondaire a {	margin:0 16px;color:#99928c;font-size: 11px;}

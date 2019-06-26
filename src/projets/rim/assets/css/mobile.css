@@ -1,0 +1,78 @@
+/* BASE pour résolution moins de 1366px Pour ces fichus d'écrans 15" en général !*/
+@media all and (max-width: 1366px) {
+	h1 {
+		margin-bottom: 10px;
+	}
+	#intro h1 {
+		margin-top: 25%;
+	}
+	#intro p {
+		font-size: 1em;
+	}
+	.data {
+		width: 50%;
+		height: 50%;
+	}
+	.battle-spec {
+		margin-bottom: 10px;
+	}
+	.pilots {
+		width: 50%;
+		height: auto;
+	}
+	.kaiju-data {
+		width: 40%;
+	}
+	.kaiju-data img {
+		margin-bottom: 15px;
+	}
+	#striker .kaiju-data img {
+		width: 20px;
+		height: 20px;
+		margin-bottom: 10px;
+	}
+	.kaiju-data span {
+		font-size: 12px;
+	}
+}
+/* BASE pour résolution moins de 1024px !*/
+@media all and (max-width: 1024px) {
+	#intro p {
+		width: 60%;
+	}
+	.kaiju-data img {
+		margin-bottom: 15px;
+		width: 15px;
+		height: 15px;
+	}
+	.kaiju-data span {
+		font-size: 12px;
+	}
+	h2, h3 {
+		font-size: 15px;
+	}
+	#striker .kaiju-data img {
+		width: 10px;
+		height: 10px;
+		margin-bottom: 10px;
+	}
+	#gipsy, #crimson, #striker, #cherno {
+		background-position: right;
+	}
+}
+/* BASE pour résolution moins de 940px !*/
+/* @media all and (max-width: 940px) {
+	.bot-portrait:hover, #crimson .bot-portrait:hover, #striker .bot-portrait:hover, #cherno .bot-portrait:hover {
+		background-position: top;
+	}
+} */
+@media all and (max-width: 900px) {
+	.competence {
+		width: 60%;
+	}
+}
+@media all and (min-width: 840px) {
+	html, body {
+		min-width: 840px;
+	}
+}
