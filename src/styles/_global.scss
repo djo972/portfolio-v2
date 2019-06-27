@@ -229,9 +229,10 @@ html{
     .clock {
       width: 75px;
       height: 75px;
-      border-radius: 106px;
+      //border-radius: 106px;
       margin: auto;
       position: absolute;
+      box-sizing: content-box;
       top: 0; bottom: 0; left: 0; right: 0; background: #fff; border: 6px solid #4ecdc4;
     }
 
@@ -304,7 +305,8 @@ html{
           -moz-opacity:0;
           transition: all 1s ease;
           -moz-transition: all 1s ease;
-          margin: 25px 0px  0px 49px;
+          //margin: 25px 0px  0px 49px;
+          margin:25px 0;
         }
       }
     }
@@ -330,7 +332,7 @@ html{
       background: url('../images/socle.png') no-repeat 50% 100%;
       position: absolute;
       img {
-        margin-left: 18px;
+        //margin-left: 18px;
       }
     }
     .lampe{

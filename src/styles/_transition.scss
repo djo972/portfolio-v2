@@ -19,28 +19,29 @@
   height: 100%;
   width: 100%;
   margin: auto auto;
-  overflow: hidden;
+
+  overflow: auto;
 }
 .page__style .page__description {
   color: #fff;
   font-weight: 300;
   text-align: center;
 }
-.page__style .btn_nav {
-  background: #002a32;
-  border-radius: 30px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  padding: 17px 30px;
-  width: 146px;
-}
+//.page__style .btn_nav {
+//  background: #002a32;
+//  border-radius: 30px;
+//  border: none;
+//  color: #fff;
+//  cursor: pointer;
+//  font-family: inherit;
+//  font-size: 15px;
+//  font-weight: bold;
+//  text-transform: uppercase;
+//  letter-spacing: 1px;
+//  margin-bottom: 20px;
+//  padding: 17px 30px;
+//  width: 146px;
+//}
 .page__style .btn_nav:focus,
 .page__style .btn_nav:active {
   outline: none;

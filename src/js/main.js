@@ -390,7 +390,7 @@ $('.about_link').click(function() {
     }, 1500);
 });
 
-$('.contact_link').click(function() {
+$('.vibre').click(function() {
     setTimeout(function() {
         $('.contact').addClass('fadeIn');
     }, 1500);
