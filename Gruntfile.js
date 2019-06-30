@@ -14,7 +14,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-mocha-test');
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -22,6 +21,7 @@ module.exports = function(grunt) {
             '* http://<%= pkg.homepage %>/\n' +
             '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
             '<%= pkg.author.name %>; Licensed MIT */',
+
         clean: {
             build: {
                 src: ['dist/*']
@@ -34,6 +34,12 @@ module.exports = function(grunt) {
             }
         },
         copy: {
+            component:{
+                expand:true,
+                cwd:'src/js/component',
+                src:['**/*'],
+                dest:'dist/js/component/'
+            },
             fonts:{
                 expand:true,
                 cwd:'src/fonts',
@@ -181,25 +187,25 @@ module.exports = function(grunt) {
         },
         replace: {
             dev:{
-                src: ['*.html'],
+                src: ['views/*.html'],
                 overwrite: true,
                 replacements: [{
-                    from: /dist(.*)css/g,
-                    to: "dist/styles/main<%= pkg.name %><%= pkg.version %>_<%= grunt.template.today('yyyy-mm-dd') %>.css"
+                    from: /main(.*)css/g,
+                    to: "main<%= pkg.name %><%= pkg.version %>_<%= grunt.template.today('yyyy-mm-dd') %>.css"
                 }, {
-                    from: /dist(.*)js/g,
-                    to: "dist/js/appCC<%= pkg.version %>_<%= grunt.template.today('yyyy-mm-dd') %>.js"
+                    from: /app(.*)js/g,
+                    to: "appCC<%= pkg.version %>_<%= grunt.template.today('yyyy-mm-dd') %>.js"
                 }]
             },
             dist: {
                 src: ['dist/*.html'],
                 overwrite: true,
                 replacements: [{
-                    from: /dist(.*)css/g,
-                    to: "styles/style_ver=<%= pkg.version %>.min.css"
+                    from: /main(.*)css/g,
+                    to: "style_ver=<%= pkg.version %>.min.css"
                 }, {
-                    from: /dist(.*)js/g,
-                    to: "js/app_ver=<%= pkg.version %>.min.js"
+                    from: /app(.*)js/g,
+                    to: "app_ver=<%= pkg.version %>.min.js"
                 }]
             }
         },
@@ -264,12 +270,11 @@ module.exports = function(grunt) {
 
     // child
     grunt.registerTask("duplicate",["copy:images","copy:files"]);
-    grunt.registerTask("duplicate-dev",["copy:images","copy:fonts"]);
+    grunt.registerTask("duplicate-dev",["copy:images","copy:fonts","copy:component"]);
     grunt.registerTask("dist-js",["jshint:beforeconcat","concat:dist","babel","jshint:afterconcat","uglify",'notify:js']);
     grunt.registerTask("dev-js",["jshint:beforeconcat","concat:dist"]);
     grunt.registerTask("dev-sass",["sass:dev","replace:dev"]);
     grunt.registerTask("prebuild",["dev-js","dev-sass","duplicate-dev"]);
-
     // prod
     grunt.registerTask("default",["clean:build","sass:dist","dist-js","duplicate","htmlmin:dist","replace:dist"]);
     // dev

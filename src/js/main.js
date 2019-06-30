@@ -79,7 +79,6 @@
         // La page contient des elements permettant d'afficher une barre de progression
         if($elements.length) {
             chargementEnCours();
-
             $elements.load(function() {
                 $(this).off('load');
                 elementsCharges++;
@@ -91,8 +90,6 @@
             // La page est integralement chargee
             chargementTermine();
             $('#welcome').delay(2000).fadeOut(2000);
-
-
         });
 
     };
@@ -100,11 +97,6 @@
 
 
 })(jQuery);
-//
-$(document).ready(function() {
-
-});
-
 
 $(document).ready(function() {
     $(".mac").mouseover(function() {
@@ -118,24 +110,8 @@ $(document).ready(function() {
 
 });
 
-$(function() {
-    $(".laz").click(function() {
-        $('.chart1').easyPieChart({
-            animate: {
-                duration: 2000,
 
-                enabled: true
-            },
-            easing: 'easeOutElastic',
-            barColor: '#2C3E50',
-            scaleColor: false,
-            lineWidth: 5,
-            size: 200,
-            lineCap: 'circle'
-        });
 
-    });
-});
 
 $(function() {
     setInterval(function() {
@@ -252,31 +228,45 @@ var pathObj = {
 
 
 
-$(".laz").click(function() {
-    $('#lool').lazylinepainter({
-        "svgData": pathObj,
-        "strokeWidth": 2,
-        "strokeColor": "#8e44ad"
-    }).lazylinepainter('paint');
-    $('#lal').lazylinepainter({
-        "svgData": pathObj,
-        "strokeWidth": 2,
-        "strokeColor": "#c0392b"
-    }).lazylinepainter('paint');
-    $('#lil').lazylinepainter({
-        "svgData": pathObj,
-        "strokeWidth": 2,
-        "strokeColor": "#2980b9"
-    }).lazylinepainter('paint');
-    $('#lel').lazylinepainter({
-        "svgData": pathObj,
-        "strokeWidth": 2,
-        "strokeColor": "#27ae60"
-    }).lazylinepainter('paint');
 
 
 
-});
+
+    function paintLazy(){
+        $('.chart1').easyPieChart({
+            animate: {
+                duration: 2000,
+
+                enabled: true
+            },
+            easing: 'easeOutElastic',
+            barColor: '#2C3E50',
+            scaleColor: false,
+            lineWidth: 5,
+            size: 200,
+            lineCap: 'circle'
+        });
+        $('#lool').lazylinepainter({
+            "svgData": pathObj,
+            "strokeWidth": 2,
+            "strokeColor": "#8e44ad"
+        }).lazylinepainter('paint');
+        $('#lal').lazylinepainter({
+            "svgData": pathObj,
+            "strokeWidth": 2,
+            "strokeColor": "#c0392b"
+        }).lazylinepainter('paint');
+        $('#lil').lazylinepainter({
+            "svgData": pathObj,
+            "strokeWidth": 2,
+            "strokeColor": "#2980b9"
+        }).lazylinepainter('paint');
+        $('#lel').lazylinepainter({
+            "svgData": pathObj,
+            "strokeWidth": 2,
+            "strokeColor": "#27ae60"
+        }).lazylinepainter('paint');
+    }
 
 
 $(document).ready(function() {
@@ -381,6 +371,9 @@ $('.projects_link').click(function() {
 $('.skills_link').click(function() {
     setTimeout(function() {
         $('.skills').addClass('fadeIn');
+        setTimeout(function(){
+            paintLazy();
+        },1500);
     }, 1500);
 });
 

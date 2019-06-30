@@ -5,28 +5,28 @@
         height: 341,
         fps: 24,
         color: "#3DA3A2",
-        manifest: [{src: "dist/images/bird.png", id: "bird"}, {
-            src: "dist/images/black.png",
+        manifest: [{src: "/images/bird.png", id: "bird"}, {
+            src: "/images/black.png",
             id: "black"
-        }, {src: "dist/images/blanche.png", id: "blanche"}, {
-            src: "dist/images/camion.png",
+        }, {src: "/images/blanche.png", id: "blanche"}, {
+            src: "/images/camion.png",
             id: "camion"
-        }, {src: "dist/images/copiered.png", id: "copiered"}, {
-            src: "dist/images/copieSanstitre1.png",
+        }, {src: "/images/copiered.png", id: "copiered"}, {
+            src: "/images/copieSanstitre1.png",
             id: "copieSanstitre1"
-        }, {src: "dist/images/fenetre.png", id: "fenetre"}, {
-            src: "dist/images/grise.png",
+        }, {src: "/images/fenetre.png", id: "fenetre"}, { 
+            src: "/images/grise.png",
             id: "grise"
-        }, {src: "dist/images/laposte.png", id: "laposte"}, {
-            src: "dist/images/red.png",
+        }, {src: "/images/laposte.png", id: "laposte"}, {
+            src: "/images/red.png",
             id: "red"
-        }, {src: "dist/images/rouge.png", id: "rouge"}, {
-            src: "dist/images/Sanstitre1.png",
+        }, {src: "/images/rouge.png", id: "rouge"}, {
+            src: "/images/Sanstitre1.png",
             id: "Sanstitre1"
-        }, {src: "dist/images/scene.png", id: "scene"}, {
-            src: "dist/images/vert.png",
+        }, {src: "/images/scene.png", id: "scene"}, {
+            src: "/images/vert.png",
             id: "vert"
-        }, {src: "dist/images/violet.png", id: "violet"}, {src: "dist/images/volet.png", id: "volet"}]
+        }, {src: "/images/violet.png", id: "violet"}, {src: "/images/volet.png", id: "volet"}]
     }, (a.Sansnom2 = function (b, d, e) {
         this.initialize(b, d, e, {}), this.instance = new a.volet, this.instance.setTransform(9, 161.8), this.timeline.addTween(c.Tween.get(this.instance).wait(450)), this.instance_1 = new a.Interpoler13("synched", 0), this.instance_1.setTransform(117.5, 170.5), this.timeline.addTween(c.Tween.get(this.instance_1).to({x: 117.6}, 449).wait(1)), this.instance_2 = new a.Interpoler12("synched", 0), this.instance_2.setTransform(-102.5, 291.9, 1, 1, 0, 0, 0, 3, 0), this.timeline.addTween(c.Tween.get(this.instance_2).to({
             regX: 0,
