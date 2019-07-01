@@ -17,6 +17,8 @@ html{
       font-size:90px;
       text-align:center;
       font-family: jochamregular;
+      //position: absolute;
+      //z-index: 10;
     }
     h2{
       color:#2980b9;
@@ -197,7 +199,8 @@ html{
       background: url("../images/ground.png");
     }
     .inner {
-      width: 960px;
+      //width: 960px;
+      width: 1080px;
       margin: 0 auto;
       position: relative;
 
@@ -289,10 +292,12 @@ html{
       position: absolute;
       width: 230px;
       height: 200px;
-      background: url('../images/etageres.png') no-repeat 100% 92% ,url('../images/livre.png') no-repeat 50% 51%;
-      top:250px;
-      right: 0px;
+      background: url('../images/book.png') no-repeat center;
+      background-size: 100%;
+      top:184px;
+      left: 50px;
       box-sizing: border-box;
+      z-index: 10;
       img{
         z-index: 5;
         margin: 70px 55px 0px;
@@ -342,15 +347,78 @@ html{
       left: 230px;
     }
     .print {
-      background: url("../images/imprimante.png");
-      width: 118px;
-      height: 83px;
+      background: url("../images/print.png") no-repeat center;
+      width: 140px;
+      height: 100px;
+      background-size: 100%;
       position: absolute;
-      right: 30px;
-      top: 692px;
+      left: 80px;
+      top: 409px;
       z-index: 30;
 
     }
+
+    .modem{
+      position: absolute;
+      top: 390px;
+      left: 80px;
+      top: 675px;
+      z-index: 30;
+      width: 125px;
+      height: 70px;
+      .m1{
+        position: absolute;
+        height: 30px;
+        width: 125px;
+        background-color: #34495e;
+        bottom: 0;
+        border-radius: 5px;
+      }
+
+      i {
+        padding: 3px 6px;
+        display: inline-block;
+        margin: 0 0 5px 6px;
+      }
+
+      .holder {
+        position:absolute;
+        height:32px;
+        width:150px;
+        bottom:50%;
+        left:50%;
+      }
+
+      .shifter {
+        position:absolute;
+        bottom:-50%;
+        left:-50%;
+      }
+
+      .p_a {position:absolute;}
+      .p_r {position:relative;}
+
+      .i_g {background:#00ff00;}
+      //.i_l25 {background:rgba(0,0,0,0.25);}
+      .i_l50 {background:rgba(0,0,0,0.5);}
+      .i_n {background:#808080;}
+      .i_o {background:#ffa000;}
+      .i_r {background:#ff6060;}
+      .i_t {background:transparent;}
+
+      .q_f {top:0px;right:0px;bottom:0px;left:0px;}
+      .an{
+        height: 50px;
+        width: 5px;
+        background-color:#34495e;
+        position: absolute;
+        border-radius: 10px;
+        right: 0;
+      }
+    }
+
+
+
 
     .chat   {
       background: url("../images/arbreachat.png");
@@ -362,7 +430,7 @@ html{
     }
 
     .sofa   {
-      width: 330px;
+      width: 390px;
       height: 249px;
       position: absolute;
       right: -350px;
@@ -378,8 +446,39 @@ html{
       position: absolute;
       top: 450px;
       left: 300px;
+      left: 350px;
     }
-
+  .bball{
+    position: absolute;
+    top:650px;
+    left: -120px;
+    width: 100px;
+    height: 150px;
+    background: url("../images/Bball.png")center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 90%;
+ }
+    .light{
+      position: absolute;
+      top:0;
+      left: 50%;
+      width: 140px;
+      height: 200px;
+      background: url("../images/light.png")center no-repeat;
+      -webkit-background-size: 100%;
+      background-position:top;
+      background-size: 100%;
+    }
+    .rocket{
+      position: absolute;
+      top:750px;
+      left: -170px;
+      width: 100px;
+      height: 150px;
+      background: url("../images/rocket.png")center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 90%;
+    }
     .prise  {
       background: url("../images/prise.png");
       width: 35px;
@@ -387,19 +486,20 @@ html{
       position: absolute;
       right: 0;
       top: 700px
-
     }
     .boxit{
       width: 300px;
       background: url('../images/shelf.png') no-repeat;
       background-size: 100%;
       top:0;
+      left: -220px;
       left: 0;
       position: absolute;
       height: 1000px;
     }
     #tableau {overflow: hidden;
       min-width: 980px;
+      min-width: 1080px;
     }
 
     .mac{
@@ -407,7 +507,7 @@ html{
       height: 230px;
       position: absolute;
       top:560px;
-      left: 530px;
+      left: 680px;
       background: url("../images/mac.png") no-repeat;
       color:#fff;
       z-index: 5;
@@ -639,6 +739,7 @@ html{
       position: absolute;
       top: 300px;
       left: 300px;
+      left: 400px;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;

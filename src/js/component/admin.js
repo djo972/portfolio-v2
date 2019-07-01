@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  const PUSHER_INSTANCE_LOCATOR = 'v1:us1:90ae9214-3cf2-4cdc-a0e3-267eb970c5d1';
+  const PUSHER_INSTANCE_LOCATOR = 'v1:us1:c0266633-91fb-4f9a-8567-34afe5f59db9';
 
   // ----------------------------------------------------
   // Chat Details

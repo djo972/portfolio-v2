@@ -389,4 +389,17 @@ $('.vibre').click(function() {
     }, 1500);
 });
 
+function $_(id_){
+    return document.getElementById(id_);}
 
+
+tic_reNov();
+
+function tic_reNov() {
+    var i=$_("mn_"+Math.round(Math.random()*3));
+    if(Math.round(Math.random()*2))
+        i.classList.toggle("i_t");
+    if(!Math.round(Math.random()*7))
+        $_("mn_7").classList.toggle("i_t");
+    window.setTimeout(tic_reNov,(Math.random()*400+20));
+}
