@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/mainbasic-html1.0.0_2019-07-02.css">
 <!--    <meta name="theme-color" content="#fafafa">-->
 </head>
-<body onload="init();">
+<body onload="init();" class="det">
 <div id="chargement">Chargement...<span id="chargement-infos"></span></div>
     <div id="container">
     <div id="welcome"><p>Bienvenue chez moi</p></div>
@@ -244,7 +244,7 @@
                 <div id="tableau">
                     <div id="lo">
                         <div class="inner"> <!--  INNER -->
-                            <h1 class="animated bounceInLeft">hello,i'm <span class=" animated bounceInRight" bounceInUp>djo</span></h1>
+                            <h1 class="animated bounceInLeft"><span class="fetch">hello,</span> i'm <span class=" animated bounceInRight" bounceInUp>djo</span></h1>
                             <!-- MENU -->
                             <div class="menu">
                                 <ul class="tit">
@@ -313,15 +313,19 @@
                             <a href="/giovanny_pied_cv.pdf"><div class=""></div></a>
                             <!--BUREAU-->
                             <div class="bball"></div>
+                            <div class="burst">
+                                <div class="rocket"></div>
+                                <div class="fire"></div>
+                                <div class="bfire"></div>
+                            </div>
 
-                            <div class="rocket"></div>
                             <div class="bureau ">
                                 <div class="hot-sign"></div>
                             </div>
                             <!-- PLACARD -->
-                            <div class="gsm ">
-                                <button class="btn_nav contact_link vibre">
-                                    <img src="/images/gsm.png" alt="portable">
+                            <div class="gsm btn_nav contact_link  dwet det">
+                                <button class="">
+
                                 </button>
                             </div>
                             <div class="boxit"></div>
@@ -335,10 +339,20 @@
                                         </div>
                                     </button>
                                 </div>
-
-
                             </div>
-
+<!--                            <div class="mobile vibre">-->
+<!--                                <div class="top-button"></div>-->
+<!--                                <div class="side-button"></div>-->
+<!--                                <div class="side-button vol"></div>-->
+<!--                                <div class="side-button vol"></div>-->
+<!--                                <div class="body">-->
+<!--                                    <div class="cam"></div>-->
+<!--                                    <div class="sensor"></div>-->
+<!--                                    <div class="speaker"></div>-->
+<!--                                    <div class="screen"></div>-->
+<!--                                    <div class="home-button"></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             </div>
                             <!-- FIN ORDINATEUR -->
                         </div>
@@ -374,6 +388,7 @@
 <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.17.0/dist/axios.min.js"></script>
 <script src=" https://unpkg.com/@pusher/chatkit-client"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
 <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>

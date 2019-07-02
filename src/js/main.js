@@ -403,3 +403,34 @@ function tic_reNov() {
         $_("mn_7").classList.toggle("i_t");
     window.setTimeout(tic_reNov,(Math.random()*400+20));
 }
+
+var intervalId = null;
+
+function vibre(e,a) {
+    let element = document.getElementsByClassName('det');
+    let elementOne = element[e];
+    elementOne.classList.add("vibre");
+    setTimeout(function(){
+        elementOne.classList.remove("vibre");
+        }, a);
+}
+function start(){
+    setInterval(function(){vibre(1, 7000); }, 15000);
+}
+
+start();
+$(".inte").click(function() {
+    vibre(0,5000);
+    rocketLaunch();
+});
+
+function rocketLaunch(){
+    var tl = new TimelineMax();
+    tl.to( $('.burst') , 2, { x:5 , y:-70});
+    tl.to($('.fire'),0.2,{autoAlpha:1,scale:1.1},'0');
+    tl.to($('.bfire'),0.1,{autoAlpha:1,scale:1.1},"2" );
+    tl.to($('.work'),2,{rotation:50},"2" );
+    tl.to($('.clocki'),0.5,{y:700 ,rotation:90},"2" );
+    tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" )
+    .to( $('.fetch') ,0.5, {transformPerspective:500, rotation:120, y:50}, "2" );
+}
