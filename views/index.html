@@ -9,13 +9,16 @@
     <link rel="icon" href="/images/bogoss.ico"/>
     <!-- Place favicon.ico in the root directory -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/mainbasic-html1.0.0_2019-07-02.css">
+    <link rel="stylesheet" href="styles/mainbasic-html1.0.0_2019-07-04.css">
 <!--    <meta name="theme-color" content="#fafafa">-->
 </head>
-<body onload="init();" class="det">
-<div id="chargement">Chargement...<span id="chargement-infos"></span></div>
-    <div id="container">
-    <div id="welcome"><p>Bienvenue chez moi</p></div>
+<body data-barba="wrapper" onload="init();" class="det">
+<header>
+    <div class="transition__wipe"></div>
+</header>
+<!--<div id="chargement">Chargement...<span id="chargement-infos"></span></div>-->
+    <div data-barba="container" data-barba-namespace="home" id="container">
+<!--    <div id="welcome"><p>Bienvenue chez moi</p></div>-->
     <button id="dp">
         <img class="dp" src="images/menu1.png" alt=""/>
     </button>
@@ -243,8 +246,19 @@
             <div id="home">
                 <div id="tableau">
                     <div id="lo">
-                        <div class="inner"> <!--  INNER -->
-                            <h1 class="animated bounceInLeft"><span class="fetch">hello,</span> i'm <span class=" animated bounceInRight" bounceInUp>djo</span></h1>
+                        <div class="inner">
+                            <a  href="/test">gooooo !!!!!!!!</a><!--  INNER -->
+                            <h1 class="animated bounceInLeft">
+                                <span class="fetch">
+                                    <span>h</span>
+                                    <span>e</span>
+                                    <span>l</span>
+                                    <span>l</span>
+                                    <span>o</span>
+                                    <span></span>
+                                    </span>
+                                    i'm ,
+                                <span class="dot">djo</span></h1>
                             <!-- MENU -->
                             <div class="menu">
                                 <ul class="tit">
@@ -389,12 +403,13 @@
 <script src="https://cdn.jsdelivr.net/npm/axios@0.17.0/dist/axios.min.js"></script>
 <script src=" https://unpkg.com/@pusher/chatkit-client"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
 <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
 <script src="js/component/chat.js"></script>
-<script type="text/javascript" src="js/appCC1.0.0_2019-07-02.js"></script>
-<script>$(document).ready(function() {$.pageLoader();});</script>
+<script type="text/javascript" src="js/appCC1.0.0_2019-07-04.js"></script>
+<!--<script>$(document).ready(function() {$.pageLoader();});</script>-->
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
@@ -402,5 +417,4 @@
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
-
 </html>

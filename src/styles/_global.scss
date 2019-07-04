@@ -9,6 +9,10 @@ html{
     width: 100%;
     background-color: #fff;
     min-height: 100%;
+    &#test{
+      background:url("../images/bg2.jpg") center no-repeat ;
+      background-size: cover;
+    }
     &.vibre{
       -webkit-animation-name: vibre-base;
       -ms-animation-name: vibre-base;
@@ -45,17 +49,28 @@ html{
       font-size:90px;
       text-align:center;
       font-family: jochamregular;
+      display: flex;
+      justify-content: center;
+
       //position: absolute;
       //z-index: 10;
       span.fetch{
+        font-family:jochamregular;
         display: inline-block;
-        color: white;
+        color: white!important;
+        display: flex;
+        float: left;
+        margin-right: 20px;
+      }
+      span.dot {
+        color:#e74c3c;
+        margin-left: 20px;
       }
     }
     h2{
       color:#2980b9;
       font-size:36px;
-      font-family: jochamregular;
+      font-family:jochamregular;
     }
     button{
       text-decoration:none;
@@ -160,64 +175,62 @@ html{
       visibility: visible;
     }
     //********************** loading **********************
-    #chargement {
-      font-size: 4em;
-      text-align: center;
-      position: absolute;
-      left: 50%;
-      top: 25%;
-      width: 600px;
-      margin-left: -300px;
-    }
-    #container {
-      visibility: hidden;
-
-    }
-    #chargement-infos {
-      text-align:right;
-      white-space: nowrap;
-      display: block;
-      border-bottom:4px solid #000;
-      width: 0%;
-    }
-    #welcome{
-      position: fixed;
-      width: 100%;
-      height: 1000px;
-      background-color: #55A79A;
-      position: absolute;
-      z-index: 20000;
-      color:#fff;
-      border: white 20px solid;
-      box-sizing:border-box ;
-      p{
-        font-size: 4em;
-        text-align: center;
-        position: absolute;
-        left: 50%;
-        top: 25%;
-        width: 600px;
-        margin-left: -340px;
-        font-family: Helvetica, Arial, sans-serif;
-        border: white 10px solid;
-        padding: 30px;
-      }
-    }
-    .load{
-      width: 100%;
-      height: 1000px;
-      background-color: #fff;
-      position: absolute;
-      z-index: 20000;
-    }
+    //#chargement {
+    //  font-size: 4em;
+    //  text-align: center;
+    //  position: absolute;
+    //  left: 50%;
+    //  top: 25%;
+    //  width: 600px;
+    //  margin-left: -300px;
+    //}
+    //#container {
+    //  visibility: hidden;
+    //
+    //}
+    //#chargement-infos {
+    //  text-align:right;
+    //  white-space: nowrap;
+    //  display: block;
+    //  border-bottom:4px solid #000;
+    //  width: 0%;
+    //}
+    //#welcome{
+    //  position: fixed;
+    //  width: 100%;
+    //  height: 1000px;
+    //  background-color: #55A79A;
+    //  position: absolute;
+    //  z-index: 20000;
+    //  color:#fff;
+    //  border: white 20px solid;
+    //  box-sizing:border-box ;
+    //  p{
+    //    font-size: 4em;
+    //    text-align: center;
+    //    position: absolute;
+    //    left: 50%;
+    //    top: 25%;
+    //    width: 600px;
+    //    margin-left: -340px;
+    //    font-family: Helvetica, Arial, sans-serif;
+    //    border: white 10px solid;
+    //    padding: 30px;
+    //  }
+    //}
+    //.load{
+    //  width: 100%;
+    //  height: 1000px;
+    //  background-color: #fff;
+    //  position: absolute;
+    //  z-index: 20000;
+    //}
 
     #lo {
       width: 100%;
       height:  750px;
       background: #55A79A url("../images/texture.png");
-      span {
-        color:#e74c3c;
-      }
+
     }
     #la {
       width: 100%;
@@ -1856,5 +1869,19 @@ html{
         padding-top: 10px;
       }
     }
+    header{
+      z-index: 9999;
+      display: flex;
+    }
+
+    .transition__wipe {
+      height: 0vh;
+      width: 100vw;
+      height: 100vh;
+      background: gray;
+      z-index: 50000000;
+      position: absolute;
+    }
+
   }
 }

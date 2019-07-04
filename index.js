@@ -7,6 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const uuidv4 = require('uuid/v4');
 const Chatkit = require('@pusher/chatkit-server');
+const barbaCss = require('@barba/css');
 
 // ----------------------------------------------------------------------------
 // Instantiate Express and Chatkit
@@ -104,7 +105,6 @@ app.post('/session/load', (req, res, next) => {
 
 app.post('/session/auth', (req, res) => {
   const authData = chatkit.authenticate({ userId: req.query.user_id });
-
   res.status(authData.status).send(authData.body);
 });
 
@@ -114,6 +114,9 @@ app.get('/admin', (req, res) => {
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', { root: __dirname + '/views' });
+});
+app.get('/test', (req, res) => {
+  res.sendFile('test.html', { root: __dirname + '/views' });
 });
 
 // ----------------------------------------------------------------------------

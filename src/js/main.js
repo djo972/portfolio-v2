@@ -7,92 +7,92 @@
     /**
      * Loader de page
      */
-    $.pageLoader = function() {
-        // Selection des images en src="
-        var $elements = $('body').find('img[src]');
-        // Selection des images en background-image
-        $('body [style]').each(function() {
-            var src = $(this).css('background-image').replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-            if(src && src != 'none') {
-                $elements = $elements.add($('<img src="' + src + '"/>'));
-            }
-        });
-
-
-
-        var $chargement = $('#chargement');
-        var $chargementInfos = $('#chargement-infos');
-        var elementsCharges = 0;
-        var dureeMs = 1000;
-
-        function animateStep(now, fx) {
-            $chargementInfos.text(parseInt(now)+'%');
-        }
-
-        function chargementEnCours() {
-            var pourcentage = 0;
-            if($elements.length) {
-                pourcentage = parseInt((elementsCharges / $elements.length) * 100);
-            }
-
-            // Affichage du pourcentage
-            $chargementInfos
-                .stop() // stop les anciennes animations
-                .animate({width:pourcentage + '%'}, dureeMs);
-            $chargement
-                .stop() // stop les anciennes animations
-                .animate({pourcentage:pourcentage}, {
-                    duration: dureeMs,
-                    step: animateStep
-                });
-        }
-
-        function chargementTermine() {
-            var pourcentage = 100;
-
-            // Affichage du pourcentage
-            $chargementInfos
-                .stop() // stop les anciennes animations
-                .animate({width:pourcentage + '%'}, (dureeMs / 2));
-            $chargement
-                .stop() // stop les anciennes animations
-                .animate({pourcentage:pourcentage}, {
-                    duration: (dureeMs / 2),
-                    step: animateStep
-                })
-                // Disparition du chargement et affichage de la page
-                .css({opacity: 1})
-                .animate({opacity: 0}, function() {
-                    // La page est prete
-                    $chargement.css({display:'none'});
-                    $('#container')
-                        .css({
-                            opacity: 0,
-                            visibility:'visible'
-                        })
-                        .animate({opacity:1});
-
-                });
-
-        }
-
-        // La page contient des elements permettant d'afficher une barre de progression
-        if($elements.length) {
-            chargementEnCours();
-            $elements.load(function() {
-                $(this).off('load');
-                elementsCharges++;
-                chargementEnCours();
-            });
-        }
-
-        $(window).load(function() {
-            // La page est integralement chargee
-            chargementTermine();
-            $('#welcome').delay(2000).fadeOut(2000);
-        });
-
-    };
+    // $.pageLoader = function() {
+    //     // Selection des images en src="
+    //     var $elements = $('body').find('img[src]');
+    //     // Selection des images en background-image
+    //     $('body [style]').each(function() {
+    //         var src = $(this).css('background-image').replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+    //         if(src && src != 'none') {
+    //             $elements = $elements.add($('<img src="' + src + '"/>'));
+    //         }
+    //     });
+    //
+    //
+    //
+    //     var $chargement = $('#chargement');
+    //     var $chargementInfos = $('#chargement-infos');
+    //     var elementsCharges = 0;
+    //     var dureeMs = 1000;
+    //
+    //     function animateStep(now, fx) {
+    //         $chargementInfos.text(parseInt(now)+'%');
+    //     }
+    //
+    //     function chargementEnCours() {
+    //         var pourcentage = 0;
+    //         if($elements.length) {
+    //             pourcentage = parseInt((elementsCharges / $elements.length) * 100);
+    //         }
+    //
+    //         // Affichage du pourcentage
+    //         $chargementInfos
+    //             .stop() // stop les anciennes animations
+    //             .animate({width:pourcentage + '%'}, dureeMs);
+    //         $chargement
+    //             .stop() // stop les anciennes animations
+    //             .animate({pourcentage:pourcentage}, {
+    //                 duration: dureeMs,
+    //                 step: animateStep
+    //             });
+    //     }
+    //
+    //     function chargementTermine() {
+    //         var pourcentage = 100;
+    //
+    //         // Affichage du pourcentage
+    //         $chargementInfos
+    //             .stop() // stop les anciennes animations
+    //             .animate({width:pourcentage + '%'}, (dureeMs / 2));
+    //         $chargement
+    //             .stop() // stop les anciennes animations
+    //             .animate({pourcentage:pourcentage}, {
+    //                 duration: (dureeMs / 2),
+    //                 step: animateStep
+    //             })
+    //             // Disparition du chargement et affichage de la page
+    //             .css({opacity: 1})
+    //             .animate({opacity: 0}, function() {
+    //                 // La page est prete
+    //                 $chargement.css({display:'none'});
+    //                 $('#container')
+    //                     .css({
+    //                         opacity: 0,
+    //                         visibility:'visible'
+    //                     })
+    //                     .animate({opacity:1});
+    //
+    //             });
+    //
+    //     }
+    //
+    //     // La page contient des elements permettant d'afficher une barre de progression
+    //     if($elements.length) {
+    //         chargementEnCours();
+    //         $elements.load(function() {
+    //             $(this).off('load');
+    //             elementsCharges++;
+    //             chargementEnCours();
+    //         });
+    //     }
+    //
+    //     $(window).load(function() {
+    //         // La page est integralement chargee
+    //         chargementTermine();
+    //         $('#welcome').delay(2000).fadeOut(2000);
+    //     });
+    //
+    // };
 
 
 
@@ -390,11 +390,13 @@ $('.vibre').click(function() {
 });
 
 function $_(id_){
-    return document.getElementById(id_);}
+    return document.getElementById(id_);
+}
 
-
-tic_reNov();
-
+var myEle = document.getElementsByClassName("modem");
+if(myEle){
+    tic_reNov();
+}
 function tic_reNov() {
     var i=$_("mn_"+Math.round(Math.random()*3));
     if(Math.round(Math.random()*2))
@@ -403,6 +405,8 @@ function tic_reNov() {
         $_("mn_7").classList.toggle("i_t");
     window.setTimeout(tic_reNov,(Math.random()*400+20));
 }
+
+
 
 var intervalId = null;
 
@@ -423,7 +427,9 @@ $(".inte").click(function() {
     vibre(0,5000);
     rocketLaunch();
 });
-
+$('.windows').click(function(){
+    test();
+});
 function rocketLaunch(){
     var tl = new TimelineMax();
     tl.to( $('.burst') , 2, { x:5 , y:-70});
@@ -431,6 +437,14 @@ function rocketLaunch(){
     tl.to($('.bfire'),0.1,{autoAlpha:1,scale:1.1},"2" );
     tl.to($('.work'),2,{rotation:50},"2" );
     tl.to($('.clocki'),0.5,{y:700 ,rotation:90},"2" );
-    tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" )
-    .to( $('.fetch') ,0.5, {transformPerspective:500, rotation:120, y:50}, "2" );
+    tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" );
+
+    // .to( $('.fetch') ,2, {rotationX:-360, transformOrigin:"left top"}, "2" );
 }
+
+var tl2 = new TimelineMax();
+function test(){
+    tl2.to($('.fetch span:first-of-type'),0.5,{rotationX:-360, transformOrigin:"bottom center",ease: Power4.easeOut,repeat:1},"zeta")
+        .to($('.fetch span:first-of-type'),1,{y:800,ease: Power4.easeInOut},"zeta");
+}
+
