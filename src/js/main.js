@@ -393,20 +393,28 @@ function $_(id_){
     return document.getElementById(id_);
 }
 
-var myEle = document.getElementsByClassName("modem");
-if(myEle){
+var myEle = document.getElementsByClassName("modem").length;
+console.log(myEle);
+if(myEle != 0){
     tic_reNov();
 }
 function tic_reNov() {
-    var i=$_("mn_"+Math.round(Math.random()*3));
-    if(Math.round(Math.random()*2))
-        i.classList.toggle("i_t");
-    if(!Math.round(Math.random()*7))
-        $_("mn_7").classList.toggle("i_t");
-    window.setTimeout(tic_reNov,(Math.random()*400+20));
+    var myEle = document.getElementsByClassName("modem");
+    if(myEle){
+        console.log('exist');
+        var i=$_("mn_"+Math.round(Math.random()*3));
+        if(Math.round(Math.random()*2))
+            i.classList.toggle("i_t");
+        if(!Math.round(Math.random()*7))
+            $_("mn_7").classList.toggle("i_t");
+        window.setTimeout(tic_reNov,(Math.random()*400+20));
+    }
+    else{
+        console.log('not exist');
+        return;
+
+    }
 }
-
-
 
 var intervalId = null;
 
@@ -427,6 +435,7 @@ $(".inte").click(function() {
     vibre(0,5000);
     rocketLaunch();
 });
+
 $('.windows').click(function(){
     test();
 });

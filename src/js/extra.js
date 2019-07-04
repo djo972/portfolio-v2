@@ -1,13 +1,13 @@
 var header;
 
 document.addEventListener("DOMContentLoaded", function () {
+
     header = document.querySelector('.transition__wipe');
 
     TweenMax.set(header, {
         scaleY: 0,
         transformOrigin:"0% 100%"
     });
-
     barba.init({
         transitions: [
             {
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // In this case, context matters, we do not use arrow function…
                 leave({ current }) {
                     containerOutAnim(current.container, this.async());
+                    console.log(current.container);
                 },
 
                 // This returns a promise, we do not care about "context/arrow function"
