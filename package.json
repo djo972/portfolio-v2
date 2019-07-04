@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@barba/core": "^2.3.12",
-    "express-device": "^0.4.2"
+    "express-device": "^0.4.2",
+    "mobile-detect": "^1.4.3"
   }
 }

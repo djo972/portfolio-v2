@@ -7,8 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const uuidv4 = require('uuid/v4');
 const Chatkit = require('@pusher/chatkit-server');
-const device = require('express-device');
-
+const MobileDetect = require('mobile-detect');
 
 
 // ----------------------------------------------------------------------------
@@ -23,10 +22,6 @@ const chatkit = new Chatkit.default(require('./config.js'));
 // Load Express Middlewares
 // ----------------------------------------------------------------------------
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use(device.capture());
 // ----------------------------------------------------------------------------
 // Define Routes
 // ----------------------------------------------------------------------------
@@ -115,13 +110,9 @@ app.get('/admin', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  console.log(device.type);
-  if (device == 'desktop'){
-    res.sendFile('index.html', { root: __dirname + '/views' });
-  }else{
-    res.sendFile('test.html', { root: __dirname + '/views' });
-  }
-
+  let  md = new MobileDetect(req.headers['user-agent']);
+   console.log(md);
+  res.sendFile('index.html', { root: __dirname + '/views' });
 });
 app.get('/test', (req, res) => {
   res.sendFile('test.html', { root: __dirname + '/views' });
