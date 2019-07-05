@@ -452,6 +452,7 @@ function rocketLaunch(){
 }
 
 var tl2 = new TimelineMax();
+
 function test(){
     tl2.to($('.fetch span:first-of-type'),0.5,{rotationX:-360, transformOrigin:"bottom center",ease: Power4.easeOut,repeat:1},"zeta")
         .to($('.fetch span:first-of-type'),1,{y:800,ease: Power4.easeInOut},"zeta");

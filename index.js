@@ -22,6 +22,10 @@ const chatkit = new Chatkit.default(require('./config.js'));
 // Load Express Middlewares
 // ----------------------------------------------------------------------------
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'dist')));
+
 // ----------------------------------------------------------------------------
 // Define Routes
 // ----------------------------------------------------------------------------
