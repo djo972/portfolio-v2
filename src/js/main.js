@@ -2,7 +2,20 @@
 
 
 
+    // $.getJSON( "/js/component/file.json", {
+    //     format: "jsonp"
+    // })
+
+
 (function($) {
+    $.getJSON( "/js/component/file.json" )
+        .done(function( data ) {
+            // let newData = Json.parse(data);
+        })
+        .fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            console.log( "Request Failed: " + err );
+        });
 
     /**
      * Loader de page
@@ -401,7 +414,7 @@ if(myEle != 0){
 function tic_reNov() {
     var myEle = document.getElementsByClassName("modem");
     if(myEle){
-        console.log('exist');
+
         var i=$_("mn_"+Math.round(Math.random()*3));
         if(Math.round(Math.random()*2))
             i.classList.toggle("i_t");
@@ -457,4 +470,7 @@ function test(){
     tl2.to($('.fetch span:first-of-type'),0.5,{rotationX:-360, transformOrigin:"bottom center",ease: Power4.easeOut,repeat:1},"zeta")
         .to($('.fetch span:first-of-type'),1,{y:800,ease: Power4.easeInOut},"zeta");
 }
+
+
+
 

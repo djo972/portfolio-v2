@@ -249,6 +249,13 @@ module.exports = function(grunt) {
             options: {
                 livereload: 35729
             },
+            express: {
+                files:  [ '**/*.js' ],
+                tasks:  [ 'express:dev' ],
+                options: {
+                    spawn: false
+                }
+            },
             images: {
                 files: 'src/images/**',
                 tasks: ['copy:images'],
