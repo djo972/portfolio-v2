@@ -14,6 +14,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-mocha-test');
+    grunt.loadNpmTasks('grunt-express-server');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -217,7 +218,7 @@ module.exports = function(grunt) {
         // },
         express: {
             options: {
-                port:3000,
+                port:5000,
             },
             dev: {
                 options: {
@@ -236,15 +237,15 @@ module.exports = function(grunt) {
                 }
             }
         },
-        // connect: {
-        //     all: {
-        //         options:{
-        //             port:3000,
-        //             hostname: 'localhost',
-        //             livereload: 35729
-        //         }
-        //     }
-        // },
+        connect: {
+            all: {
+                options:{
+                    port:4000,
+                    hostname: 'localhost',
+                    livereload: 35729
+                }
+            }
+        },
         watch: {
             options: {
                 livereload: 35729
@@ -316,6 +317,8 @@ module.exports = function(grunt) {
     // Start web server
     // grunt.registerTask('serve', ['clean','connect:all','notify:server','prebuild','watch']);
     grunt.registerTask('serve', ['clean','express:dev','notify:server','prebuild','watch']);
+
+    grunt.registerTask('serveDebug', ['clean','connect:all','notify:server','prebuild','watch']);
     require('load-grunt-tasks')(grunt);
     // Unit Test
     grunt.registerTask('test',['mochaTest']);

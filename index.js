@@ -9,18 +9,13 @@ const uuidv4 = require('uuid/v4');
 const Chatkit = require('@pusher/chatkit-server');
 const MobileDetect = require('mobile-detect');
 const Instagram = require('node-instagram').default;
+const PORT = process.env.PORT || 3000;
 const util = require('util');
-
-
-
 // ----------------------------------------------------------------------------
 // Instantiate Express and Chatkit
 // ----------------------------------------------------------------------------
-
-
 const app = express();
 const chatkit = new Chatkit.default(require('./config.js'));
-
 // ----------------------------------------------------------------------------
 // Load Express Middlewares
 // ----------------------------------------------------------------------------
@@ -37,25 +32,16 @@ const instagram = new Instagram({
     clientSecret: '4b19d68a5fab43a2a210e2daf1d74e93',
     accessToken: '208075717.89171b8.6982811f36c8426fa898cf0da5a5cf57',
 });
-
-
-
 // ----------------------------------------------------------------------------
 // Define Routes
 // ----------------------------------------------------------------------------
 // Example with express
-
-
 const redirectUri = 'http://localhost:3000/auth/instagram/callback';
-
 // create express server
-
-
 // Redirect user to instagram oauth
 app.get('/auth/instagram', (req, res) => {
     res.redirect(instagram.getAuthorizationUrl(redirectUri, { scope: ['basic'] }));
 });
-
 // Handle auth code and get access_token for user
 app.get('/auth/instagram/callback', async (req, res) => {
     try {
@@ -67,7 +53,6 @@ app.get('/auth/instagram/callback', async (req, res) => {
         res.json(err);
     }
 });
-
 app.post('/session/load', (req, res, next) => {
     // Attempt to create a new user with the email will serving as the ID of the user.
     // If there is no user matching the ID, we create one but if there is one we skip
@@ -141,67 +126,30 @@ app.post('/session/load', (req, res, next) => {
             });
     }
 });
-
 app.post('/session/auth', (req, res) => {
     const authData = chatkit.authenticate({ userId: req.query.user_id });
     res.status(authData.status).send(authData.body);
 });
-
 app.get('/admin', (req, res) => {
     res.sendFile('admin.html', { root: __dirname + '/views' });
 });
-
 app.get('/', (req, res) => {
     let  md = new MobileDetect(req.headers['user-agent']);
     console.log(md);
     res.sendFile('index.html', { root: __dirname + '/views' });
 });
-
-
 app.get('/test',async (req, res) => {
 
     res.sendFile('test.html', { root: __dirname + '/views' });
 });
 app.get('/insta',(req, res) => {
-    instagram.get('users/self', (err, data) => {
-
-        let newData = data;
-        console.log(newData);
-        let  stringify = JSON.stringify(newData);
-       let str = JSON.stringify(stringify, null, 4);
-         console.log(str);
-       let obj = JSON.parse(str);
-
-
-
-
-
-
-        // let content = JSON.parse(data);
-        // let content = JSON.parse(data);
-
-
-
-        // console.log('t2:'+content);
-
-        // let newData = {
-        //     id: f.newData.id,
-        //     username: f.newData.username,
-        //     full_name: f.newData.full_name,
-        //     bio: f.newData.bio,
-        //     website: f.newData.website,
-        //     profile_picture: f.newData.profile_picture,
-        // };
-        //
-        // console.log(newData.username);
-        // console.log(username);
-
+    instagram.get('users/self/media/recent').then(data => {
+        let instagram = data;
+        let insta = instagram.data;
+        res.render('index.ejs', { root: __dirname + '/views' });
     });
-
-    res.render('index.ejs', { root: __dirname + '/views' , title: 'My Instagram'});
 });
 // ----------------------------------------------------------------------------
 // Start Express Application
 // ----------------------------------------------------------------------------
-
-app.listen(3000, () => console.log('Application listening on port 3000!!!'));
+app.listen(PORT, () => console.log(`App listening on *:${PORT}`));
