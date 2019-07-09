@@ -1,20 +1,389 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html class="no-js" lang="fr">
 <head>
-    <% include partials/head %>
+ <%include partials/head.ejs%>
 </head>
-<body class="container">
-
+<body data-barba="wrapper" onload="init();" class="det">
 <header>
-    <% include partials/header %>
+    <div class="transition__wipe"></div>
 </header>
+<!--<div id="chargement">Chargement...<span id="chargement-infos"></span></div>-->
+    <div data-barba="container" data-barba-namespace="home" id="container">
+<!--    <div id="welcome"><p>Bienvenue chez moi</p></div>-->
+    <button id="dp">
+        <img class="dp" src="images/menu1.png" alt=""/>
+    </button>
+    <!--//	projects///////////////////////////////////-->
+    <div class="page__style projects">
+        <div class="page__description">
+            <div id="projects">
+                <h2>projets</h2>
+                <ul id="da-thumbs" class="da-thumbs">
+                    <li>
+                        <a href="/projets/rim/index.html" target="_blank">
+                            <img src="images/rim.png"/>
+                            <div><span>projet réalisé pour event</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/silex/index.html" target="_blank">
+                            <img src="/images/silex.png"/>
+                            <div><span>projet réalisé pour event</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/dig/index.html" target="_blank">
+                            <img src="/images/diy.png"/>
+                            <div><span>projet réalisé pour event</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/fmr/index.html" target="_blank">
+                            <img src="/images/fmr.png"/>
+                            <div><span>exercice cours</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/labo/index.html" target="_blank">
+                            <img src="/images/labo2.png"/>
+                            <div><span>exercice cours</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/labo2/index.html" target="_blank">
+                            <img src="/images/labo1.png"/>
+                            <div><span>exercice cours</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/nivea/index.html" target="_blank">
+                            <img src="/images/nivea.png"/>
+                            <div><span>intégration newsletter </span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/projets/taramon/index.html" target="_blank">
+                            <img src="/images/taramon.png"/>
 
-<main>
-    <div class="row">
+                            <div><span>exercice cours </span></div>
+                        </a>
+                    </li>
 
+                </ul>
+                <button class="btn_nav home_link">back</button>
+            </div>
+        </div>
     </div>
-</main>
-<footer>
-</footer>
+    <!--
+            //	skills
+            ///////////////////////////////////-->
+    <div class="page__style skills">
+        <div class="page__description">
+            <div id="skills">
+                <h2>Compétences</h2>
+                <div class="boxi">
+                    <div id="lool">
+                        <span class="chart1" data-percent="80" data-bar-color="#8e44ad" data-size="165">
+                         <p>html/css</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="boxi">
+                    <div id="lal">
+                        <span class="chart1 " data-percent="40" data-bar-color="#c0392b" data-size="165">
+                         <p>php/sql</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="boxi">
+                    <div id="lil">
+                        <span class="chart1" data-percent="50" data-bar-color="#2980b9" data-size="165">
+                         <p>js/jquery</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="boxi">
+                    <div id="lel">
+                        <span class="chart1" data-percent="30" data-bar-color="#27ae60" data-size="165">
+                         <p>wordpress</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="boxe">
+                    <h3>Pratiques acquises</h3>
+                    <ul>
+                        <li>SEO</li>
+                        <li>RDW</li>
+                        <li>UX/UI DESIGN</li>
+                        <li>Accéssibilité</li>
+                    </ul>
+                </div>
+                <div class="boxe">
+                    <h3>Logiciels utilisés</h3>
+                    <ul>
+                        <li>Sublim text</li>
+                        <li>Photoshop</li>
+                        <li>Illustrator</li>
+                        <li>Phpstorm7</li>
+                    </ul>
+                </div>
+                <button class="btn_nav home_link">back</button>
+            </div>
+        </div>
+    </div>
+    <!--
+            //	about
+            ///////////////////////////////////-->
+    <div class="page__style about">
+        <div class="page__description">
+            <div id="about">
+                <h2>à propos</h2>
+                <div class="para">
+                    <p>Mon nom est <span>Giovanny PIED</span> , je suis né il y a 27 ans dans une ville appelée Fort de france en
+                        Martinique. Pour le moment,je suis étudiant en web développement à Hétic. Comme je
+                        le disais , je suis activement à la recherche d'un<span> contrat de professionnalisation</span>. J'aime
+                        énormement le travail de création qui englobe les projets Web, d'où ma préférence pour le front
+                        end. Cependant, je ne néglige pas le reste pour autant.
+                    </p>
+                    <p>
+                        Pendant mon temps libre,je reste un fan inconditionnel de films d'animation et de science fiction. Bon
+                        j'avoue ... de jeux video aussi. J'en tire une source d'inspiration qui m'aide énormément dans mes projets.
+                    </p>
+                    <p>
+                        Si vous pensez que je suis le bon gars pour votre projet, n'hesitez pas à me contacter. <br>
+                        <span>MERCI</span>
+                    </p>
+                </div>
+                <div class="ch-grid">
+                    <img src="/images/fleche2.png" alt="fleche">
+                    <li>
+                        <div class="ch-item ch-img-1">
+                            <div class="ch-info-wrap">
+                                <div class="ch-info">
+                                    <div class="ch-info-front ch-img-1"></div>
+                                    <div class="ch-info-back">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <button class="btn_nav home_link">back</button>
+            </div>
+        </div>
+    </div>
+    <!--
+            //	contact
+            ///////////////////////////////////-->
+    <div class="page__style contact">
+        <div class="page__description">
+            <div id="contact">
+                <h2>Contact</h2>
+                <div class="chatbubble">
+                    <div class="unexpanded">
+                        <div class="title">Chat withSupport</div>
+                    </div>
+                    <div class="expanded chat-window">
+                        <div class="login-screen container">
+                            <form id="loginScreenForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="fullname" placeholder="Name*" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Email Address*" required>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-primary">Start Chat</button>
+                            </form>
+                        </div>
+                        <div class="chats">
+                            <div class="loader-wrapper">
+                                <div class="loader">
+                                    <span>{</span><span>}</span>
+                                </div>
+                            </div>
+                            <ul class="messages clearfix">
+                            </ul>
+                            <div class="input">
+                                <form class="form-inline" id="messageSupport">
+                                    <div class="form-group">
+                                        <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social">
+                    <h3>Suivez-moi</h3>
+                    <div class="soc">
+                        <a href="https://plus.google.com/u/0/105332821105247497368/posts" target="_blank">
+                            <img src="/images/google.png" alt="google+" width="70px"/></a>
+                        <a href="https://twitter.com/giovanny_pied" target="_blank"><img src="/images/twiiter.png" width="70px"></a>
+                        <a href="https://www.linkedin.com/profile/view?id=317490701&trk=nav_responsive_tab_profile"
+                           target="_blank"><img src="/images/link.png" alt="link" width="70px"/></a>
+                        <a href="" target="_blank"><img src="/images/pinte.png" alt="pinterest" width="70px"/></a>
+                    </div>
+                </div>
+                <button class="btn_nav home_link">back</button>
+            </div>
+        </div>
+    </div>
+    <!--
+            //	home
+            ///////////////////////////////////-->
+    <div class="page__style home">
+        <div class="page__description">
+            <div id="home">
+                <div id="tableau">
+                    <div id="lo">
+                        <div class="inner">
+                            <a  href="/insta">gooooo !!!!!!!!</a><!--  INNER -->
+                            <h1 class="animated bounceInLeft">
+                                <span class="fetch">
+                                    <span>h</span>
+                                    <span>e</span>
+                                    <span>l</span>
+                                    <span>l</span>
+                                    <span>o</span>
+                                    <span></span>
+                                    </span>
+                                    i'm ,
+                                <span class="dot">djo</span></h1>
+                            <!-- MENU -->
+                            <div class="menu">
+                                <ul class="tit">
+                                    <li class="con">contact <img src="/images/fleche.png" alt="fleche"></li>
+                                    <li class="pro"> à propos<img src="/images/fleche.png" alt="fleche"></li>
+                                    <li class="apro">projets<img src="/images/fleche.png" alt="fleche"></li>
+                                    <li class="com">compétences <img src="/images/fleche.png" alt="fleche"></li>
+                                    <li class="cv">cv <img src="/images/fleche.png" alt="fleche"></li>
+                                </ul>
+                            </div>
+                            <!-- FENETRE -->
+                            <div class="light"></div>
+                            <div class="windows">
+                                <canvas id="canvas" width="233" height="330"></canvas>
+                            </div>
+                            <!-- FIN FENETRE -->
+                            <div class="sofa"></div>
+<!--                            <div class="chat"></div>-->
+                            <!-- HORLOGE -->
+                            <div class="clocki ">
+                                <div class="klo">
+                                    <div class="clock">
+                                        <div class="minute-hand"></div>
+                                        <div class="hour-hand"></div>
+                                        <div class="second-hand"></div>
+                                        <div class="pin"></div>
+                                    </div>
+                                    <div class="time"></div>
+                                </div>
+                            </div>
+                            <!-- FIN HORLOGE -->
+                            <!-- WORK -->
+                            <div class="work">
+                                <button class="btn_nav about_link">
+                                    <img src="images/affiche.png" alt="projets">
+                                </button>
+                            </div>
+                            <div class="print"></div>
+                            <div class="modem">
+                                <div class="m1">
+                                    <div class="holder">
+                                        <div class="shifter">
+                                            <i class="i_l25">
+                                                <i class="p_r i_g"><div id="mn_0" class="p_a q_f i_l50"></div></i>
+                                                <i class="p_r i_g"><div id="mn_1" class="p_a q_f i_l50"></div></i>
+                                                <i class="p_r i_g"><div id="mn_2" class="p_a q_f i_l50"></div></i>
+                                                <i class="p_r i_r"><div id="mn_7" class="p_a q_f i_l50 i_t"></div></i>
+                                                <i class="p_r i_o"><div id="mn_3" class="p_a q_f i_l50"></div></i>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="an">
+                                </div>
+                            </div>
+                            <!-- ETAGERE -->
+                            <div class="etagere">
+                                <button class="btn_nav skills_link">
+                                    <img class="tt" src="/images/name.png" alt="nom">
+                                </button>
+                            </div>
+                            <!-- FIN ETAGERE -->
+                            <!--LAMPE-->
+                            <div class="inte"></div>
+<!--                            <div class="prise"></div>-->
+                            <a href="/giovanny_pied_cv.pdf"><div class=""></div></a>
+                            <!--BUREAU-->
+                            <div class="bball"></div>
+                            <div class="burst">
+                                <div class="rocket"></div>
+                                <div class="fire"></div>
 
+                                <div class="bfire"></div>
+                            </div>
+
+                            <div class="bureau ">
+                                <div class="hot-sign"></div>
+                            </div>
+                            <div class="me-gth"></div>
+                            <!-- PLACARD -->
+                            <div class="gsm btn_nav contact_link  dwet det">
+                                <button class="">
+                                </button>
+                            </div>
+                            <div class="boxit"></div>
+                            <!-- FIN PLACARD-->
+                            <!-- ORDINATEUR  -->
+                            <div class="mac">
+                                <div class="whoim">
+                                    <button class="btn_nav projects_link">
+                                        <div class="ecrit">
+                                            <span id="typed"></span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+<!--                            <div class="mobile vibre">-->
+<!--                                <div class="top-button"></div>-->
+<!--                                <div class="side-button"></div>-->
+<!--                                <div class="side-button vol"></div>-->
+<!--                                <div class="side-button vol"></div>-->
+<!--                                <div class="body">-->
+<!--                                    <div class="cam"></div>-->
+<!--                                    <div class="sensor"></div>-->
+<!--                                    <div class="speaker"></div>-->
+<!--                                    <div class="screen"></div>-->
+<!--                                    <div class="home-button"></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            </div>
+                            <!-- FIN ORDINATEUR -->
+                        </div>
+                        <!-- FIN INNER -->
+                    <!-- FIN LO -->
+                     <div id="la"></div>
+                         <div id="li"></div>
+                    </div>
+            </div>
+                </div>
+                <div class="box"></div>
+            </div>
+        </div>
+<!--<div id="footer">-->
+<!--    <div class="inner">-->
+<!--        <p>© 2014 - pied Giovanny- code & design par moi.</p>-->
+<!--    </div>-->
+<!--</div>-->
+<%include partials/script.ejs%>
+<!--<script>$(document).ready(function() {$.pageLoader();});</script>-->
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
+</html>

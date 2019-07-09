@@ -8,15 +8,6 @@
 
 
 (function($) {
-    $.getJSON( "/js/component/file.json" )
-        .done(function( data ) {
-            // let newData = Json.parse(data);
-        })
-        .fail(function( jqxhr, textStatus, error ) {
-            var err = textStatus + ", " + error;
-            console.log( "Request Failed: " + err );
-        });
-
     /**
      * Loader de page
      */
@@ -120,11 +111,23 @@ $(document).ready(function() {
 
         });
     });
+    $("#dp").click(function() {
+        $(".tit").toggleClass("show", 4000);
+    });
+    $("#typed").delay(188000).typed({
+        strings: ["Futur Développeur web, je suis actuellement à la recherche  d'un contrat de professionnalisation."],
+        startDelay:2000
+    });
+    $(' #da-thumbs > li ').each(function() {
+        $(this).hoverdir();
+    });
 
 });
 
 
 
+
+// ********************************CLOCK SCRIPT*****************************************
 
 $(function() {
     setInterval(function() {
@@ -163,12 +166,13 @@ $(function() {
 });
 
 
+
+// ********************************??? SCRIPT*****************************************
 var canvas, stage, exportRoot;
 
 function init() {
     canvas = document.getElementById("canvas");
     images = images || {};
-
     var loader = new createjs.LoadQueue(false);
     loader.addEventListener("fileload", handleFileLoad);
     loader.addEventListener("complete", handleComplete);
@@ -183,67 +187,21 @@ function handleFileLoad(evt) {
 
 function handleComplete() {
     exportRoot = new lib.Sansnom2();
-
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);
     stage.update();
-
     createjs.Ticker.setFPS(lib.properties.fps);
     createjs.Ticker.addEventListener("tick", stage);
 }
 
 
-var pathObj = {
-    "lool": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 600
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    },
-
-
-    "lal": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 800
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    },
-    "lil": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 1000
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    },
-
-    "lel": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 1200
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    },
-};
 
 
 
 
 
 
+    // *******************************SKILL SCRIPT*****************************************
 
     function paintLazy(){
         $('.chart1').easyPieChart({
@@ -280,77 +238,55 @@ var pathObj = {
             "strokeColor": "#27ae60"
         }).lazylinepainter('paint');
     }
+    var pathObj = {
+        "lool": {
+            "strokepath": [{
+                "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
+                "duration": 600
+            }],
+            "dimensions": {
+                "width": 200,
+                "height": 216
+            }
+        },
 
 
-$(document).ready(function() {
-    $(' #da-thumbs > li ')
-        .each(function() {
-            $(this).hoverdir();
-        });
-});
+        "lal": {
+            "strokepath": [{
+                "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
+                "duration": 800
+            }],
+            "dimensions": {
+                "width": 200,
+                "height": 216
+            }
+        },
+        "lil": {
+            "strokepath": [{
+                "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
+                "duration": 1000
+            }],
+            "dimensions": {
+                "width": 200,
+                "height": 216
+            }
+        },
 
-$(document).ready(function() {
-    $("#dp").click(function() {
-        $(".tit").toggleClass("show", 4000);
-    });
-
-});
-
-
-$(document).ready(function() {
-    $("#typed").delay(188000).typed({
-        strings: ["Futur Développeur web, je suis actuellement à la recherche  d'un contrat de professionnalisation."],
-        startDelay:2000
-    });
-
-});
-var pathObj = {
-    "lool": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 600
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
+        "lel": {
+            "strokepath": [{
+                "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
+                "duration": 1200
+            }],
+            "dimensions": {
+                "width": 200,
+                "height": 216
+            }
         }
-    },
+    };
 
 
-    "lal": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 800
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    },
-    "lil": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 1000
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    },
 
-    "lel": {
-        "strokepath": [{
-            "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-            "duration": 1200
-        }],
-        "dimensions": {
-            "width": 200,
-            "height": 216
-        }
-    }
-};
-
-// *****************Transition********************
+// *****************Transition PAGE********************
 
 $('.btn_nav').click(function() {
     // animate content
@@ -396,21 +332,17 @@ $('.about_link').click(function() {
     }, 1500);
 });
 
-$('.vibre').click(function() {
+$('.contact_link').click(function() {
     setTimeout(function() {
         $('.contact').addClass('fadeIn');
     }, 1500);
 });
 
+    // ********************************MODEM SCRIPT*****************************************
 function $_(id_){
     return document.getElementById(id_);
 }
-
-var myEle = document.getElementsByClassName("modem").length;
-console.log(myEle);
-if(myEle != 0){
-    tic_reNov();
-}
+tic_reNov();
 function tic_reNov() {
     var myEle = document.getElementsByClassName("modem");
     if(myEle){
@@ -428,9 +360,10 @@ function tic_reNov() {
 
     }
 }
-
 var intervalId = null;
 
+
+    // ********************************LOOP GSM  SCRIPT*****************************************
 function vibre(e,a) {
     let element = document.getElementsByClassName('det');
     let elementOne = element[e];
@@ -442,16 +375,18 @@ function vibre(e,a) {
 function start(){
     setInterval(function(){vibre(1, 7000); }, 15000);
 }
-
 start();
-$(".inte").click(function() {
+
+
+
+
+    // ********************************ROCKET ANIMATION*****************************************
+
+    $(".inte").click(function() {
     vibre(0,5000);
     rocketLaunch();
 });
 
-$('.windows').click(function(){
-    test();
-});
 function rocketLaunch(){
     var tl = new TimelineMax();
     tl.to( $('.burst') , 2, { x:5 , y:-70});
@@ -460,7 +395,6 @@ function rocketLaunch(){
     tl.to($('.work'),2,{rotation:50},"2" );
     tl.to($('.clocki'),0.5,{y:700 ,rotation:90},"2" );
     tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" );
-
     // .to( $('.fetch') ,2, {rotationX:-360, transformOrigin:"left top"}, "2" );
 }
 
@@ -471,6 +405,63 @@ function test(){
         .to($('.fetch span:first-of-type'),1,{y:800,ease: Power4.easeInOut},"zeta");
 }
 
+    // ********************************BARBAJS SCRIPT*****************************************
+    var header;
 
+    document.addEventListener("DOMContentLoaded", function () {
+
+        header = document.querySelector('.transition__wipe');
+
+        TweenMax.set(header, {
+            scaleY: 0,
+            transformOrigin:"0% 100%"
+        });
+
+        barba.init({
+            transitions: [
+                {
+                    // sync:false, // default
+                    // You can run only 1 transitions at the same time.
+                    // All your different steps/hooks should be declared inside the same transition.
+                    // Previously, only the last declared was called…
+                    beforeLeave({current}) {
+                        // This allows to use the hook in an asynchronous way
+                        const done = this.async();
+
+                        var tl = new TimelineMax({
+                            paused:true,
+                            onComplete: done, // "resolve the hook"
+                        });
+
+
+                        tl.to(header, 0.5, {scaleY:1});
+                        tl.to(header, 0.5, {scaleY:0, transformOrigin:"100% 0%"});
+                        tl.set(header, {transformOrigin:"0% 100%"});
+                        tl.play();
+                    },
+
+                    // This do not return anything and use the "this.async" pattern.
+                    // In this case, context matters, we do not use arrow function…
+                    leave({ current }) {
+                        containerOutAnim(current.container, this.async());
+                        console.log(current.container);
+                    },
+
+                    // This returns a promise, we do not care about "context/arrow function"
+                    enter: ({ next }) => containerInAnim(next.container),
+                },
+            ], // transitions
+        }); //barba init
+    }); // wrapper
+    // We pass the "async" callback.
+    function containerOutAnim (element, done) {
+        TweenMax.to(element, 1, { y:"200", autoAlpha:0, onComplete: done });
+    }
+    // We return a promise.
+    function containerInAnim (element) {
+        return new Promise(resolve => {
+            TweenMax.from(element, 2, {autoAlpha:0, onComplete: resolve });
+        });
+    }
 
 

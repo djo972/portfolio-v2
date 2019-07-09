@@ -131,24 +131,46 @@ app.post('/session/auth', (req, res) => {
     res.status(authData.status).send(authData.body);
 });
 app.get('/admin', (req, res) => {
-    res.sendFile('admin.html', { root: __dirname + '/views' });
+    res.render('admin.ejs', { root: __dirname + '/views' });
 });
 app.get('/', (req, res) => {
     let  md = new MobileDetect(req.headers['user-agent']);
     console.log(md);
-    res.sendFile('index.html', { root: __dirname + '/views' });
+    res.render('index.ejs', { root: __dirname + '/views' });
 });
-app.get('/test',async (req, res) => {
 
-    res.sendFile('test.html', { root: __dirname + '/views' });
-});
-app.get('/insta',(req, res) => {
+
+app.get('/insta',async (req, res) => {
     instagram.get('users/self/media/recent').then(data => {
         let instagram = data;
         let insta = instagram.data;
-        res.render('index.ejs', { root: __dirname + '/views' });
+        // let img1 = insta[1].images.standard_resolution.url;
+        //
+        // console.log(insta[1].images.standard_resolution.url);
+        // console.log(insta[1].images);
+
+
+        res.render('insta.ejs', {
+            root: __dirname + '/views' ,
+            insta : instagram.data
+        });
     });
 });
+
+// app.get('/insta',(req, res) => {
+//     instagram.get('users/self/media/recent').then(data => {
+//         let instagram = data;
+//         let insta = instagram.data;
+//         let img1 = insta[1].images.standard_resolution.url;
+//
+//             console.log(insta[1].images.standard_resolution.url);
+//             console.log(insta[1].images);
+//         res.render('index.ejs', {
+//             root: __dirname + '/views' ,
+//             insta : instagram.data
+//         });
+//     });
+// });
 // ----------------------------------------------------------------------------
 // Start Express Application
 // ----------------------------------------------------------------------------

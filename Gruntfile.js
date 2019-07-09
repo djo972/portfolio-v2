@@ -189,7 +189,7 @@ module.exports = function(grunt) {
         },
         replace: {
             dev:{
-                src: ['views/*.html'],
+                src: ['views/partial/*.ejs'],
                 overwrite: true,
                 replacements: [{
                     from: /main(.*)css/g,
@@ -200,7 +200,7 @@ module.exports = function(grunt) {
                 }]
             },
             dist: {
-                src: ['dist/*.html'],
+                src: ['dist/views/partial/*.ejs'],
                 overwrite: true,
                 replacements: [{
                     from: /main(.*)css/g,
@@ -211,31 +211,26 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        // shell: {
-        //     connect: {
-        //         command: 'node index.js'
-        //     }
-        // },
         express: {
             options: {
                 port:5000,
             },
             dev: {
                 options: {
-                    script: 'index.js'
+                    script: 'app.js'
                 }
             },
-            prod: {
-                options: {
-                    script: 'path/to/prod/server.js',
-                    node_env: 'production'
-                }
-            },
-            test: {
-                options: {
-                    script: 'path/to/test/server.js'
-                }
-            }
+            // prod: {
+            //     options: {
+            //         script: 'path/to/prod/server.js',
+            //         node_env: 'production'
+            //     }
+            // },
+            // test: {
+            //     options: {
+            //         script: 'path/to/test/server.js'
+            //     }
+            // }
         },
         connect: {
             all: {
@@ -270,7 +265,7 @@ module.exports = function(grunt) {
                 tasks: ['sass:dev','replace:dev','notify:css']
             },
             files: {
-                files: '**/*.html', // tous les fichiers Sass de n'importe quel dossier
+                files: '**/*.ejs', // tous les fichiers ejs de n'importe quel dossier
                 tasks: []
             }
         },

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <% include partials/head %>
+</head>
+<body id="test" data-barba="wrapper">
+<header>
+    <div class="transition__wipe"></div>
+</header>
+<main data-barba="container" data-barba-namespace="home">
+    <a href="/">baack</a>
+    <div class="row">
+        <% for (var key in insta) { %>
+            <img src="<%= insta[key].images.standard_resolution.url%>" alt="">
+        <% } %>
+    </div>
+</main>
+<footer>
+</footer>
+<%include partials/script.ejs%>
+</body>
