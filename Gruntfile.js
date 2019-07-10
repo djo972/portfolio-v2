@@ -189,7 +189,7 @@ module.exports = function(grunt) {
         },
         replace: {
             dev:{
-                src: ['views/partial/*.ejs'],
+                src: ['views/partials/*.ejs'],
                 overwrite: true,
                 replacements: [{
                     from: /main(.*)css/g,
