@@ -1,10 +1,54 @@
+var App = function(){
+    var intervalId = null;
+
+
+    // ********************************LOOP GSM  SCRIPT*****************************************
+    function vibre(e,a) {
+        console.log("init");
+        let element = document.getElementsByClassName('det');
+        let elementOne = element[e];
+        elementOne.classList.add("vibre");
+        setTimeout(function(){
+            elementOne.classList.remove("vibre");
+        }, a);
+    }
+    function start(){
+        setInterval(function(){vibre(1, 7000); }, 15000);
+    }
+    // ********************************MODEM SCRIPT*****************************************
+    function $_(id_){
+        return document.getElementById(id_);
+    }
+    function tic_reNov() {
+            var i=$_("mn_"+Math.round(Math.random()*3));
+            if(Math.round(Math.random()*2))
+                i.classList.toggle("i_t");
+            if(!Math.round(Math.random()*7))
+                $_("mn_7").classList.toggle("i_t");
+            window.setTimeout(tic_reNov,(Math.random()*400+20));
+    }
+
+
+
+    return {
+        initStart: function () {
+          start();
+        },
+        initTictoc:function(){
+            tic_reNov();
+        }
+    };
+}();
+
+window.addEventListener('load', function () {
+    App.initStart();
+    App.initTictoc();
+});
 
 
 
 
-    // $.getJSON( "/js/component/file.json", {
-    //     format: "jsonp"
-    // })
+
 
 
 (function($) {
@@ -97,10 +141,47 @@
     //     });
     //
     // };
-
-
-
 })(jQuery);
+
+
+
+//********************* pattern for click event
+const x = document.getElementById("clickIt");
+const y = document.getElementById("hoverPara");
+
+// x.addEventListener("click", RespondClick);
+// y.addEventListener("mouseover", RespondMouseOver);
+// y.addEventListener("mouseout", RespondMouseOut);
+
+function RespondMouseOver() {
+    document.getElementById("effect").innerHTML +=
+        "MouseOver Event" + "<br>";
+}
+
+function RespondMouseOut() {
+    document.getElementById("effect").innerHTML +=
+        "MouseOut Event" + "<br>";
+}
+
+function RespondClick() {
+    document.getElementById("effect").innerHTML +=
+        "Click Event" + "<br>";
+}
+
+
+
+function one() {
+    console.log("hai");
+}
+
+Array.prototype.forEach.call(
+    document.querySelectorAll('[id^=dealsButton_]'), function(e) {
+        e.addEventListener('click', one);
+    });
+// **************************************************************************
+
+
+
 
 $(document).ready(function() {
     $(".mac").mouseover(function() {
@@ -108,7 +189,6 @@ $(document).ready(function() {
             top: 680
         }, {
             duration: 1000
-
         });
     });
     $("#dp").click(function() {
@@ -121,7 +201,6 @@ $(document).ready(function() {
     $(' #da-thumbs > li ').each(function() {
         $(this).hoverdir();
     });
-
 });
 
 
@@ -133,7 +212,6 @@ $(function() {
     setInterval(function() {
         var dt = new Date();
         //$('.time').text(dt);
-
         var sec_deg = dt.getSeconds() * (360 / 60);
         var min_deg = dt.getMinutes() * (360 / 60);
         var hr_deg = dt.getHours() * (360 / 12) + dt.getMinutes() * (360 / 60 / 12);
@@ -207,7 +285,6 @@ function handleComplete() {
         $('.chart1').easyPieChart({
             animate: {
                 duration: 2000,
-
                 enabled: true
             },
             easing: 'easeOutElastic',
@@ -338,44 +415,11 @@ $('.contact_link').click(function() {
     }, 1500);
 });
 
-    // ********************************MODEM SCRIPT*****************************************
-function $_(id_){
-    return document.getElementById(id_);
-}
-tic_reNov();
-function tic_reNov() {
-    var myEle = document.getElementsByClassName("modem");
-    if(myEle){
-
-        var i=$_("mn_"+Math.round(Math.random()*3));
-        if(Math.round(Math.random()*2))
-            i.classList.toggle("i_t");
-        if(!Math.round(Math.random()*7))
-            $_("mn_7").classList.toggle("i_t");
-        window.setTimeout(tic_reNov,(Math.random()*400+20));
-    }
-    else{
-        console.log('not exist');
-        return;
-
-    }
-}
-var intervalId = null;
 
 
-    // ********************************LOOP GSM  SCRIPT*****************************************
-function vibre(e,a) {
-    let element = document.getElementsByClassName('det');
-    let elementOne = element[e];
-    elementOne.classList.add("vibre");
-    setTimeout(function(){
-        elementOne.classList.remove("vibre");
-        }, a);
-}
-function start(){
-    setInterval(function(){vibre(1, 7000); }, 15000);
-}
-start();
+
+
+
 
 
 
@@ -409,14 +453,11 @@ function test(){
     var header;
 
     document.addEventListener("DOMContentLoaded", function () {
-
         header = document.querySelector('.transition__wipe');
-
         TweenMax.set(header, {
             scaleY: 0,
             transformOrigin:"0% 100%"
         });
-
         barba.init({
             transitions: [
                 {
