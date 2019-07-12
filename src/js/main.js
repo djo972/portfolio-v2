@@ -2,10 +2,8 @@ var App = function(){
     var intervalId = null;
     var canvas, stage, exportRoot;
 
-
-    // ********************************LOOP GSM  SCRIPT*****************************************
     function vibre(e,a) {
-        console.log("init");
+    // *Vibre SCRIPT*
         let element = document.getElementsByClassName('det');
         let elementOne = element[e];
         elementOne.classList.add("vibre");
@@ -16,11 +14,11 @@ var App = function(){
     function start(){
         setInterval(function(){vibre(1, 7000); }, 15000);
     }
-    // ********************************MODEM SCRIPT*****************************************
     function $_(id_){
         return document.getElementById(id_);
     }
     function tic_reNov() {
+    // *MODEM SCRIPT*
             var i=$_("mn_"+Math.round(Math.random()*3));
             if(Math.round(Math.random()*2))
                 i.classList.toggle("i_t");
@@ -28,9 +26,8 @@ var App = function(){
                 $_("mn_7").classList.toggle("i_t");
             window.setTimeout(tic_reNov,(Math.random()*400+20));
     }
-
-    // ********************************CLOCK SCRIPT*****************************************
- function Clock(){
+    function Clock(){
+     // *CLOCK SCRIPT*
      setInterval(function() {
          var dt = new Date();
          //$('.time').text(dt);
@@ -64,24 +61,19 @@ var App = function(){
 
      }, 1000);
  }
-
-    // *******************************anim windows SCRIPT*****************************************
-function animWindow(){
-    function init() {
+    function animWindow(){
+    // *anim windows SCRIPT*
         canvas = document.getElementById("canvas");
         images = images || {};
         var loader = new createjs.LoadQueue(false);
         loader.addEventListener("fileload", handleFileLoad);
         loader.addEventListener("complete", handleComplete);
         loader.loadManifest(lib.properties.manifest);
-    }
-
     function handleFileLoad(evt) {
         if (evt.item.type == "image") {
             images[evt.item.id] = evt.result;
         }
     }
-
     function handleComplete() {
         exportRoot = new lib.Sansnom2();
         stage = new createjs.Stage(canvas);
@@ -91,9 +83,8 @@ function animWindow(){
         createjs.Ticker.addEventListener("tick", stage);
     }
 }
-
-    // *******************************SKILL SCRIPT*****************************************
-function paintLazy(){
+    function paintLazy(){
+    // *SKILL SCRIPT*
         var pathObj = {
             "lool": {
                 "strokepath": [{
@@ -172,8 +163,7 @@ function paintLazy(){
             "strokeColor": "#27ae60"
         }).lazylinepainter('paint');
     }
-
-function rocketLaunch(){
+    function rocketLaunch(){
         var tl = new TimelineMax();
         tl.to( $('.burst') , 2, { x:5 , y:-70});
         tl.to($('.fire'),0.2,{autoAlpha:1,scale:1.1},'0');
@@ -183,10 +173,26 @@ function rocketLaunch(){
         tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" );
         // .to( $('.fetch') ,2, {rotationX:-360, transformOrigin:"left top"}, "2" );
     }
-
-
+    function typed(){
+    // *typed SCRIPT*
+        $("#typed").typed({
+            strings: ["Futur Développeur web, je suis actuellement à la recherche  d'un contrat de professionnalisation."],
+            startDelay:2000
+        });
+    }
+    function  hoverProject(){
+        $(' #da-thumbs > li ').each(function() {
+            $(this).hoverdir();
+        });
+    }
 
     return {
+        initTyped:function(){
+            typed();
+        },
+        initVibre:function(e,a){
+            vibre(e,a);
+        },
         initStart: function () {
           start();
         },
@@ -204,6 +210,9 @@ function rocketLaunch(){
         },
         initLaunch:function(){
             rocketLaunch();
+        },
+        initHover:function(){
+            hoverProject();
         }
     };
 }();
@@ -214,109 +223,97 @@ window.addEventListener('load', function () {
     App.initClock();
     App.initWindow();
     App.initSkills();
-
+    App.initTyped();
+    App.initHover();
 });
 
 
+/**
+ * Loader de page
+ */
+$.pageLoader = function() {
+    // Selection des images en src="
+    var $elements = $('body').find('img[src]');
+    // Selection des images en background-image
+    $('body [style]').each(function() {
+        var src = $(this).css('background-image').replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+        if(src && src != 'none') {
+            $elements = $elements.add($('<img src="' + src + '"/>'));
+        }
+    });
 
 
 
+    var $chargement = $('#chargement');
+    var $chargementInfos = $('#chargement-infos');
+    var elementsCharges = 0;
+    var dureeMs = 1000;
 
+    function animateStep(now, fx) {
+        $chargementInfos.text(parseInt(now)+'%');
+    }
+    function chargementEnCours() {
+        var pourcentage = 0;
+        if($elements.length) {
+            pourcentage = parseInt((elementsCharges / $elements.length) * 100);
+        }
 
-(function($) {
-    /**
-     * Loader de page
-     */
-    // $.pageLoader = function() {
-    //     // Selection des images en src="
-    //     var $elements = $('body').find('img[src]');
-    //     // Selection des images en background-image
-    //     $('body [style]').each(function() {
-    //         var src = $(this).css('background-image').replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-    //         if(src && src != 'none') {
-    //             $elements = $elements.add($('<img src="' + src + '"/>'));
-    //         }
-    //     });
-    //
-    //
-    //
-    //     var $chargement = $('#chargement');
-    //     var $chargementInfos = $('#chargement-infos');
-    //     var elementsCharges = 0;
-    //     var dureeMs = 1000;
-    //
-    //     function animateStep(now, fx) {
-    //         $chargementInfos.text(parseInt(now)+'%');
-    //     }
-    //
-    //     function chargementEnCours() {
-    //         var pourcentage = 0;
-    //         if($elements.length) {
-    //             pourcentage = parseInt((elementsCharges / $elements.length) * 100);
-    //         }
-    //
-    //         // Affichage du pourcentage
-    //         $chargementInfos
-    //             .stop() // stop les anciennes animations
-    //             .animate({width:pourcentage + '%'}, dureeMs);
-    //         $chargement
-    //             .stop() // stop les anciennes animations
-    //             .animate({pourcentage:pourcentage}, {
-    //                 duration: dureeMs,
-    //                 step: animateStep
-    //             });
-    //     }
-    //
-    //     function chargementTermine() {
-    //         var pourcentage = 100;
-    //
-    //         // Affichage du pourcentage
-    //         $chargementInfos
-    //             .stop() // stop les anciennes animations
-    //             .animate({width:pourcentage + '%'}, (dureeMs / 2));
-    //         $chargement
-    //             .stop() // stop les anciennes animations
-    //             .animate({pourcentage:pourcentage}, {
-    //                 duration: (dureeMs / 2),
-    //                 step: animateStep
-    //             })
-    //             // Disparition du chargement et affichage de la page
-    //             .css({opacity: 1})
-    //             .animate({opacity: 0}, function() {
-    //                 // La page est prete
-    //                 $chargement.css({display:'none'});
-    //                 $('#container')
-    //                     .css({
-    //                         opacity: 0,
-    //                         visibility:'visible'
-    //                     })
-    //                     .animate({opacity:1});
-    //
-    //             });
-    //
-    //     }
-    //
-    //     // La page contient des elements permettant d'afficher une barre de progression
-    //     if($elements.length) {
-    //         chargementEnCours();
-    //         $elements.load(function() {
-    //             $(this).off('load');
-    //             elementsCharges++;
-    //             chargementEnCours();
-    //         });
-    //     }
-    //
-    //     $(window).load(function() {
-    //         // La page est integralement chargee
-    //         chargementTermine();
-    //         $('#welcome').delay(2000).fadeOut(2000);
-    //     });
-    //
-    // };
-})(jQuery);
+        // Affichage du pourcentage
+        $chargementInfos
+            .stop() // stop les anciennes animations
+            .animate({width:pourcentage + '%'}, dureeMs);
+        $chargement
+            .stop() // stop les anciennes animations
+            .animate({pourcentage:pourcentage}, {
+                duration: dureeMs,
+                step: animateStep
+            });
+    }
+    function chargementTermine() {
+        var pourcentage = 100;
 
+        // Affichage du pourcentage
+        $chargementInfos
+            .stop() // stop les anciennes animations
+            .animate({width:pourcentage + '%'}, (dureeMs / 2));
+        $chargement
+            .stop() // stop les anciennes animations
+            .animate({pourcentage:pourcentage}, {
+                duration: (dureeMs / 2),
+                step: animateStep
+            })
+            // Disparition du chargement et affichage de la page
+            .css({opacity: 1})
+            .animate({opacity: 0}, function() {
+                // La page est prete
+                $chargement.css({display:'none'});
+                $('#container')
+                    .css({
+                        opacity: 0,
+                        visibility:'visible'
+                    })
+                    .animate({opacity:1});
+            });
 
+    }
 
+    // La page contient des elements permettant d'afficher une barre de progression
+    if($elements.length) {
+        chargementEnCours();
+        $elements.load(function() {
+            $(this).off('load');
+            elementsCharges++;
+            chargementEnCours();
+        });
+    }
+
+    $(window).load(function() {
+        // La page est integralement chargee
+        chargementTermine();
+
+    });
+
+};
 //********************* pattern for click event
 const x = document.getElementById("clickIt");
 const y = document.getElementById("hoverPara");
@@ -352,49 +349,12 @@ Array.prototype.forEach.call(
     });
 // **************************************************************************
 
-
-
-
 $(document).ready(function() {
-    $(".mac").mouseover(function() {
-        $(".ki").animate({
-            top: 680
-        }, {
-            duration: 1000
-        });
-    });
     $("#dp").click(function() {
         $(".tit").toggleClass("show", 4000);
     });
-    $("#typed").delay(188000).typed({
-        strings: ["Futur Développeur web, je suis actuellement à la recherche  d'un contrat de professionnalisation."],
-        startDelay:2000
-    });
-    $(' #da-thumbs > li ').each(function() {
-        $(this).hoverdir();
-    });
-});
-
-
-
-
-
-
-$(function() {
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // *****************Transition PAGE********************
@@ -445,33 +405,20 @@ $('.contact_link').click(function() {
     }, 1500);
 });
 
-
-
-
-
-
-
-
-
-
     // ********************************ROCKET ANIMATION*****************************************
 $(".inte").click(function() {
-    // vibre(0,5000);
-     console.log('init');
-    App.initLaunch();
+     App.initVibre(0,5000);
+      App.initLaunch();
 });
-
-
 var tl2 = new TimelineMax();
-
 function test(){
     tl2.to($('.fetch span:first-of-type'),0.5,{rotationX:-360, transformOrigin:"bottom center",ease: Power4.easeOut,repeat:1},"zeta")
         .to($('.fetch span:first-of-type'),1,{y:800,ease: Power4.easeInOut},"zeta");
 }
 
+
     // ********************************BARBAJS SCRIPT*****************************************
     var header;
-
     document.addEventListener("DOMContentLoaded", function () {
         header = document.querySelector('.transition__wipe');
         TweenMax.set(header, {
