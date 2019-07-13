@@ -133,6 +133,9 @@ app.post('/session/auth', (req, res) => {
 app.get('/admin', (req, res) => {
     res.render('admin.ejs', { root: __dirname + '/views' });
 });
+app.get('/contact', (req, res) => {
+    res.render('contact.ejs', { root: __dirname + '/views' });
+});
 app.get('/', (req, res) => {
     let  md = new MobileDetect(req.headers['user-agent']);
     console.log(md);

@@ -456,7 +456,10 @@ function test(){
                     },
 
                     // This returns a promise, we do not care about "context/arrow function"
-                    enter: ({ next }) => containerInAnim(next.container),
+                    enter({ next }) {
+                        containerInAnim(next.container);
+                        App.initWindow();
+                    },
                 },
             ], // transitions
         }); //barba init
