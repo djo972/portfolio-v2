@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="real" >
 <head>
-    <% include partials/head %>
+    <% include partials/head-one %>
 </head>
-<body id="test" data-barba="wrapper">
+<body id="insta" data-barba="wrapper">
 <header>
     <div class="transition__wipe"></div>
 </header>
-<main data-barba="container" data-barba-namespace="home">
+<main  class="content" data-barba="container" data-barba-namespace="insta">
     <a href="/">baack</a>
-    <div class="row">
+    <div id="scene">
         <% for (var key in insta) { %>
-            <img src="<%= insta[key].images.standard_resolution.url%>" alt="">
+            <div data-depth="1.00" class="content_img">
+                <img   src="<%= insta[key].images.standard_resolution.url%>"  alt="">
+                <div class="tag">#<%=insta[key].tags[0]%></div>
+            </div>
         <% } %>
     </div>
 </main>
 <footer>
 </footer>
 <%include partials/script.ejs%>
+<script src="js/component/tiltfx.js"></script>
 </body>

@@ -134,6 +134,12 @@ app.get('/admin', (req, res) => {
     res.render('admin.ejs', { root: __dirname + '/views' });
 });
 app.get('/contact', (req, res) => {
+    instagram.get('tags/search', { q: 'paris' })
+        .then(data => {
+        console.log(data);
+    });
+
+
     res.render('contact.ejs', { root: __dirname + '/views' });
 });
 app.get('/', (req, res) => {
@@ -147,6 +153,7 @@ app.get('/insta',async (req, res) => {
     instagram.get('users/self/media/recent').then(data => {
         let instagram = data;
         let insta = instagram.data;
+        console.log(instagram);
         // let img1 = insta[1].images.standard_resolution.url;
         //
         // console.log(insta[1].images.standard_resolution.url);
@@ -157,7 +164,11 @@ app.get('/insta',async (req, res) => {
             root: __dirname + '/views' ,
             insta : instagram.data
         });
-    });
+    })
+        .catch(err => {
+            // An error occured
+            console.log(err);
+        });
 });
 
 // app.get('/insta',(req, res) => {
