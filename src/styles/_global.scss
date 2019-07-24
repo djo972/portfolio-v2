@@ -14,7 +14,7 @@ html{
     min-height: 100%;
 
     &#test{
-      background:url("../images/bg2.jpg") center no-repeat ;
+      //background:url("../images/bg2.jpg") center no-repeat ;
       background-size: cover;
     }
     &.vibre{
@@ -241,16 +241,20 @@ html{
       min-height: 100vh;
       position: relative;
     }
-    #lo {
+    #wall {
       position: absolute;
       top: 0;
       width: 100%;
       height:  79%;
       background: #d6d5d8;
       border-bottom: 4px solid #d6d5d8;
-
+      .content-wall{
+        width: 50%;
+        height: 100%;
+        background:  url("../images/new/brique.png");
+      }
     }
-    #la {
+    #cornice {
       width: 100%;
       height: 2%;
       position: absolute;
@@ -258,12 +262,8 @@ html{
       background:#d6d5d8 url("../images/texture.png");
       border-top:white 3px solid;
     }
-    .le{
-      width: 50%;
-      height: 100%;
-      background:  url("../images/brique.png");
-    }
-    #li {
+
+    #ground {
       width: 100%;
       height: 19%;
       position: absolute;
@@ -277,6 +277,7 @@ html{
       position: relative;
       height: 100%;
       z-index: 1;
+      background: black;
     }
     .windows{
       width: 235px;
@@ -397,15 +398,17 @@ html{
 
     }
     .bureau {
-      width: 790px;
+      width: 670px;
       height: 355px;
-      background: url('../images/desk.png') no-repeat center;
+      background: url('../images/new/desk.png') no-repeat center;
       background-position: top;
       z-index: 10;
       position: absolute;
-      top: 595px !important;
+      bottom: -35px !important;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0 !important;
       right: 0 !important;
-      left: initial !important;
     }
     .gsm {
       width: 95px;
@@ -463,26 +466,27 @@ html{
       top: 409px !important;
       z-index: 30;
     }
-
     .modem{
       position: absolute;
-      left: 80px !important;
-      top: 675px  !important;
-      right: inherit !important ;
-      z-index: 30;
+      bottom:142px !important;
+      z-index: 30 ;
       width: 125px;
-      height: 70px;
+      height: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0 !important;
+      right: 0 !important;
       .m1{
         position: absolute;
-        height: 30px;
+        height: 20px;
         width: 125px;
-        background-color: #34495e;
+        background-color: #31353a;
         bottom: 0;
         border-radius: 5px;
       }
 
       i {
-        padding: 3px 6px;
+        padding: 3px 4px;
         display: inline-block;
         margin: 0 0 5px 6px;
       }
@@ -492,13 +496,12 @@ html{
         height:32px;
         width:150px;
         bottom:50%;
-        left:50%;
       }
 
       .shifter {
         position:absolute;
         bottom:-50%;
-        left:-50%;
+        //left:40%;
       }
 
       .p_a {position:absolute;}
