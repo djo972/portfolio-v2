@@ -310,7 +310,9 @@ module.exports = function(grunt) {
     // dev
     grunt.registerTask("dev",["sass:dev","concat:dist"]);
     // Start web server
-    // grunt.registerTask('serve', ['clean','connect:all','notify:server','prebuild','watch']);
+    // grunt.registerTask('serve', ['clean','connect:all','notify:server','prebuild','watch']);,
+
+
     grunt.registerTask('serve', ['clean','express:dev','notify:server','prebuild','watch']);
 
     grunt.registerTask('serveDebug', ['clean','connect:all','notify:server','prebuild','watch']);

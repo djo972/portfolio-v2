@@ -1,13 +1,17 @@
 
-.hot-sign  {
-  width: 9px;
-  height: 37px;
-  background: #EDF8F4;
-  border-radius: 100% 0% 100% 0%;
-  filter: blur(1px);
-  animation: hot 4s 1s infinite ease-out backwards;
-  position: absolute;
-  top: -150%; left: 48%;
+
+  .hot-sign {
+    width: 9px;
+    height: 37px;
+    background: #EDF8F4;
+    border-radius: 100% 0% 100% 0%;
+    filter: blur(1px);
+    animation: hot 4s 1s infinite ease-out backwards;
+    position: absolute;
+    /* top: -150%; */
+    left: 76%;
+    bottom: 147px;
+    z-index: 30;
   &:before  {
     display: block;
     content: '';

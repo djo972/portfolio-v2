@@ -272,21 +272,22 @@ html{
     }
     .inner {
       //width: 960px;
-      width: 1080px;
+      width: 1024px;
       margin: 0 auto;
       position: relative;
       height: 100%;
       z-index: 1;
-      background: black;
+      //background: black;
     }
     .windows{
-      width: 235px;
-      height: 341px;
-      top:137px !important;
-      right: 0 !important;
+      width: 700px;
+      height: 486px;
+      top: 55px !important;
+      right: -225px !important;
       left: inherit !important;
       position: absolute;
-      background: url('../images/fenetre.png') ,url('../images/scene2.png')no-repeat 50% 100%;
+      background: url(../images/new/windows.png) no-repeat center, url(../images/new/scene.png) no-repeat center;
+      background-size: 100%;
       img{
         margin-top: 184px;
         margin-left: 15px;
@@ -399,12 +400,12 @@ html{
     }
     .bureau {
       width: 670px;
-      height: 355px;
+      height: 235px;
       background: url('../images/new/desk.png') no-repeat center;
       background-position: top;
       z-index: 10;
       position: absolute;
-      bottom: -35px !important;
+      bottom: -85px !important;
       margin-left: auto;
       margin-right: auto;
       left: 0 !important;
@@ -448,6 +449,18 @@ html{
        overflow: hidden;
       }
     }
+    .deskLamp{
+      background: url(../images/new/desk-lamp@X2.png) no-repeat center;
+      width: 140px;
+      height: 190px;
+      background-size: 100%;
+      position: absolute;
+      left: 196px;
+      right: inherit !important;
+      bottom: 106px;
+      top: inherit !important;
+      z-index: 10;
+    }
     .lampe{
       width: 143px;
       height: 215px;
@@ -468,7 +481,7 @@ html{
     }
     .modem{
       position: absolute;
-      bottom:142px !important;
+      bottom:121px !important;
       z-index: 30 ;
       width: 125px;
       height: 20px;
@@ -652,20 +665,33 @@ html{
       }
 
     }
-
+  .hp{
+    position: absolute;
+    bottom: 114px !important;
+    background: url(../images/new/hp@X2.png) no-repeat center;
+    background-size: 100%;
+    z-index: 30;
+    width: 500px;
+    height: 89px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0 !important;
+    right: 0 !important;
+  }
 
 
 
     .sofa   {
-      width: 390px;
-      height: 249px;
+      width: 300px;
+      height: 330px;
       position: absolute;
-      right: -350px !important;
-      top: 650px !important;
-      left: inherit !important;
-      background:url("../images/sofa.png") no-repeat;
+      right: inherit !important;
+      top:inherit!important;
+      left: -170px !important;
+      background: url(../images/new/sofa.png) no-repeat;
       background-size: 100%;
-
+      bottom: 60px;
+    z-index: 30;
     }
     .inte   {
       background:url("../images/inte.png");
@@ -748,29 +774,36 @@ html{
       top: 700px
     }
     .boxit{
-      width: 300px;
-      background: url(../images/shelf.png) no-repeat;
+      width: 550px;
+      background: url(../images/new/etagere.png) no-repeat;
       background-size: 100%;
       background-position: bottom;
-      top:inherit !important;
-      bottom: 32px !important;
-      left: 0 !important;
+      top: 104px !important;
+      bottom:inherit !important;
+      left: -223px !important;
       right: inherit !important;
       position: absolute;
-      height: 1000px;
-    }
+      height: 400px;
+
+
+
+  }
 
 
     .mac{
       width: 300px;
-      height: 230px;
+      height: 238px;
       position: absolute;
-      top:560px !important;
-      left: 680px !important;
-      right: inherit !important;
-      background: url("../images/mac.png") no-repeat;
-      color:#fff;
+      top: inherit !important;
+      background: url(../images/new/desktop@X2.png) no-repeat;
+      background-size: 100%;
+      color: #fff;
       z-index: 5;
+      bottom: 150px !important;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0 !important;
+      right: 0 !important;
       p{
         color:#e74c3c;
         display: block;
@@ -780,8 +813,8 @@ html{
       }
     }
     .whoim{
-      width: 270px;
-      height: 175px;
+      width: 277px;
+      height: 163px;
       background-color: black;
       border-radius: 2px;
       color: #fff;
@@ -795,7 +828,8 @@ html{
         transition: all 1s ease;
       }
       &:hover{
-        background: url("../images/termi.png")no-repeat;
+        background: url("../images/new/termi.png")no-repeat;
+        background-size: 100%;
         -moz-transition: all 1s ease;
         -o-transition: all 1s ease;
         -webkit-transition: all 1s ease;
@@ -820,6 +854,32 @@ html{
     #typed{
       color:#fff;
       font-size: 22px
+    }
+    .macpro{
+      width: 170px;
+      height: 117px;
+      position: absolute;
+      background: url(../images/new/mac@X2.png) no-repeat center;
+      background-size: 100%;
+      box-sizing: border-box;
+      bottom: 96px !important;
+      left: 56% !important;
+      right: inherit !important;
+      top: inherit !important;
+      z-index: 30;
+    }
+    .cofee{
+      width: 55px;
+      height: 59px;
+      position: absolute;
+      background: url(../images/new/cofee.png) no-repeat center;
+      background-size: 100%;
+      box-sizing: border-box;
+      bottom: 99px !important;
+      left: 74% !important;
+      right: inherit !important;
+      top: inherit !important;
+      z-index: 30;
     }
     .me{
       position: absolute;
