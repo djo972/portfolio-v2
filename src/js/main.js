@@ -131,6 +131,7 @@ var App = function(){
     }
     function Clock(){
      // *CLOCK SCRIPT*
+
      setInterval(function() {
          var dt = new Date();
          //$('.time').text(dt);
