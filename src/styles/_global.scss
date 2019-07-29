@@ -275,13 +275,14 @@ html{
       width: 1024px;
       margin: 0 auto;
       position: relative;
+
       height: 100%;
       z-index: 1;
       //background: black;
     }
     .windows{
-      width: 700px;
-      height: 486px;
+      width: 700px !important;
+      //height: 486px;
       top: 55px !important;
       right: -225px !important;
       left: inherit !important;
@@ -292,6 +293,9 @@ html{
         margin-top: 184px;
         margin-left: 15px;
 
+      }
+      #animation_container{
+        max-width: 700px !important;
       }
     }
     /*HORLOGE*/

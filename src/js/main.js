@@ -166,6 +166,8 @@ var App = function(){
      }, 1000);
  }
     function animWindow(){
+
+
 }
     function paintLazy(){
     // *SKILL SCRIPT*
@@ -413,10 +415,11 @@ window.addEventListener('load', function () {
     $(window).load(function() {
         // La page est integralement chargee
         // chargementTermine();
-        var scene = document.getElementById('scene');
-        console.log('scene');
-        var parallaxInstance = new Parallax(scene, {
-        });
+
+        // var scene = document.getElementById('scene');
+        // console.log('scene');
+        // var parallaxInstance = new Parallax(scene, {
+        // });
     });
 
 
