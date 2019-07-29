@@ -280,6 +280,27 @@ html{
       z-index: 1;
       //background: black;
     }
+    .bar{
+      width: 751px !important;
+      height: 50px;
+      top: 10px !important;
+      right: -249px !important;
+      left: inherit !important;
+      position: absolute;
+      background: url(../images/new/bar.png) no-repeat center;
+      background-size: 100%;
+    }
+    .rideau{
+      width: 700px !important;
+      height: 650px;
+      top: 36px !important;
+      right: -225px !important;
+      left: inherit !important;
+      position: absolute;
+      background: url(../images/new/rideau.png) no-repeat center;
+      background-size: 100%;
+      z-index: 30;
+    }
     .windows{
       width: 700px !important;
       //height: 486px;
@@ -306,9 +327,6 @@ html{
       left: 36px !important;
       z-index: 40;
     }
-
-
-
     .klo{
       position: relative;
     }
@@ -825,6 +843,7 @@ html{
       margin-right: auto;
       left: 0 !important;
       right: 0 !important;
+      z-index: 40;
       p{
         color:#e74c3c;
         display: block;
