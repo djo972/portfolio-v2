@@ -416,10 +416,10 @@ window.addEventListener('load', function () {
         // La page est integralement chargee
         // chargementTermine();
 
-        // var scene = document.getElementById('scene');
-        // console.log('scene');
-        // var parallaxInstance = new Parallax(scene, {
-        // });
+        var scene = document.getElementById('scene');
+        console.log('scene');
+        var parallaxInstance = new Parallax(scene, {
+        });
     });
 
 

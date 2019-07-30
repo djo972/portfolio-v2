@@ -434,6 +434,7 @@ html{
       position: absolute;
       bottom: -85px !important;
       margin-left: auto;
+      top:inherit  !important;
       margin-right: auto;
       left: 0 !important;
       right: 0 !important;
@@ -441,10 +442,11 @@ html{
     .gsm {
       width: 95px;
       height: 100px;
-      top:690px !important;
-      left: 422px !important;
-      right: inherit !important;
-      background: url('../images/gsm.png') no-repeat center;
+      top: inherit !important;
+      bottom: 162px;
+      left: inherit !important;
+      right: 109px !important;
+      background: url(../images/gsm.png) no-repeat center;
       position: absolute;
       z-index: 10;
      &.vibre{
@@ -482,9 +484,9 @@ html{
       height: 190px;
       background-size: 100%;
       position: absolute;
-      left: 196px;
+      left: 196px !important;
       right: inherit !important;
-      bottom: 106px;
+      bottom: 106px !important;
       top: inherit !important;
       z-index: 10;
     }
@@ -497,14 +499,64 @@ html{
       left: 230px;
     }
     .print {
-      background: url("../images/print.png") no-repeat center;
-      width: 140px;
-      height: 100px;
+      background: url(../images/new/print.png) no-repeat center;
+      width: 95px;
+      height: 65px;
       background-size: 100%;
       position: absolute;
-      left: 80px !important;
-      top: 409px !important;
+      left: 186px !important;
+      top: 326px !important;
       z-index: 30;
+    }
+    .glow {
+      background-color: #222222;
+      background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
+      overflow: hidden;
+      padding: 15px;
+      /* background-size: 100%; */
+      position: absolute;
+      left: 200px !important;
+      top: 100px !important;
+      z-index: 30;
+      border-radius: 5px;
+      p{
+        color: #fff;
+        font-size: 1.7em;
+        font-family: Monoton;
+        -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+        animation: neon1 1.5s ease-in-out infinite alternate;
+        &:hover {
+          color: #FF1177;
+          -webkit-animation: none;
+          -moz-animation: none;
+          animation: none;
+        }
+        @-webkit-keyframes neon1 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+        }
+        @-moz-keyframes neon1 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+        }
+        @keyframes neon1 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+        }
+      }
     }
     .carpet{
       width: 550px;
@@ -714,6 +766,7 @@ html{
     height: 89px;
     margin-left: auto;
     margin-right: auto;
+    top:inherit !important;
     left: 0 !important;
     right: 0 !important;
   }
@@ -744,31 +797,62 @@ html{
     }
   .bball{
     position: absolute;
-    top:650px !important;
-    left: -120px !important;
-    right:inherit !important;
+    top: inherit !important;
+    left: 96px !important;
+    bottom: 142px;
+    right: inherit  !important;
     width: 100px;
     height: 150px;
-    background: url("../images/Bball.png")center no-repeat;
+    background: url(../images/new/Bball.png) center no-repeat;
     -webkit-background-size: 100%;
     background-size: 90%;
+    z-index: 10;
  }
+    .ball{
+      position: absolute;
+      bottom: 159px !important;
+      left: 126px !important;
+      right: inherit  !important;
+      width: 40px;
+      height: 40px;
+      background: url(../images/new/ball.png) center no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
     .light{
       position: absolute;
       top:0 !important;
-      left: 50% !important;
+      left: -10% !important;
       right: inherit !important;
       width: 140px;
       height: 200px;
+      z-index: 40;
       background: url("../images/light.png")center no-repeat;
       -webkit-background-size: 100%;
       background-position:top;
       background-size: 100%;
     }
+    .table{
+      width: 300px;
+      height: 238px;
+      position: absolute;
+      top: inherit !important;
+      background: url(../images/new/table.png) no-repeat;
+      background-size: 100%;
+      color: #fff;
+      z-index: 5;
+      bottom: 15px !important;
+      left:inherit !important;
+      margin-left: auto;
+      margin-right: auto;
+      right: -99px !important;
+      z-index: 10;
+    }
     .burst{
-      position: relative;
-      top:650px !important;
-      left: -170px !important;
+      position: absolute;
+      top: inherit !important;
+      bottom: 77px;
+      left: 201px !important;
       right: inherit !important;
       width: 100px;
       height: 200px;
@@ -803,7 +887,19 @@ html{
         visibility:hidden;
       }
     }
-
+    .holiday{
+      width: 130px;
+      height: 99px;
+      position: absolute;
+      background: url(../images/new/holiday.png) no-repeat center;
+      background-size: 100%;
+      box-sizing: border-box;
+      bottom: 30px !important;
+      left: inherit !important;
+      right: 0 !important;
+      top: inherit !important;
+      z-index: 30;
+    }
     .prise  {
       background: url("../images/prise.png");
       width: 35px;
