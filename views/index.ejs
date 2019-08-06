@@ -38,13 +38,13 @@
                             </ul>
                         </div>
 <!--                        ***************************************LUMIERE***********************************************-->
-                        <div class="glow">
+                        <div class="glow" data-depth="0.2">
                             <p> &#60; HelloWorld ! &#62;</p>
                         </div>
-                        <div class="light"></div>
+                        <div class="light" data-depth="0.2"></div>
                         <!--                        ***************************************FENETRE***********************************************-->
-                        <div class="bar"></div>
-                        <div class="rideau"></div>
+                        <div class="bar" data-depth="0.2"></div>
+                        <div class="rideau" data-depth="0.2" ></div>
                         <div   id="step" class="windows" data-depth="0.2">
                             <canvas id="canvas" width="700" height="468" style="position: absolute; display: block;"></canvas>
                             <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:700px; height:468px; position: absolute; left: 0px; top: 0px; display: block;">
@@ -54,8 +54,8 @@
 
                         <!--                        ***************************************SOFA***********************************************-->
 
-                        <div class="sofa" data-depth="0.3"></div>
-                        <div class="carpet"></div>
+                        <div class="sofa" data-depth="0.6"></div>
+                        <div class="carpet" data-depth="0.2"></div>
 
 
                         <!--                        ***************************************HORLOGE***********************************************-->
@@ -90,12 +90,10 @@
 
 
                         <!--                        ***************************************MODEM***********************************************-->
-
-                    <div class="modem-content">
-                        <div class="modem" data-depth="0.2">
-        <div class="m1">
-            <div class="holder">
-                <div class="shifter">
+                        <div class="modem-content" data-depth="0.2">
+                        <div class="modem">
+                                <div class="m1">
+                                     <div class="holder"><div class="shifter">
                     <i class="i_l25">
                         <i class="p_r i_g"><div id="mn_0" class="p_a q_f i_l50"></div></i>
                         <i class="p_r i_g"><div id="mn_1" class="p_a q_f i_l50"></div></i>
@@ -139,7 +137,7 @@
                         <div class="ball"></div>
                         <!--                        ***************************************ROCKET***********************************************-->
 
-                        <div class="burst">
+                        <div class="burst" data-depth="0.2">
                             <div class="rocket"></div>
                             <div class="fire"></div>
 
@@ -149,15 +147,15 @@
 
                         <!--                        ***************************************DESK***********************************************-->
 
-                        <div class="table"></div>
+                        <div class="table" data-depth="0.6"></div>
                         <div data-depth="0.2"  class="bureau ">
 
 
                         </div>
-                        <div class="deskLamp"></div>
-                        <div class="hp"></div>
-                        <div class="hot-sign"></div>
-                        <div class="cofee"></div>
+                        <div class="deskLamp"  data-depth="0.2"></div>
+                        <div class="hp" data-depth="0.2"></div>
+                        <div class="hot-sign" data-depth="0.2"></div>
+                        <div class="cofee" data-depth="0.2"></div>
                         <!--                        ***************************************MOI***********************************************-->
 
 <!--                        <div class="me-gth"></div>-->
@@ -168,10 +166,10 @@
 <!--                        <div data-depth="0.2" class="gsm btn_nav contact_link  dwet det">-->
 
 <!--                        </div>-->
-                        <div data-depth="0.2" class="gsm">
+                        <div data-depth="0.6" class="gsm">
 
                         </div>
-                        <div class="holiday"></div>
+                        <div class="holiday" data-depth="0.6"></div>
                         <!--                        ***************************************AMOIRE***********************************************-->
 
 
@@ -189,7 +187,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="macpro"></div>
+                        <div class="macpro" data-depth="0.2"></div>
 
                     </div>
                     <div id="wall">
@@ -236,7 +234,7 @@
         for(i=0; i<ssMetadata.length; i++) {
             ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
         }
-        exportRoot = new lib.windowsAnim();
+        exportRoot = new lib.windowsAnimopti();
         stage = new lib.Stage(canvas);
         //Registers the "tick" event listener.
         fnStartAnimation = function() {
