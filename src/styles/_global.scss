@@ -301,14 +301,67 @@ html{
       background-size: 100%;
       z-index: 30;
     }
-    .windows{
+    .winAnim{
       width: 700px !important;
-      //height: 486px;
+      height: 456px;
       top: 55px !important;
       right: -225px !important;
       left: inherit !important;
       position: absolute;
-      background: url(../images/new/windows.png) no-repeat center, url(../images/new/scene.png) no-repeat center;
+      overflow: hidden;
+      .scene{
+        width: 700px !important;
+        height: 456px;
+        position: absolute;
+        z-index: 10;
+        background: url(../images/windows/scene.png) no-repeat center;
+        background-size: 100%;
+      }
+      .bridge{
+        width: 700px !important;
+        height: 150px;
+        z-index: 20;
+        bottom:100px;
+        position: absolute;
+        background: url(../images/windows/bridge.png) no-repeat center;
+        background-size: 100%;
+      }
+      .cloud{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        top:10px;
+        position: absolute;
+        background: url(../images/windows/cloud.png) no-repeat center;
+        background-size: 100%;
+      }
+      .cloudTwo{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        top:10px;
+        right: 50px;
+        position: absolute;
+        background: url(../images/windows/cloud2.png) no-repeat center;
+        background-size: 100%;
+      }
+      .window{
+        width: 700px !important;
+        height: 456px;
+        z-index: 30;
+        position: absolute;
+        background: url(../images/windows/windows.png) no-repeat center;
+        background-size: 100%;
+      }
+    }
+    .windows{
+      width: 700px !important;
+      height: 486px;
+      top: 55px !important;
+      right: -225px !important;
+      left: inherit !important;
+      position: absolute;
+      background: url(../images/windows/windows.png) no-repeat center;
       background-size: 100%;
       img{
         margin-top: 184px;
