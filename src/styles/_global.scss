@@ -308,13 +308,23 @@ html{
       right: -225px !important;
       left: inherit !important;
       position: absolute;
-      overflow: hidden;
+      //overflow: hidden;
       .scene{
         width: 700px !important;
         height: 456px;
         position: absolute;
         z-index: 10;
         background: url(../images/windows/scene.png) no-repeat center;
+        background-size: 100%;
+      }
+      .subway{
+        width: 650px !important;
+        height: 75px;
+        z-index: 19;
+        bottom:230px;
+        right: -651px;
+        position: absolute;
+        background: url(../images/windows/sub.png) no-repeat center;
         background-size: 100%;
       }
       .bridge{
@@ -343,6 +353,126 @@ html{
         right: 50px;
         position: absolute;
         background: url(../images/windows/cloud2.png) no-repeat center;
+        background-size: 100%;
+      }
+      .jeep{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/jeep.png) no-repeat center;
+        background-size: 100%;
+      }
+      .family{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/family.png) no-repeat center;
+        background-size: 100%;
+      }
+      .poste{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/poste.png) no-repeat center;
+        background-size: 100%;
+      }
+      .twingo{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/twingo.png) no-repeat center;
+        background-size: 100%;
+      }
+      .supercar{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/supercar.png) no-repeat center;
+        background-size: 100%;
+      }
+      .suv{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/suv.png) no-repeat center;
+        background-size: 100%;
+      }
+      .cam{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/cam.png) no-repeat center;
+        background-size: 100%;
+      }
+      .bache{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/bache.png) no-repeat center;
+        background-size: 100%;
+      }
+      .sedan{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/sedan.png) no-repeat center;
+        background-size: 100%;
+      }
+      .tee{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/tee.png) no-repeat center;
+        background-size: 100%;
+      }
+      .dodge{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/dodge.png) no-repeat center;
+        background-size: 100%;
+      }
+      .jeepTwo{
+        width: 140px !important;
+        height: 70px;
+        z-index: 20;
+        left:-150px;
+        bottom: 0px;
+        position: absolute;
+        background: url(../images/windows/jeep2.png) no-repeat center;
         background-size: 100%;
       }
       .window{

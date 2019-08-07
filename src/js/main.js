@@ -667,4 +667,26 @@ function test(){
 //     }]
 // });
 
+function animWin(){
+    let sub = document.querySelector(".subway");
+    let jeep =  document.querySelector(".jeep");
+    let family =  document.querySelector(".family");
+    let twingo =  document.querySelector(".twingo");
+    let supercar =  document.querySelector(".supercar");
+    let suv =  document.querySelector(".suv");
+    let cam =  document.querySelector(".cam");
+    let bache =  document.querySelector(".bache");
+    let sedan =  document.querySelector(".sedan");
+    let tee =  document.querySelector(".tee");
+    let dodge =  document.querySelector(".dodge");
+    let jeepTwo =  document.querySelector(".jeepTwo");
 
+    var tl2 = new TimelineMax({
+        repeat:-1
+    });
+    tl2.to(sub, 2, {x:-700} );
+}
+$('.winAnim').click(function() {
+    console.log('tyu');
+    animWin();
+});
