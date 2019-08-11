@@ -305,10 +305,10 @@ html{
       width: 700px !important;
       height: 456px;
       top: 55px !important;
-      //right: -225px !important;
+      right: -225px !important;
       left: inherit !important;
       position: absolute;
-      //overflow: hidden;
+      overflow: hidden;
       .scene{
         width: 700px !important;
         height: 456px;
@@ -339,8 +339,8 @@ html{
       .stockFire{
         width: 20px !important;
         height: 60px;
-        z-index: 40;
-        bottom: 162px;
+        z-index: 30;
+        bottom: 145px;
         left: 370px;
         position: absolute;
         background: url(../images/windows/fire.png) no-repeat center;
@@ -368,7 +368,7 @@ html{
         height: 70px;
         z-index: 20;
         top:10px;
-        right: 50px;
+        right: 150px;
         position: absolute;
         background: url(../images/windows/cloud2.png) no-repeat center;
         background-size: 100%;
@@ -406,7 +406,7 @@ html{
       .twingo{
         width: 100px !important;
         height: 70px;
-        z-index: 30;
+        z-index: 60;
         left: -150px;
         bottom: 30px;
         position: absolute;
@@ -416,7 +416,7 @@ html{
       .supercar{
         width: 140px !important;
         height: 70px;
-        z-index: 20;
+        z-index: 55;
         left:-150px;
         bottom: 28px;
         position: absolute;
@@ -446,9 +446,9 @@ html{
       .bache{
         width: 140px !important;
         height: 70px;
-        z-index: 20;
+        z-index: 30;
         left:-150px;
-        bottom: 0px;
+        bottom: 10px;
         position: absolute;
         background: url(../images/windows/bache.png) no-repeat center;
         background-size: 100%;
@@ -458,7 +458,7 @@ html{
         height: 70px;
         z-index: 20;
         left:-150px;
-        bottom: 0px;
+        bottom: 50px;
         position: absolute;
         background: url(../images/windows/sedan.png) no-repeat center;
         background-size: 100%;
@@ -466,9 +466,9 @@ html{
       .tee{
         width: 140px !important;
         height: 70px;
-        z-index: 20;
+        z-index: 30;
         left:-150px;
-        bottom: 0px;
+        bottom: 12px;
         position: absolute;
         background: url(../images/windows/tee.png) no-repeat center;
         background-size: 100%;
@@ -478,7 +478,7 @@ html{
         height: 70px;
         z-index: 20;
         left:-150px;
-        bottom: 0px;
+        bottom: 50px;
         position: absolute;
         background: url(../images/windows/dodge.png) no-repeat center;
         background-size: 100%;
@@ -488,7 +488,7 @@ html{
         height: 70px;
         z-index: 20;
         left:-150px;
-        bottom: 0px;
+        bottom: 20px;
         position: absolute;
         background: url(../images/windows/jeep2.png) no-repeat center;
         background-size: 100%;
@@ -496,7 +496,7 @@ html{
       .window{
         width: 700px !important;
         height: 456px;
-        z-index: 30;
+        z-index: 80;
         position: absolute;
         background: url(../images/windows/windows.png) no-repeat center;
         background-size: 100%;
