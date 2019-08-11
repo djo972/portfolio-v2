@@ -7,7 +7,7 @@ var App = function(){
     // const x = document.getElementById("clickIt");
     const inte = document.getElementById("inte");
     function handleEvent(){
-        console.log('ini');
+        // console.log('ini');
     // inte.addEventListener("click", function(){
     //     App.initVibre(0,5000);
     //     App.initLaunch();
@@ -90,11 +90,11 @@ var App = function(){
 
         if( elementOne == undefined){
             let a = 0;
-            console.log('undef');
+            // console.log('undef');
         }
-        console.log(a);
-        console.log(element.length);
-        console.log(elementOne);
+        // console.log(a);
+        // console.log(element.length);
+        // console.log(elementOne);
 
 
         if (element.length > 1)
@@ -261,7 +261,7 @@ var App = function(){
     }
     function typed(){
     // *typed SCRIPT*
-        console.log('typed');
+    //     console.log('typed');
         $("#typed").typed({
             strings: ["Lorem ipsum dolor  facilis in libero maiores molestiae molestias soluta suscipit unde vel velit veniam voluptatem."],
             startDelay:2000
@@ -315,7 +315,7 @@ var App = function(){
 var pathname = window.location.pathname;
 switch(pathname) {
     case "/" :
-        console.log("home");
+        // console.log("home");
         App.initStart();
         App.initTictoc();
         App.initTyped();
@@ -417,7 +417,7 @@ window.addEventListener('load', function () {
         // chargementTermine();
 
         var scene = document.getElementById('scene');
-        console.log('scene');
+        // console.log('scene');
         var parallaxInstance = new Parallax(scene, {
         });
     });
@@ -671,6 +671,7 @@ function animWin(){
     let sub = document.querySelector(".subway");
     let jeep =  document.querySelector(".jeep");
     let family =  document.querySelector(".family");
+    let poste =  document.querySelector(".poste");
     let twingo =  document.querySelector(".twingo");
     let supercar =  document.querySelector(".supercar");
     let suv =  document.querySelector(".suv");
@@ -680,13 +681,40 @@ function animWin(){
     let tee =  document.querySelector(".tee");
     let dodge =  document.querySelector(".dodge");
     let jeepTwo =  document.querySelector(".jeepTwo");
-
+    // tl.to( $('.burst') , 2, { x:5 , y:-70});
+    // tl.to($('.fire'),0.2,{autoAlpha:1,scale:1.1},'0');
+    // tl.to($('.bfire'),0.1,{autoAlpha:1,scale:1.1},"2" );
+    // tl.to($('.work'),2,{rotation:50},"2" );
+    // tl.to($('.clocki'),0.5,{y:700 ,rotation:90},"2" );
+    // tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" );
     var tl2 = new TimelineMax({
-        repeat:-1
+        // repeat:-1
     });
-    tl2.to(sub, 2, {x:-700} );
+    tl2.to(sub, 2, {x:-800 })
+    .add("scene1", 0)
+    .to(jeep,2,{x:850,ease: Power0.easeNone}, "scene1")
+    .to(poste,2,{x:390,y:-18,ease: Power0.easeNone}, 1)
+    .to(family,2.5,{x:850,ease: Power0.easeNone}, "scene1")
+    .to(sub,2,{x:-1350,ease: Power0.easeNone}, 4)
+    .to(poste,1,{x:530,ease: Power0.easeNone}, 4)
+    .to(poste,1,{x:650,y:12,ease: Power0.easeNone}, 7.5)
+    .to(poste,1,{x:955,ease: Power0.easeNone}, 8.5)
+    .to(twingo,3,{x:450,ease: Power0.easeNone},"-=6")
+    .to(supercar,4,{x:450,ease: Power0.easeNone},"-=5")
+    .to(twingo,0.4,{x:485,y:25,ease: Power0.easeNone},"-=3")
+    .to(twingo,2,{x:850,ease: Power0.easeNone},"-=2.6")
+    .to(supercar,1,{x:850,ease: Power0.easeNone},"-=2.4")
+    .to(suv,2,{x:850,ease: Power0.easeNone},8)
+    .to(cam,3,{x:850,ease: Power0.easeNone},7);
+
+
+
+    $('#restart').click(function() {
+        tl2.restart();
+        console.log('jbegffz');
+    });
 }
-$('.winAnim').click(function() {
-    console.log('tyu');
+$('#play').click(function() {
+    console.log('tyffffude');
     animWin();
 });

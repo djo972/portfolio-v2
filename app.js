@@ -143,8 +143,8 @@ app.get('/contact', (req, res) => {
     res.render('contact.ejs', { root: __dirname + '/views' });
 });
 app.get('/', (req, res) => {
-    let  md = new MobileDetect(req.headers['user-agent']);
-    console.log(md);
+    // let  md = new MobileDetect(req.headers['user-agent']);
+    // console.log(md);
     res.render('index.ejs', { root: __dirname + '/views' });
 });
 

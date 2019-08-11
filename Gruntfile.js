@@ -15,6 +15,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-nodemon');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -213,7 +214,7 @@ module.exports = function(grunt) {
         },
         express: {
             options: {
-                port:3000,
+                port:5000,
             },
             dev: {
                 options: {
@@ -232,6 +233,17 @@ module.exports = function(grunt) {
             //     }
             // }
         },
+        nodemon: {
+            dev: {
+                script: 'app.js',
+                options: {
+                    nodeArgs: ['--inspect'],
+                    env: {
+                        PORT: '5455'
+                    },
+                }
+            },
+        },
         connect: {
             all: {
                 options:{
@@ -243,13 +255,18 @@ module.exports = function(grunt) {
         },
         watch: {
             options: {
-                livereload: 35729
+                livereload: 35729,
+                // dateFormat: function(time) {
+                //     grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
+                //     grunt.log.writeln('Waiting for more changes...');
+                // },
             },
             express: {
-                files:  [ '**/*.js' ],
+                files:  [ 'app.js' ],
                 tasks:  [ 'express:dev' ],
                 options: {
-                    spawn: false
+                    spawn: false,
+                    livereload: true
                 }
             },
             images: {
@@ -257,7 +274,7 @@ module.exports = function(grunt) {
                 tasks: ['copy:images'],
             },
             scripts: {
-                files: '**/*.js', // tous les fichiers JavaScript de n'importe quel dossier
+                files:  [ 'app.js','Grunfile.js','config.js', 'views/**/*.js', 'src/js/**'],
                 tasks: ['dev-js','replace:dev','notify:js']
             },
             styles: {
@@ -265,7 +282,7 @@ module.exports = function(grunt) {
                 tasks: ['sass:dev','replace:dev','notify:css']
             },
             files: {
-                files: '**/*.ejs', // tous les fichiers ejs de n'importe quel dossier
+                files: 'views/*.ejs', // tous les fichiers ejs de n'importe quel dossier
                 tasks: []
             }
         },
@@ -297,7 +314,9 @@ module.exports = function(grunt) {
 });
     // Redéfinition de la tâche `default` qui est la tâche lancée dès que vous lancez Grunt sans rien spécifier.
     // Note : ici, nous définissons sass comme une tâche à lancer si on lance la tâche `default`.
-
+    // grunt.event.on('watch', function(action, filepath, target) {
+    //     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
+    // });
     // child
     grunt.registerTask("duplicate",["copy:images","copy:files"]);
     grunt.registerTask("duplicate-dev",["copy:images","copy:fonts","copy:component"]);
@@ -311,11 +330,10 @@ module.exports = function(grunt) {
     grunt.registerTask("dev",["sass:dev","concat:dist"]);
     // Start web server
     // grunt.registerTask('serve', ['clean','connect:all','notify:server','prebuild','watch']);,
-
-
     grunt.registerTask('serve', ['clean','express:dev','notify:server','prebuild','watch']);
+    // grunt.registerTask('serve', ['clean','notify:server','prebuild','nodemon:dev','watch']);
+    // grunt.registerTask('serve', ['clean','nodemon:dev','notify:server','prebuild','watch']);
 
-    grunt.registerTask('serveDebug', ['clean','connect:all','notify:server','prebuild','watch']);
     require('load-grunt-tasks')(grunt);
     // Unit Test
     grunt.registerTask('test',['mochaTest']);

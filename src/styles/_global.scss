@@ -305,7 +305,7 @@ html{
       width: 700px !important;
       height: 456px;
       top: 55px !important;
-      right: -225px !important;
+      //right: -225px !important;
       left: inherit !important;
       position: absolute;
       //overflow: hidden;
@@ -336,6 +336,16 @@ html{
         background: url(../images/windows/bridge.png) no-repeat center;
         background-size: 100%;
       }
+      .stockFire{
+        width: 20px !important;
+        height: 60px;
+        z-index: 40;
+        bottom: 162px;
+        left: 370px;
+        position: absolute;
+        background: url(../images/windows/fire.png) no-repeat center;
+        background-size: 100%;
+      }
       .cloud{
         width: 140px !important;
         height: 70px;
@@ -360,7 +370,7 @@ html{
         height: 70px;
         z-index: 20;
         left:-150px;
-        bottom: 0px;
+        bottom:70px;
         position: absolute;
         background: url(../images/windows/jeep.png) no-repeat center;
         background-size: 100%;
@@ -376,21 +386,21 @@ html{
         background-size: 100%;
       }
       .poste{
-        width: 140px !important;
-        height: 70px;
-        z-index: 20;
-        left:-150px;
-        bottom: 0px;
+        width: 160px !important;
+        height: 85px;
+        z-index: 50;
+        left:-180px;
+        bottom: 70px;
         position: absolute;
         background: url(../images/windows/poste.png) no-repeat center;
         background-size: 100%;
       }
       .twingo{
-        width: 140px !important;
+        width: 100px !important;
         height: 70px;
-        z-index: 20;
-        left:-150px;
-        bottom: 0px;
+        z-index: 30;
+        left: -150px;
+        bottom: 30px;
         position: absolute;
         background: url(../images/windows/twingo.png) no-repeat center;
         background-size: 100%;
@@ -400,7 +410,7 @@ html{
         height: 70px;
         z-index: 20;
         left:-150px;
-        bottom: 0px;
+        bottom: 28px;
         position: absolute;
         background: url(../images/windows/supercar.png) no-repeat center;
         background-size: 100%;
@@ -408,19 +418,19 @@ html{
       .suv{
         width: 140px !important;
         height: 70px;
-        z-index: 20;
+        z-index: 30;
         left:-150px;
-        bottom: 0px;
+        bottom: 5px;
         position: absolute;
         background: url(../images/windows/suv.png) no-repeat center;
         background-size: 100%;
       }
       .cam{
-        width: 140px !important;
-        height: 70px;
+        width: 175px !important;
+        height: 85px;
         z-index: 20;
         left:-150px;
-        bottom: 0px;
+        bottom:60px;
         position: absolute;
         background: url(../images/windows/cam.png) no-repeat center;
         background-size: 100%;
