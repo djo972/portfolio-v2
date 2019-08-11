@@ -705,7 +705,9 @@ function animWin(){
     .to(twingo,2,{x:850,ease: Power0.easeNone},"-=2.6")
     .to(supercar,1,{x:850,ease: Power0.easeNone},"-=2.4")
     .to(suv,2,{x:850,ease: Power0.easeNone},8)
-    .to(cam,3,{x:850,ease: Power0.easeNone},7);
+    .to(cam,3,{x:850,ease: Power0.easeNone},7)
+    .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireOrange.png) no-repeat center"}, ease:Power2.easeOut},9)
+    .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireRed.png) no-repeat center"}, ease:Power2.easeOut},10);
 
 
 
