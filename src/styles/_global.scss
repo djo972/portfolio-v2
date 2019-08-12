@@ -299,7 +299,13 @@ html{
       position: absolute;
       background: url(../images/new/rideau.png) no-repeat center;
       background-size: 100%;
-      z-index: 30;
+      z-index: 90;
+    }
+    #vivacity{
+      position: absolute !important;
+      width: 100%;
+      bottom: 0;
+      z-index: 100;
     }
     .winAnim{
       width: 700px !important;
@@ -631,7 +637,7 @@ html{
       height: 235px;
       background: url('../images/new/desk.png') no-repeat center;
       background-position: top;
-      z-index: 10;
+      z-index: 40;
       position: absolute;
       bottom: -85px !important;
       margin-left: auto;
@@ -773,7 +779,7 @@ html{
     }
     .modem-content{
       position: absolute;
-      z-index: 30 ;
+      z-index: 45 ;
       width: 125px;
       height: 20px;
       margin-left: auto;
@@ -1021,6 +1027,7 @@ html{
       bottom: 159px !important;
       left: 126px !important;
       right: inherit  !important;
+      top:inherit !important;
       width: 40px;
       height: 40px;
       background: url(../images/new/ball.png) center no-repeat;
@@ -1210,7 +1217,7 @@ html{
       left: 56% !important;
       right: inherit !important;
       top: inherit !important;
-      z-index: 30;
+      z-index: 40;
     }
     .cofee{
       width: 55px;
@@ -1223,7 +1230,7 @@ html{
       left: 74% !important;
       right: inherit !important;
       top: inherit !important;
-      z-index: 30;
+      z-index: 45;
     }
     .me{
       position: absolute;
