@@ -646,45 +646,50 @@ html{
       left: 0 !important;
       right: 0 !important;
     }
-    .gsm {
+    .port{
       width: 95px;
       height: 100px;
       top: inherit !important;
       bottom: 162px;
       left: inherit !important;
       right: 109px !important;
-      background: url(../images/gsm.png) no-repeat center;
-      position: absolute;
       z-index: 10;
-     &.vibre{
-       background: url('../images/gsm-mom.png') no-repeat center;
-       -webkit-animation-name: vibre-base;
-       -ms-animation-name: vibre-base;
-       animation-name: vibre-base;
-       -moz-animation-name: vibre-base;
-       -webkit-animation-duration: 100ms;
-       -ms-animation-duration: 100ms;
-       animation-duration: 100ms;
-       -moz-animation-duration: 100ms;
-       -webkit-animation-iteration-count: infinite;
-       -ms-animation-iteration-count: infinite;
-       animation-iteration-count: infinite;
-       -moz-animation-iteration-count: infinite;
-       -webkit-animation-timing-function: ease-in-out;
-       -ms-animation-timing-function: ease-in-out;
-       animation-timing-function: ease-in-out;
-       -moz-animation-timing-function: ease-in-out;
-       -webkit-animation-delay: 0s;
-       -ms-animation-delay: 0s;
-       animation-delay: 0s;
-       -moz-animation-delay: 0s;
-       -webkit-animation-play-state: running;
-       -ms-animation-play-state: running;
-       animation-play-state: running;
-       -moz-animation-play-state: running;
-       overflow: hidden;
+      .gsm {
+        width: 95px;
+        height: 100px;
+        background: url(../images/gsm.png) no-repeat center;
+        position: absolute;
+        &.vibre{
+          background: url('../images/gsm-mom.png') no-repeat center;
+          -webkit-animation-name: vibre-base;
+          -ms-animation-name: vibre-base;
+          animation-name: vibre-base;
+          -moz-animation-name: vibre-base;
+          -webkit-animation-duration: 100ms;
+          -ms-animation-duration: 100ms;
+          animation-duration: 100ms;
+          -moz-animation-duration: 100ms;
+          -webkit-animation-iteration-count: infinite;
+          -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+          -moz-animation-iteration-count: infinite;
+          -webkit-animation-timing-function: ease-in-out;
+          -ms-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+          -moz-animation-timing-function: ease-in-out;
+          -webkit-animation-delay: 0s;
+          -ms-animation-delay: 0s;
+          animation-delay: 0s;
+          -moz-animation-delay: 0s;
+          -webkit-animation-play-state: running;
+          -ms-animation-play-state: running;
+          animation-play-state: running;
+          -moz-animation-play-state: running;
+          overflow: hidden;
+        }
       }
     }
+
     .deskLamp{
       background: url(../images/new/desk-lamp@X2.png) no-repeat center;
       width: 140px;

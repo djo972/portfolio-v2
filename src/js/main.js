@@ -29,6 +29,8 @@ var App = function(){
             App.initVibre(0,5000);
             App.initLaunch();
         });
+
+
         $("#dp").click(function() {
             $(".tit").toggleClass("show", 4000);
         });
@@ -87,10 +89,10 @@ var App = function(){
         let element = document.getElementsByClassName('det');
         let elementOne = element[e];
 
-
+        console.log(elementOne);
         if( elementOne == undefined){
             let a = 0;
-            // console.log('undef');
+            console.log('undef');
         }
         // console.log(a);
         // console.log(element.length);
@@ -108,7 +110,6 @@ var App = function(){
         }, a);
     }
     function start(){
-
         setInterval(function(){vibre(1, 7000); }, 15000);
     }
     function $_(id_){
@@ -718,10 +719,4 @@ function test(){
 //     }]
 // });
 
-function animWin(){
 
-}
-$('#play').click(function() {
-    console.log('tyffffude');
-    animWin();
-});
