@@ -8,9 +8,10 @@
     filter: blur(1px);
     animation: hot 4s 1s infinite ease-out backwards;
     position: absolute;
-    /* top: -150%; */
-    left: 76%;
-    bottom: 147px;
+    top:  inherit !important;
+    right:  inherit !important;
+    left: 76% !important  ;
+    bottom: 147px !important;
     z-index: 30;
   &:before  {
     display: block;

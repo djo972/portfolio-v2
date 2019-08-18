@@ -1,6 +1,8 @@
 @include font-face(jochamregular, "../fonts/jocham-regular-webfont");
 @include font-face(freightsans, "../fonts/freightsans-medium-webfont");
-
+*{
+  cursor: none;
+}
 html{
   background-color: #31353a;
   font-family: freightsans;
@@ -12,7 +14,6 @@ html{
     width: 100%;
     background-color: #fff;
     min-height: 100%;
-
     &#test{
       //background:url("../images/bg2.jpg") center no-repeat ;
       background-size: cover;
@@ -44,7 +45,6 @@ html{
       -moz-animation-play-state: running;
       overflow: hidden;
     }
-
     &.pace-done{
       background: none;
     }
@@ -106,7 +106,13 @@ html{
     }
     .me-gth{
        width: 100px;
-       height: 50px;
+       height: 150px;
+      position: absolute;
+      background: url(../images/me.png) no-repeat;
+      background-size: 100%;
+      z-index: 60;
+      left:50%;
+     bottom:-130px;
     }
     .menu{
       li {
@@ -251,7 +257,7 @@ html{
       .content-wall{
         width: 50%;
         height: 100%;
-        background:  url("../images/new/brique.png");
+        background:  url("../images/new/brique.png") !important;
       }
     }
     #cornice {
@@ -531,7 +537,7 @@ html{
       position: absolute;
       top: 266px !important;
       right: inherit !important;
-      left: 36px !important;
+      left: 10px !important;
       z-index: 40;
     }
     .klo{
@@ -555,7 +561,7 @@ html{
     .hour-hand {
       height: 18px;
       position: absolute;
-      top: 34px;
+      top: 32px;
       background: black;
       width: 2px;
       left: 31px;
@@ -566,7 +572,7 @@ html{
       height: 24px;
       background: #666;
       position: absolute;
-      top: 28px;
+      top: 26px;
       left: 31px;
     }
 
@@ -580,8 +586,8 @@ html{
     }
 
     .pin {
-      width: 5px;
-      height: 5px;
+      width: 7px;
+      height: 7px;
       background: #f28a8b;
       border-radius: 10px;
       margin: auto;
@@ -650,7 +656,7 @@ html{
       width: 95px;
       height: 100px;
       top: inherit !important;
-      bottom: 162px;
+      bottom: 162px !important;
       left: inherit !important;
       right: 109px !important;
       z-index: 10;
@@ -700,7 +706,7 @@ html{
       right: inherit !important;
       bottom: 106px !important;
       top: inherit !important;
-      z-index: 10;
+      z-index: 40;
     }
     .lampe{
       width: 143px;
@@ -716,7 +722,7 @@ html{
       height: 65px;
       background-size: 100%;
       position: absolute;
-      left: 186px !important;
+      left: 160px !important;
       top: 326px !important;
       z-index: 30;
     }
@@ -727,9 +733,9 @@ html{
       padding: 15px;
       /* background-size: 100%; */
       position: absolute;
-      left: 200px !important;
-      top: 100px !important;
-      z-index: 30;
+      left: 210px !important;
+      top: 45px !important;
+      z-index: 85;
       border-radius: 5px;
       p{
         color: #fff;
@@ -775,7 +781,7 @@ html{
       background: url(../images/new/carpet.png) no-repeat;
       background-size: 100%;
       background-position: bottom;
-      bottom: 25px !important;
+      bottom: 0 !important;
       top: inherit !important;
       left: -250px !important;
       right: inherit !important;
@@ -989,6 +995,79 @@ html{
     left: 0 !important;
     right: 0 !important;
   }
+    #smoke {
+      position: absolute;
+      z-index: 3;
+      width: 1px;
+      height: 163px;
+      bottom: 139px;
+      left: 255px !important;
+      right: inherit !important;
+      z-index: 100;
+      &.start{
+        span {
+          display: block;
+          position: absolute;
+          bottom: -35px; left: 50%; margin-left:-20px;
+          height: 0px; width: 0px;
+          border: 35px solid #4b4b4b;
+          border-radius: 35px;
+          left: -14px; opacity: 0;
+          transform: scale(0.2);
+          &.s0 { animation: smokeL1 10s 0s infinite }
+          &.s1 { animation: smokeR1 10s 0.5s infinite }
+          &.s2 { animation: smokeL2 10s 1s infinite }
+          &.s3 { animation: smokeR2 10s 1.5s infinite }
+          &.s4 { animation: smokeL1 10s 2s infinite }
+          &.s5 { animation: smokeR1 10s 2.5s infinite }
+          &.s6 { animation: smokeL2 10s 3s infinite }
+          &.s7 { animation: smokeR2 10s 3.5s infinite }
+          &.s8 { animation: smokeL1 10s 4s infinite }
+          &.s9 { animation: smokeR1 10s 4.5s infinite }
+          &.s10 { animation: smokeL2 10s 5s infinite }
+          &.s11 { animation: smokeR2 10s 5.5s infinite }
+          &.s12 { animation: smokeL1 10s 6s infinite }
+          &.s13 { animation: smokeR1 10s 6.5s infinite }
+          &.s14 { animation: smokeL2 10s 7s infinite }
+          &.s15 { animation: smokeR2 10s 7.5s infinite }
+          &.s16 { animation: smokeL1 10s 8s infinite }
+          &.s17 { animation: smokeR1 10s 8.5s infinite }
+          &.s18 { animation: smokeL2 10s 9s infinite }
+          &.s19 { animation: smokeR2 10s 9.5s infinite }
+        }
+      }
+    }
+
+    /* smoke balls */
+
+
+
+    /* Smoke animation */
+
+    @keyframes smokeL1 {
+      0%   { transform: scale(0.2) translate(0, 0) }
+      10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
+      100% { opacity: 0; transform: scale(1) translate(-20px, -130px) }
+    }
+
+    @keyframes smokeR1 {
+      0%   { transform: scale(0.2) translate(0, 0) }
+      10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
+      100% { opacity: 0; transform: scale(1) translate(20px, -130px) }
+    }
+
+    @keyframes smokeL2 {
+      0%   { transform: scale(0.2) translate(0, 0) }
+      10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
+      100% { opacity: 0; transform: scale(1) translate(-40px, -100px) }
+    }
+
+    @keyframes smokeR2 {
+      0%   { transform: scale(0.2) translate(0, 0) }
+      10%  { opacity: 1; transform: scale(0.2) translate(0, -5px) }
+      100% { opacity: 0; transform: scale(1) translate(40px, -100px) }
+    }
+
 
 
 
@@ -1001,8 +1080,9 @@ html{
       left: -140px !important;
       background: url(../images/new/sofa.png) no-repeat;
       background-size: 100%;
-      bottom: 20px;
+      bottom: 0 !important;
       z-index: 30;
+
     }
     .inte   {
       background:url("../images/inte.png");
@@ -1022,23 +1102,41 @@ html{
     right: inherit  !important;
     width: 100px;
     height: 150px;
-    background: url(../images/new/Bball.png) center no-repeat;
+    background: url(../images/windows/panier.png) center no-repeat;
     -webkit-background-size: 100%;
     background-size: 90%;
     z-index: 10;
  }
-    .ball{
+    .content-trash{
       position: absolute;
-      bottom: 159px !important;
-      left: 126px !important;
-      right: inherit  !important;
-      top:inherit !important;
-      width: 40px;
-      height: 40px;
-      background: url(../images/new/ball.png) center no-repeat;
-      -webkit-background-size: 100%;
-      background-size: 100%;
+      top: inherit !important;
+      left: 115px !important;
+      bottom: 124px;
+      right: inherit !important;
+      width: 60px;
+      height: 77px;
+      z-index: 10;
+      .corbeille{
+        position: absolute;
+        width: 60px;
+        height: 77px;
+        background: url(../images/windows/corbeille.png) center no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        z-index: 10;
+      }
+      .ball{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: url(../images/new/ball.png) center no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+        bottom:5px;
+        left: 10px;
+      }
     }
+
     .light{
       position: absolute;
       top:0 !important;
@@ -1076,6 +1174,7 @@ html{
       right: inherit !important;
       width: 100px;
       height: 200px;
+      z-index: 90;
       .rocket{
         position: absolute;
         width: 100px;
@@ -1135,7 +1234,7 @@ html{
       background-position: bottom;
       top: 104px !important;
       bottom:inherit !important;
-      left: -223px !important;
+      left: -250px !important;
       right: inherit !important;
       position: absolute;
       height: 400px;

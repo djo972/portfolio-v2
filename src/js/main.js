@@ -6,6 +6,9 @@ var App = function(){
     var canvas, stage, exportRoot;
     // const x = document.getElementById("clickIt");
     const inte = document.getElementById("inte");
+    function newCursor(){
+
+    }
     function handleEvent(){
         // console.log('ini');
     // inte.addEventListener("click", function(){
@@ -13,20 +16,16 @@ var App = function(){
     //     App.initLaunch();
     // }, true);
 
-
-
         // inte.onclick = function() {
         //
         //     window.removeEventListener("test", options, options);
         // };
 
-
-
-
-
         $(".inte").click(function() {
+            let elm = document.getElementById('smoke');
+            elm.className = 'start';
             console.log('anyyy');
-            App.initVibre(0,5000);
+            App.initVibre(0,7000);
             App.initLaunch();
         });
 
@@ -82,17 +81,15 @@ var App = function(){
                 $('.contact').addClass('fadeIn');
             }, 1500);
         });
-
     }
     function vibre(e,a) {
     // *Vibre SCRIPT*
         let element = document.getElementsByClassName('det');
         let elementOne = element[e];
 
-        console.log(elementOne);
         if( elementOne == undefined){
             let a = 0;
-            console.log('undef');
+
         }
         // console.log(a);
         // console.log(element.length);
@@ -304,12 +301,20 @@ var App = function(){
     function rocketLaunch(){
         var tl = new TimelineMax();
         tl.to( $('.burst') , 2, { x:5 , y:-70});
+        tl.to( $('.me-gth') , 2, { x:5 , y:-70 ,ease: Power4.easeIn});
         tl.to($('.fire'),0.2,{autoAlpha:1,scale:1.1},'0');
         tl.to($('.bfire'),0.1,{autoAlpha:1,scale:1.1},"2" );
+        tl.to($('.glow'),2.5,{transformOrigin:"bottom right",rotation:-90,ease: Elastic.easeOut.config(1, 0.3)},"2" );
+        tl.to($('.content-trash'),2,{transformOrigin:"bottom right",rotation:84,ease: Power4.easeIn,},"2" );
+        tl.to($('.ball'),6.2,{rotation:720,y:-300,x:46 ,ease: Power4.easeInOut,},"3" );
         tl.to($('.work'),2,{rotation:50},"2" );
-        tl.to($('.clocki'),0.5,{y:700 ,rotation:90},"2" );
-        tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "2" );
-        // .to( $('.fetch') ,2, {rotationX:-360, transformOrigin:"left top"}, "2" );
+        tl.to($('.clocki'),1,{rotationX:-720, y:600,autoAlpha:1,force3D:true,ease:Power1.easeOut},"2" );
+        // tl.to($('.clocki'),0.5,{y:700 ,rotation:90},"2" );
+        tl.to( $('.burst') , 2.5, { y:-1000, ease: Power4.easeIn }, "5" );
+        tl.to( $('.me-gth') , 2, { x:5 , y:80 ,ease: Power4.easeIn},"7");
+        tl.to( $('#smoke') , 2, { autoAlpha:0 ,ease: Power4.easeIn},"15");
+
+        // .to( $('.fetch') ,2, {rotationX:-360, transformOrigin:"left top"}, "2" );s
     }
     function typed(){
     // *typed SCRIPT*
@@ -326,6 +331,9 @@ var App = function(){
     }
 
     return {
+        initCursor:function(){
+            newCursor();
+        },
         initHandle:function(){
             handleEvent();
         },
@@ -374,6 +382,7 @@ switch(pathname) {
         App.initClock();
         App.initWindow();
         App.initHandle();
+        App.initCursor();
         // App.initLaunch();
         break;
     case "/game" :
@@ -384,7 +393,35 @@ switch(pathname) {
 window.addEventListener('load', function () {
 });
 
-
+$(document)
+    .mousemove(function(e) {
+        $('.your-cursor4')
+            .eq(0)
+            .css({
+                left: e.pageX,
+                top: e.pageY
+            });
+        setTimeout(function() {
+            $('.your-cursor4')
+                .eq(1)
+                .css({
+                    left: e.pageX,
+                    top: e.pageY
+                });
+        }, 400);
+        setTimeout(function() {
+            $('.your-cursor4')
+                .eq(2)
+                .css({
+                    left: e.pageX,
+                    top: e.pageY
+                });
+        }, 200);
+    });
+$(document).on("mousemove", function(e) {
+  var  mouseX = e.pageX;
+   var  mouseY = e.pageY;
+});
 /**
  * Loader de page
 //  */
@@ -510,12 +547,6 @@ Array.prototype.forEach.call(
     });
 // **************************************************************************
 
-$(document).ready(function() {
-
-
-});
-
-
 // *****************Transition PAGE********************
 
 
@@ -559,8 +590,6 @@ function test(){
                             paused:true,
                             onComplete: done, // "resolve the hook"
                         });
-
-
                         tl.to(header, 0.5, {scaleY:1});
                         tl.to(header, 0.5, {scaleY:0, transformOrigin:"100% 0%"});
                         tl.set(header, {transformOrigin:"0% 100%"});
