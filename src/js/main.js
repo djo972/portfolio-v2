@@ -6,8 +6,37 @@ var App = function(){
     var canvas, stage, exportRoot;
     // const x = document.getElementById("clickIt");
     const inte = document.getElementById("inte");
-    function newCursor(){
 
+    function newCursor(){
+        $(document)
+            .mousemove(function(e) {
+                $('.your-cursor4')
+                    .eq(0)
+                    .css({
+                        left: e.pageX,
+                        top: e.pageY
+                    });
+                setTimeout(function() {
+                    $('.your-cursor4')
+                        .eq(1)
+                        .css({
+                            left: e.pageX,
+                            top: e.pageY
+                        });
+                }, 400);
+                setTimeout(function() {
+                    $('.your-cursor4')
+                        .eq(2)
+                        .css({
+                            left: e.pageX,
+                            top: e.pageY
+                        });
+                }, 200);
+            });
+        $(document).on("mousemove", function(e) {
+            var  mouseX = e.pageX;
+            var  mouseY = e.pageY;
+        });
     }
     function handleEvent(){
         // console.log('ini');
@@ -393,35 +422,7 @@ switch(pathname) {
 window.addEventListener('load', function () {
 });
 
-$(document)
-    .mousemove(function(e) {
-        $('.your-cursor4')
-            .eq(0)
-            .css({
-                left: e.pageX,
-                top: e.pageY
-            });
-        setTimeout(function() {
-            $('.your-cursor4')
-                .eq(1)
-                .css({
-                    left: e.pageX,
-                    top: e.pageY
-                });
-        }, 400);
-        setTimeout(function() {
-            $('.your-cursor4')
-                .eq(2)
-                .css({
-                    left: e.pageX,
-                    top: e.pageY
-                });
-        }, 200);
-    });
-$(document).on("mousemove", function(e) {
-  var  mouseX = e.pageX;
-   var  mouseY = e.pageY;
-});
+
 /**
  * Loader de page
 //  */

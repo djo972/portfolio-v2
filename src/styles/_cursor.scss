@@ -11,18 +11,18 @@
   pointer-events: none;
 }
 .your-cursor4 {
-  background-color: gold;
-  z-index: 5;
+  background-color: #d32f2f;
+  z-index: 7;
 }
 .your-cursor4:nth-child(1) {
-  background-color: gold;
-  z-index: 10;
+  background-color: #ff6659;
+  z-index: 5;
   width: 20px;
   height: 20px;
 }
 .your-cursor4:nth-child(2) {
-  background-color: gold;
-  z-index: 7;
+  background-color: #9a0007;
+  z-index: 10;
   width: 6px;
   height: 6px;
 }
