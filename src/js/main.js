@@ -7,16 +7,29 @@ var App = function(){
     // const x = document.getElementById("clickIt");
     const inte = document.getElementById("inte");
     function giveMeTheLight(){
-        TweenMax.to(
-            "body",
-            5,
-            {
-                webkitFilter: "brightness(1)",
-                filter: "brightness(1)",
-                ease:Elastic.easeOut.config( 1, 0.3)
+        setTimeout(function() {
+            TweenMax.to(
+                ".shutter",
+                5,
+                {
+                    y:-850,ease: Power0.easeNone
+                }
+            );
+            TweenMax.to(
+                "body",
+                4,
+                {
+                    webkitFilter: "brightness(1)",
+                    filter: "brightness(1)",
+                    ease: Power0.easeNone,
+                    onComplete:function(){
+                        App.initWindow();
+                    }
+                }
+            );
+        }, 2000);
 
-            }
-        );
+
     }
     function newCursor(){
         $(document)
@@ -423,7 +436,7 @@ switch(pathname) {
         App.initTictoc();
         App.initTyped();
         App.initClock();
-        App.initWindow();
+
         App.initHandle();
         App.initCursor();
         // App.initLaunch();

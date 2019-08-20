@@ -58,4 +58,11 @@
   }
 }
 
-
+.shutter{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../images/windows/shtutter.png) no-repeat center;
+  background-size: 100%;
+  z-index: 70;
+}
