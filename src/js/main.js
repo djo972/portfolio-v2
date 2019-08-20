@@ -6,7 +6,18 @@ var App = function(){
     var canvas, stage, exportRoot;
     // const x = document.getElementById("clickIt");
     const inte = document.getElementById("inte");
+    function giveMeTheLight(){
+        TweenMax.to(
+            "body",
+            5,
+            {
+                webkitFilter: "brightness(1)",
+                filter: "brightness(1)",
+                ease:Elastic.easeOut.config( 1, 0.3)
 
+            }
+        );
+    }
     function newCursor(){
         $(document)
             .mousemove(function(e) {
@@ -392,6 +403,9 @@ var App = function(){
         },
         initHover:function(){
             hoverProject();
+        },
+        initLight:function(){
+            giveMeTheLight();
         }
     };
 }();
@@ -504,8 +518,8 @@ window.addEventListener('load', function () {
 //
     $(window).load(function() {
         // La page est integralement chargee
-        // chargementTermine();
-
+        // // chargementTermine();
+        App.initLight();
         var scene = document.getElementById('vivacity');
         // console.log('scene');
         var parallaxInstance = new Parallax(scene, {
@@ -748,5 +762,7 @@ function test(){
 //         afterEnter() {}
 //     }]
 // });
-
+$('body').on("click",function(){
+    $(".folding").toggleClass('folded');
+});
 

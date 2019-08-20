@@ -1,8 +1,8 @@
 @include font-face(jochamregular, "../fonts/jocham-regular-webfont");
 @include font-face(freightsans, "../fonts/freightsans-medium-webfont");
-*{
-  cursor: none;
-}
+//*{
+//  cursor: none;
+//}
 html{
   background-color: #31353a;
   font-family: freightsans;
@@ -14,6 +14,7 @@ html{
     width: 100%;
     background-color: #fff;
     min-height: 100%;
+    filter: brightness(4%);
     &#test{
       //background:url("../images/bg2.jpg") center no-repeat ;
       background-size: cover;

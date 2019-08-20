@@ -1,0 +1,105 @@
+
+
+.folder{
+  width: 500px;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 180px;
+  left: 400px;
+  z-index: 100;
+}
+.folding {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+.csstransforms3d .folding {
+  -webkit-perspective: 700px;
+  -moz-perspective: 700px;
+  -ms-perspective: 700px;
+  perspective: 700px;
+}
+
+.folding li {
+  height: 50px;
+  color: #fff;
+  padding-left: 30px;
+  border-left: 30px solid rgba(0,0,0,.1);
+  margin: -3px;
+}
+
+.csstransforms3d .folding li {
+  -webkit-transition: ease .15s all;
+  -moz-transition: ease .15s all;
+  -o-transition: ease .15s all;
+  -ms-transition: ease .15s all;
+  transition: ease .15s all;
+}
+
+.csstransforms3d .folding li:nth-child(even) {
+  margin-top: -1px;
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: rotateX(10deg);
+  -moz-transform: rotateX(10deg);
+  -o-transform: rotateX(10deg);
+  -ms-transform: rotateX(10deg);
+  transform: rotateX(10deg);
+}
+
+.csstransforms3d .folding li:nth-child(odd) {
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: rotateX(-10deg);
+  -moz-transform: rotateX(-10deg);
+  -o-transform: rotateX(-10deg);
+  -ms-transform: rotateX(-10deg);
+  transform: rotateX(-10deg);
+}
+
+.folding .fb {
+  background-color: #3959a6;
+}
+
+.folding .tw {
+  background-color: #2fc6ff;
+}
+
+.folding .gp {
+  background-color:#d84d30;
+}
+
+.folding .rss {
+  background-color: #ff7e09;
+}
+
+.csstransforms3d .folded li:nth-child(even) {
+  margin-top: -75px;
+  -webkit-transform: rotateX(75deg);
+  -moz-transform: rotateX(75deg);
+  -o-transform: rotateX(75deg);
+  -ms-transform: rotateX(75deg);
+  transform: rotateX(75deg);
+  background-image: -webkit-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,.5));
+  background-image: -moz-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,.5));
+  background-image: -o-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,.5));
+  background-image: -ms-linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,.5));
+  background-image: linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,.5));
+}
+
+.csstransforms3d .folded li:nth-child(odd) {
+  -webkit-transform: rotateX(-75deg);
+  -moz-transform: rotateX(-75deg);
+  -o-transform: rotateX(-75deg);
+  -ms-transform: rotateX(-75deg);
+  transform: rotateX(-75deg);
+}
+
