@@ -145,7 +145,7 @@ app.get('/contact', (req, res) => {
 app.get('/', (req, res) => {
     // let  md = new MobileDetect(req.headers['user-agent']);
     // console.log(md);
-    res.render('index.ejs', { root: __dirname + '/views' });
+    res.render('index.ejs', { root: __dirname + '/views' });      
 });
 
 

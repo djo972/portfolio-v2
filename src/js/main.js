@@ -24,7 +24,8 @@ var App = function(){
                     ease: Power0.easeNone,
                     onComplete:function(){
                         App.initWindow();
-                    }
+                    },
+                    force3D: true
                 }
             );
         }, 2000);
@@ -234,9 +235,11 @@ var App = function(){
         let cloud2 =  document.querySelector(".cloudTwo");
 
         var tl2 = new TimelineMax({
+            force3D: false,
             repeat:-1,
         });
         var tl3 =new TimelineMax({
+            force3D: false,
             repeat:-1,
         });
 
