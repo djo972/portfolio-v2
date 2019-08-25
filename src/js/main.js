@@ -25,13 +25,13 @@ var App = function(){
                     onComplete:function(){
                         App.initWindow();
                     },
-                    force3D: true
+                    force3D: false
                 }
             );
         }, 2000);
-
-
     }
+
+
     function newCursor(){
         $(document)
             .mousemove(function(e) {
@@ -217,6 +217,9 @@ var App = function(){
 
      }, 1000);
  }
+
+
+
     function animWindow(){
         let sub = document.querySelector(".subway");
         let jeep =  document.querySelector(".jeep");
@@ -233,127 +236,43 @@ var App = function(){
         let jeepTwo =  document.querySelector(".jeepTwo");
         let cloud = document.querySelector(".cloud");
         let cloud2 =  document.querySelector(".cloudTwo");
-
         var tl2 = new TimelineMax({
-            force3D: false,
             repeat:-1,
         });
         var tl3 =new TimelineMax({
-            force3D: false,
             repeat:-1,
         });
-
-        tl3.to(cloud, 40, {x:400 })
-            .to(cloud2, 60, {x:800 },0);
+        tl3.to(cloud, 40, {x:400,force3D:false })
+            .to(cloud2, 60, {x:800 ,force3D:false},0);
 
         tl2.to(sub, 2, {x:-800 })
             .add("scene1", 0)
-            .to(jeep,2,{x:850,ease: Power0.easeNone}, "scene1")
-            .to(poste,2,{x:390,y:-18,ease: Power0.easeNone}, 1)
-            .to(family,2.5,{x:850,ease: Power0.easeNone}, "scene1")
-            .to(sub,2,{x:-1350,ease: Power0.easeNone}, 4)
-            .to(poste,1,{x:530,ease: Power0.easeNone}, 4)
-            .to(poste,1,{x:650,y:12,ease: Power0.easeNone}, 7.5)
-            .to(poste,1,{x:955,ease: Power0.easeNone}, 8.5)
-            .to(twingo,3,{x:450,ease: Power0.easeNone},"-=6")
-            .to(supercar,4,{x:850,ease: Power1.easeIn},"-=5")
-            .to(twingo,0.4,{x:485,y:25,ease: Power0.easeNone},"-=3")
-            .to(twingo,2,{x:850,ease: Power0.easeNone},"-=2.6")
-            .to(suv,2,{x:850,ease: Power0.easeNone},8)
-            .to(cam,3,{x:850,ease: Power0.easeNone},7)
-            .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireOrange.png) no-repeat center"}, ease:Power2.easeOut},9)
-            .to(bache,2.5,{x:350,ease: Power4.easeOut,},9)
-            .to(sedan,3,{x:350,ease: Power4.easeOut,},9.5)
-            .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireRed.png) no-repeat center"}, ease:Power2.easeOut},11)
-            .to(tee,3,{x:200,ease: Power4.easeOut,},10)
-            .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireGreen.png) no-repeat center"}, ease:Power2.easeOut},13)
-            .to(bache,3.5,{x:850,ease: Power1.easeIn,},13.5)
-            .to(sedan,3,{x:850,ease: Power1.easeIn,},13.5)
-            .to(tee,4,{x:850,ease: Power1.easeIn,},14)
-            .to(dodge,3,{x:850,y:15,ease: Power2.easeIn,},15)
-            .to(jeepTwo,3,{x:850,ease: Power0.easeOut},16);
+            .to(jeep,2,{x:850,ease: Power0.easeNone,force3D:false}, "scene1")
+            .to(poste,2,{x:390,y:-18,ease: Power0.easeNone,force3D:false}, 1)
+            .to(family,2.5,{x:850,ease: Power0.easeNone,force3D:false}, "scene1")
+            .to(sub,2,{x:-1350,ease: Power0.easeNone,force3D:false}, 4)
+            .to(poste,1,{x:530,ease: Power0.easeNone,force3D:false}, 4)
+            .to(poste,1,{x:650,y:12,ease: Power0.easeNone,force3D:false}, 7.5)
+            .to(poste,1,{x:955,ease: Power0.easeNone,force3D:false}, 8.5)
+            .to(twingo,3,{x:450,ease: Power0.easeNone,force3D:false},"-=6")
+            .to(supercar,4,{x:850,ease: Power1.easeIn,force3D:false},"-=5")
+            .to(twingo,0.4,{x:485,y:25,ease: Power0.easeNone,force3D:false},"-=3")
+            .to(twingo,2,{x:850,ease: Power0.easeNone,force3D:false},"-=2.6")
+            .to(suv,2,{x:850,ease: Power0.easeNone,force3D:false},8)
+            .to(cam,3,{x:850,ease: Power0.easeNone,force3D:false},7)
+            .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireOrange.png) no-repeat center"}, ease:Power2.easeOut,force3D:false},9)
+            .to(bache,2.5,{x:350,ease: Power4.easeOut,force3D:false},9)
+            .to(sedan,3,{x:350,ease: Power4.easeOut,force3D:false},9.5)
+            .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireRed.png) no-repeat center"}, ease:Power2.easeOut,force3D:false},11)
+            .to(tee,3,{x:200,ease: Power4.easeOut,force3D:false},10)
+            .to(".fireS", 2, {css:{backgroundSize:"100%", background:"url(../images/windows/fireGreen.png) no-repeat center"}, ease:Power2.easeOut,force3D:false},13)
+            .to(bache,3.5,{x:850,ease: Power1.easeIn,force3D:false,},13.5)
+            .to(sedan,3,{x:850,ease: Power1.easeIn,force3D:false},13.5)
+            .to(tee,4,{x:850,ease: Power1.easeIn,force3D:false},14)
+            .to(dodge,3,{x:850,y:15,ease: Power2.easeIn,force3D:false},15)
+            .to(jeepTwo,3,{x:850,ease: Power0.easeOut,force3D:false},16);
 
 }
-    function paintLazy(){
-    // *SKILL SCRIPT*
-        var pathObj = {
-            "lool": {
-                "strokepath": [{
-                    "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-                    "duration": 600
-                }],
-                "dimensions": {
-                    "width": 200,
-                    "height": 216
-                }
-            },
-
-
-            "lal": {
-                "strokepath": [{
-                    "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-                    "duration": 800
-                }],
-                "dimensions": {
-                    "width": 200,
-                    "height": 216
-                }
-            },
-            "lil": {
-                "strokepath": [{
-                    "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-                    "duration": 1000
-                }],
-                "dimensions": {
-                    "width": 200,
-                    "height": 216
-                }
-            },
-
-            "lel": {
-                "strokepath": [{
-                    "path": "M100.015,23.056C48.091,23.056,6,65.378,6,117.585s42.091,94.529,94.015,94.529s94.015-42.322,94.015-94.529  S151.937,23.056,100.015,23.056z M100.099,208.842c-50.125,0-90.761-40.858-90.761-91.257s40.634-91.257,90.761-91.257  s90.761,40.858,90.761,91.257S150.225,208.842,100.099,208.842z",
-                    "duration": 1200
-                }],
-                "dimensions": {
-                    "width": 200,
-                    "height": 216
-                }
-            }
-        };
-        $('.chart1').easyPieChart({
-            animate: {
-                duration: 2000,
-                enabled: true
-            },
-            easing: 'easeOutElastic',
-            barColor: '#2C3E50',
-            scaleColor: false,
-            lineWidth: 5,
-            size: 200,
-            lineCap: 'circle'
-        });
-        $('#lool').lazylinepainter({
-            "svgData": pathObj,
-            "strokeWidth": 2,
-            "strokeColor": "#8e44ad"
-        }).lazylinepainter('paint');
-        $('#lal').lazylinepainter({
-            "svgData": pathObj,
-            "strokeWidth": 2,
-            "strokeColor": "#c0392b"
-        }).lazylinepainter('paint');
-        $('#lil').lazylinepainter({
-            "svgData": pathObj,
-            "strokeWidth": 2,
-            "strokeColor": "#2980b9"
-        }).lazylinepainter('paint');
-        $('#lel').lazylinepainter({
-            "svgData": pathObj,
-            "strokeWidth": 2,
-            "strokeColor": "#27ae60"
-        }).lazylinepainter('paint');
-    }
     function rocketLaunch(){
         var tl = new TimelineMax();
         tl.to( $('.burst') , 2, { x:5 , y:-70});
@@ -411,9 +330,6 @@ var App = function(){
         initWindow:function(){
             animWindow();
         },
-        initSkills:function(){
-            paintLazy();
-        },
         initLaunch:function(){
             rocketLaunch();
         },
@@ -439,7 +355,6 @@ switch(pathname) {
         App.initTictoc();
         App.initTyped();
         App.initClock();
-
         App.initHandle();
         App.initCursor();
         // App.initLaunch();
@@ -537,7 +452,7 @@ window.addEventListener('load', function () {
         // // chargementTermine();
         App.initLight();
         var scene = document.getElementById('vivacity');
-        // console.log('scene');
+
         var parallaxInstance = new Parallax(scene, {
         });
     });

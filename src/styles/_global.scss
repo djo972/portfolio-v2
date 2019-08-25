@@ -14,7 +14,7 @@ html{
     width: 100%;
     background-color: #fff;
     min-height: 100%;
-    filter: brightness(4%);
+
     &#test{
       //background:url("../images/bg2.jpg") center no-repeat ;
       background-size: cover;
@@ -79,6 +79,11 @@ html{
     }
     button{
       text-decoration:none;
+    }
+
+
+    #home{
+      //filter: brightness(4%);
     }
     //********************** MENU **********************
     #dp {
@@ -661,11 +666,11 @@ html{
       left: inherit !important;
       right: 109px !important;
       z-index: 10;
+      position: absolute;
       .gsm {
         width: 95px;
         height: 100px;
         background: url(../images/gsm.png) no-repeat center;
-        position: absolute;
         &.vibre{
           background: url('../images/gsm-mom.png') no-repeat center;
           -webkit-animation-name: vibre-base;
@@ -727,55 +732,62 @@ html{
       top: 326px !important;
       z-index: 30;
     }
+    p{
+      width: 300px;
+      height: 60px;
+      filter: brightness(100%) !important;
+      color: #fff;
+      font-size: 1.7em;
+      font-family: Monoton;
+      position: absolute;
+      -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+      -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+      animation: neon1 1.5s ease-in-out infinite alternate;
+      &:hover {
+        color: #FF1177;
+        -webkit-animation: none;
+        -moz-animation: none;
+        animation: none;
+      }
+      @-webkit-keyframes neon1 {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+        }
+      }
+      @-moz-keyframes neon1 {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+        }
+      }
+      @keyframes neon1 {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+        }
+      }
+    }
     .glow {
       background-color: #222222;
       background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
       overflow: hidden;
-      padding: 15px;
+      width: 300px;
+      height: 60px;
       /* background-size: 100%; */
       position: absolute;
       left: 210px !important;
       top: 45px !important;
       z-index: 85;
       border-radius: 5px;
-      p{
-        color: #fff;
-        font-size: 1.7em;
-        font-family: Monoton;
-        -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-        -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-        animation: neon1 1.5s ease-in-out infinite alternate;
-        &:hover {
-          color: #FF1177;
-          -webkit-animation: none;
-          -moz-animation: none;
-          animation: none;
-        }
-        @-webkit-keyframes neon1 {
-          from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-          }
-          to {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-          }
-        }
-        @-moz-keyframes neon1 {
-          from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-          }
-          to {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-          }
-        }
-        @keyframes neon1 {
-          from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-          }
-          to {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-          }
-        }
-      }
+
+
     }
     .carpet{
       width: 550px;

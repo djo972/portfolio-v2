@@ -147,7 +147,9 @@ app.get('/', (req, res) => {
     // console.log(md);
     res.render('index.ejs', { root: __dirname + '/views' });      
 });
-
+app.get('/test', (req, res) => {
+    res.render('test.ejs', { root: __dirname + '/views' });
+});
 
 app.get('/insta',async (req, res) => {
     instagram.get('users/self/media/recent').then(data => {
