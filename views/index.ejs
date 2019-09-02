@@ -12,11 +12,18 @@
 <!--    <button id="dp">-->
 <!--        <img class="dp" src="images/menu1.png" alt=""/>-->
 <!--    </button>-->
+        <div class="timeleft">
 
+            <div class="glow">
+                <div class="content-glow"></div>
+                <p> &#60; HelloWorld ! &#62;</p>
+            </div>
+        </div>
         <div id="home">
             <a  href="/insta"><button style="top:10%;padding: 15px ; background-color: #b42c2c;display:block;position:absolute;z-index:100;">goooo </button></a><!--  INNER -->
 <!--            <a  href="/contact"><button style="top:20%;padding: 15px ; background-color:salmon;display:block;position:absolute;z-index:100;">gaaa </button></a>&lt;!&ndash;  INNER &ndash;&gt;-->
                 <div id="tableau">
+
                     <div id='scene' class="inner"  data-pointer-events="true">
 <!--                        <h1  class="animated bounceInLeft">-->
 <!--                                <span class="fetch">-->
@@ -40,15 +47,9 @@
                             </ul>
                         </div>
 <!--                        ***************************************LUMIERE***********************************************-->
-                        <div class="glow">
-                            <p> &#60; HelloWorld ! &#62;</p>
-                        </div>
+
                         <div class="light" ></div>
                         <!--                        ***************************************FENETRE***********************************************-->
-
-
-
-
                         <div class="bar" ></div>
                         <div class="rideau"></div>
                         <div class="winAnim">
@@ -174,7 +175,7 @@
                             <span class="s18"></span>
                             <span class="s19"></span>
                         </div>
-                        <div id="vivacity" style="z-index: 100;">
+                        <div id="vivacity" style="z-index: 100;" data-pointer-events="true">
 
 
 
@@ -231,7 +232,9 @@
 
 
                             </div>
-                            <div class="holiday" data-depth="0.3"></div>
+                            <div class="holiday" data-depth="0.3">
+                                <a  href="/insta"></a>
+                            </div>
 
 
                             <!--                        ***************************************ECRAN***********************************************-->
@@ -273,47 +276,6 @@
 </div>
 
 <%include partials/script.ejs%>
-<!--<script>-->
-<!--    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;-->
-<!--    function init() {-->
-<!--        canvas = document.getElementById("canvas");-->
-<!--        anim_container = document.getElementById("step");-->
-<!--        dom_overlay_container = document.getElementById("dom_overlay_container");-->
-<!--        var comp=AdobeAn.getComposition("933FC8AD5A2C47778BEEA94A12FA095D");-->
-<!--        var lib=comp.getLibrary();-->
-<!--        var loader = new createjs.LoadQueue(false);-->
-<!--        loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});-->
-<!--        loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});-->
-<!--        var lib=comp.getLibrary();-->
-<!--        loader.loadManifest(lib.properties.manifest);-->
-<!--    }-->
-<!--    function handleFileLoad(evt, comp) {-->
-<!--        var images=comp.getImages();-->
-<!--        if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }-->
-<!--    }-->
-<!--    function handleComplete(evt,comp) {-->
-<!--        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.-->
-<!--        var lib=comp.getLibrary();-->
-<!--        var ss=comp.getSpriteSheet();-->
-<!--        var queue = evt.target;-->
-<!--        var ssMetadata = lib.ssMetadata;-->
-<!--        for(i=0; i<ssMetadata.length; i++) {-->
-<!--            ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )-->
-<!--        }-->
-<!--        exportRoot = new lib.windowsAnimopti();-->
-<!--        stage = new lib.Stage(canvas);-->
-<!--        //Registers the "tick" event listener.-->
-<!--        fnStartAnimation = function() {-->
-<!--            stage.addChild(exportRoot);-->
-<!--            createjs.Ticker.setFPS(lib.properties.fps);-->
-<!--            createjs.Ticker.addEventListener("tick", stage);-->
-<!--        }-->
-<!--        //Code to support hidpi screens and responsive scaling.-->
-<!--        AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);-->
-<!--        AdobeAn.compositionLoaded(lib.properties.id);-->
-<!--        fnStartAnimation();-->
-<!--    }-->
-<!--</script>-->
 <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')

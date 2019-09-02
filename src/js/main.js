@@ -8,6 +8,9 @@ var App = function(){
     const inte = document.getElementById("inte");
     function giveMeTheLight(){
         setTimeout(function() {
+            setTimeout(function(){
+                $('.glow').addClass('appaer');
+            },2000);
             TweenMax.to(
                 ".shutter",
                 5,
@@ -16,7 +19,12 @@ var App = function(){
                 }
             );
             TweenMax.to(
-                "body",
+                ".content-glow",
+                0.3,
+                {autoAlpha:1}
+                );
+            TweenMax.to(
+                "#home,.content-glow",
                 4,
                 {
                     webkitFilter: "brightness(1)",
@@ -28,6 +36,7 @@ var App = function(){
                     force3D: false
                 }
             );
+
         }, 2000);
     }
 
@@ -217,9 +226,6 @@ var App = function(){
 
      }, 1000);
  }
-
-
-
     function animWindow(){
         let sub = document.querySelector(".subway");
         let jeep =  document.querySelector(".jeep");
@@ -279,7 +285,7 @@ var App = function(){
         tl.to( $('.me-gth') , 2, { x:5 , y:-70 ,ease: Power4.easeIn});
         tl.to($('.fire'),0.2,{autoAlpha:1,scale:1.1},'0');
         tl.to($('.bfire'),0.1,{autoAlpha:1,scale:1.1},"2" );
-        tl.to($('.glow'),2.5,{transformOrigin:"bottom right",rotation:-90,ease: Elastic.easeOut.config(1, 0.3)},"2" );
+        tl.to($('.glow'),2.5,{transformOrigin:"top right",rotation:-90,ease: Elastic.easeOut.config(1, 0.3)},"2" );
         tl.to($('.content-trash'),2,{transformOrigin:"bottom right",rotation:84,ease: Power4.easeIn,},"2" );
         tl.to($('.ball'),6.2,{rotation:720,y:-300,x:46 ,ease: Power4.easeInOut,},"3" );
         tl.to($('.work'),2,{rotation:50},"2" );
@@ -292,10 +298,10 @@ var App = function(){
         // .to( $('.fetch') ,2, {rotationX:-360, transformOrigin:"left top"}, "2" );s
     }
     function typed(){
-    // *typed SCRIPT*
-    //     console.log('typed');
-        $("#typed").typed({
-            strings: ["Lorem ipsum dolor  facilis in libero maiores molestiae molestias soluta suscipit unde vel velit veniam voluptatem."],
+        var typed6 = new Typed('#typed', {
+            strings: ['npm install MyWorld^1000\n ` <br> installing components...` ^3000\n `Welcome...`in my world '],
+            // cursorChar: '_',
+            typeSpeed: 50,
             startDelay:2000
         });
     }

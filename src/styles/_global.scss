@@ -14,7 +14,7 @@ html{
     width: 100%;
     background-color: #fff;
     min-height: 100%;
-    filter: brightness(4%);
+    //filter: brightness(4%);
     &#test{
       //background:url("../images/bg2.jpg") center no-repeat ;
       background-size: cover;
@@ -83,7 +83,7 @@ html{
 
 
     #home{
-
+      filter: brightness(4%);
     }
     //********************** MENU **********************
     #dp {
@@ -289,7 +289,7 @@ html{
       position: relative;
 
       height: 100%;
-      z-index: 1;
+      z-index: 100;
       //background: black;
     }
     .bar{
@@ -541,7 +541,7 @@ html{
     /*HORLOGE*/
     .clocki{
       position: absolute;
-      top: 266px !important;
+      top: 213px !important;
       right: inherit !important;
       left: 10px !important;
       z-index: 40;
@@ -729,65 +729,85 @@ html{
       background-size: 100%;
       position: absolute;
       left: 160px !important;
-      top: 326px !important;
+      top: 268px !important;
       z-index: 30;
     }
-    p{
-      width: 300px;
-      height: 60px;
-      filter: brightness(100%) !important;
-      color: #fff;
-      font-size: 1.7em;
-      font-family: Monoton;
+    .timeleft{
+      width: 1024px;
       position: absolute;
-      -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-      -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-      animation: neon1 1.5s ease-in-out infinite alternate;
-      &:hover {
-        color: #FF1177;
-        -webkit-animation: none;
-        -moz-animation: none;
-        animation: none;
-      }
-      @-webkit-keyframes neon1 {
-        from {
-          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-        }
-        to {
-          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-        }
-      }
-      @-moz-keyframes neon1 {
-        from {
-          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-        }
-        to {
-          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-        }
-      }
-      @keyframes neon1 {
-        from {
-          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-        }
-        to {
-          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-        }
-      }
+      margin-left: auto;
+      margin-right: auto;
+      left: 0 !important;
+      right: 0 !important;
     }
+
     .glow {
-      background-color: #222222;
-      background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
-      overflow: hidden;
-      width: 300px;
-      height: 60px;
-      /* background-size: 100%; */
       position: absolute;
-      left: 210px !important;
+      left: 180px !important;
       top: 45px !important;
       z-index: 85;
       border-radius: 5px;
+      //opacity: 0;
+      &.appaer{
+        overflow: hidden !important;
+      }
+      .content-glow {
+        width: 275px;
+        height: 60px;
+        background-color: #222222;
+        background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0/15px 15px;
+        opacity: 0;
+        filter: brightness(4%);
+        border-radius: 5px;
 
-
+      }
+      &.appaer{
+        opacity: 1;
+      }
+      p{
+        color: #fff;
+        font-size: 1.7em;
+        font-family: Monoton;
+        -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+        animation: neon1 1.5s ease-in-out infinite alternate;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0 !important;
+        right: 0 !important;
+        top:17px;
+        &:hover {
+          color: #FF1177;
+          -webkit-animation: none;
+          -moz-animation: none;
+          animation: none;
+        }
+        @-webkit-keyframes neon1 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+        }
+        @-moz-keyframes neon1 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+        }
+        @keyframes neon1 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+        }
+      }
     }
     .carpet{
       width: 550px;
@@ -1103,8 +1123,8 @@ html{
       height: 30px;
       cursor: pointer;
       position: absolute;
-      top: 450px !important;
-      left: 350px !important;
+      top: 315px !important;
+      left: 455px !important;
       right: inherit !important;
     }
   .bball{
@@ -1231,6 +1251,11 @@ html{
       right: 0 !important;
       top: inherit !important;
       z-index: 30;
+        & > a {
+        position: absolute;
+        top: 0; right: 0;
+        bottom: 0; left: 0;
+      }
     }
     .prise  {
       background: url("../images/prise.png");
@@ -1245,7 +1270,7 @@ html{
       background: url(../images/new/etagere.png) no-repeat;
       background-size: 100%;
       background-position: bottom;
-      top: 104px !important;
+      top: 50px !important;
       bottom:inherit !important;
       left: -250px !important;
       right: inherit !important;
@@ -1318,6 +1343,7 @@ html{
     .ecrit{
       padding-top: 10px;
       text-align: left;
+      display: block;
     }
     #typed{
       color:#fff;
@@ -2074,16 +2100,19 @@ html{
 
 
     /*CURSEUR*/
-    .whoim #typed-cursor{
+ .typed-cursor{
       opacity: 1;
       font-weight: 700;
-      color:#fff;
+      color:#fff !important;
       font-size:20px;
       -webkit-animation: blink 0.7s infinite;
       -moz-animation: blink 0.7s infinite;
       -ms-animation: blink 0.7s infinite;
       -o-animation: blink 0.7s infinite;
       animation: blink 0.7s infinite;
+      .typed-cursor--blink{
+        color: white !important;
+      }
     }
     /*@-keyframes blink{*/
     /*0% { opacity:1; }*/
