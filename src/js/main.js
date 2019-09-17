@@ -10,7 +10,7 @@ var App = function(){
         setTimeout(function() {
             setTimeout(function(){
                 $('.glow').addClass('appaer');
-            },2000);
+            },4000);
             TweenMax.to(
                 ".shutter",
                 5,
@@ -31,13 +31,12 @@ var App = function(){
                     filter: "brightness(1)",
                     ease: Power0.easeNone,
                     onComplete:function(){
-                        App.initWindow();
+                        // App.initWindow();
                     },
                     force3D: false
                 }
             );
-
-        }, 2000);
+        }, 4000);
     }
 
 
@@ -299,7 +298,7 @@ var App = function(){
     }
     function typed(){
         var typed6 = new Typed('#typed', {
-            strings: ['npm install MyWorld^1000\n ` <br> installing components...` ^3000\n `Welcome...`in my world '],
+            strings: ['npm install MyWorld^1000\n ` <br> installing components...` ^3000\n `hello...`i\'m djo <br> welcome in my world. <br> Stay inspired, stay curious <3 . '],
             // cursorChar: '_',
             typeSpeed: 50,
             startDelay:2000
@@ -459,8 +458,8 @@ window.addEventListener('load', function () {
         App.initLight();
         var scene = document.getElementById('vivacity');
 
-        var parallaxInstance = new Parallax(scene, {
-        });
+        // var parallaxInstance = new Parallax(scene, {
+        // });
     });
 
 
