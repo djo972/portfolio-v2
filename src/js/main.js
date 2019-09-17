@@ -31,7 +31,7 @@ var App = function(){
                     filter: "brightness(1)",
                     ease: Power0.easeNone,
                     onComplete:function(){
-                        // App.initWindow();
+                        App.initWindow();
                     },
                     force3D: false
                 }
