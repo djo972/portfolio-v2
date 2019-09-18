@@ -1,4 +1,7 @@
 
+// import { cube } from '/component/test.js';
+import { cube } from './component/test.js';
+import { exportChat } from './component/chat.js';
 
 
 var App = function(){
@@ -38,7 +41,7 @@ var App = function(){
             );
         }, 4000);
     }
-
+    function enterChat(){}
 
     function newCursor(){
         $(document)
@@ -486,12 +489,6 @@ function RespondClick() {
         "Click Event" + "<br>";
 }
 
-
-
-function one() {
-    console.log("hai");
-}
-
 Array.prototype.forEach.call(
     document.querySelectorAll('[id^=dealsButton_]'), function(e) {
         e.addEventListener('click', one);
@@ -519,6 +516,8 @@ function test(){
             transformOrigin:"0% 100%"
         });
         barba.init({
+            debug:true,
+            cacheIgnore: true,
             transitions: [{
                     // sync:false, // default
                     // You can run only 1 transitions at the same time.
@@ -557,7 +556,7 @@ function test(){
                     // This returns a promise, we do not care about "context/arrow function"
                     enter({current, next, trigger}) {
                         containerInAnim(next.container);
-
+                        exportChat();
                     },
 
 
@@ -613,18 +612,6 @@ function test(){
                 // This returns a promise, we do not care about "context/arrow function"
                 enter({current, next, trigger}) {
                     containerInAnim(next.container);
-                    $(container).find('script').each(function (i, script) {
-                        var $script = $(script);
-                        $.ajax({
-                            url: $script.attr('src'),
-                            cache: true,
-                            dataType: 'script',
-                            success: function () {
-                                $script.trigger('load');
-                                console.log('load');
-                            }
-                        });
-                    });
                     App.initWindow();
                     App.initTyped();
                     App.initTictoc();

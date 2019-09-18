@@ -8,7 +8,8 @@
 <header>
     <div class="transition__wipe"></div>
 </header>
-    <div data-barba="container" data-barba-namespace="home" id="container">
+    <main data-barba="container" data-barba-namespace="home" id="container">
+
 <!--    <button id="dp">-->
 <!--        <img class="dp" src="images/menu1.png" alt=""/>-->
 <!--    </button>-->
@@ -255,19 +256,20 @@
 <!--                <p>© 2014 - pied Giovanny- code & design par moi.</p>-->
 <!--            </div>-->
 <!--        </div>-->
-    </div>
-<!---CURSORS--->
-<div class="cursor">
-    <div class='your-cursor4'></div>
-    <div class='your-cursor4'></div>
-    <div class='your-cursor4'></div>
-</div>
+        <!---CURSORS--->
+        <div class="cursor">
+            <div class='your-cursor4'></div>
+            <div class='your-cursor4'></div>
+            <div class='your-cursor4'></div>
+        </div>
 
-<%include partials/script.ejs%>
-<script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <%include partials/script.ejs%>
+        <script>
+            window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+            ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </main>
+
 </body>
 </html>
