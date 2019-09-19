@@ -31,15 +31,16 @@ function exportChat() {
         /**
          * Toggles the display of the chat window.
          */
-        ToggleChatWindow: function() {
-            chatWindow.toggleClass('opened');
-            chatHeader
-                .find('.title')
-                .text(
-                    chatWindow.hasClass('opened')
-                        ? 'Minimize Chat Window'
-                        : 'Chat with Support'
-                );
+        ToggleChatWindow : function() {
+            console.log('open');
+            // chatWindow.toggleClass('opened');
+            // chatHeader
+            //     .find('.title')
+            //     .text(
+            //         chatWindow.hasClass('opened')
+            //             ? 'Minimize Chat Window'
+            //             : 'Chat with Support'
+            //     );
         },
 
         /**
@@ -193,7 +194,8 @@ function exportChat() {
     // ----------------------------------------------------
 
     chatPage.ready(helpers.ShowAppropriateChatDisplay);
-    chatHeader.on('click', helpers.ToggleChatWindow);
+    // chatHeader.on('click', helpers.ToggleChatWindow);
+
     chatBody.find('#loginScreenForm').on('submit', helpers.LogIntoChatSession);
     chatBody.find('#messageSupport').on('submit', helpers.SendMessageToSupport);
 

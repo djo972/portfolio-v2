@@ -370,6 +370,9 @@ switch(pathname) {
     case "/game" :
         console.log("game");
         break;
+    case "/contact":
+        exportChat();
+        break;
 }
 
 window.addEventListener('load', function () {

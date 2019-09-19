@@ -137,10 +137,11 @@ body {
 }
 
 .chatbubble {
-  position: fixed;
-  bottom: 0;
-  right: 30px;
-  transform: translateY(300px);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #736598;
   transition: transform .3s ease-in-out;
 }
 .chatbubble.opened {
@@ -148,18 +149,15 @@ body {
 }
 .chatbubble .unexpanded {
   display: block;
-  background-color: #e23e3e;
   padding: 10px 15px 10px;
+  height: 50px;
   position: relative;
-  cursor: pointer;
-  width: 350px;
-  border-radius: 10px 10px 0 0;
 }
 .chatbubble .expanded {
-  height: 300px;
-  width: 350px;
-  background-color: #fff;
+border-radius: 25px;
+  background-color: #f8f8f8;
   text-align: left;
+  height: 100%;
   padding: 10px;
   color: #333;
   text-shadow: none;
@@ -182,10 +180,12 @@ body {
   width: 85%;
   float: left;
   padding: 10px;
-  border-radius: 5px 5px 5px 0;
+  border-radius: 20px 20px 20px 0;
   font-size: 14px;
-  background: #c9f1e6;
+  background: #947cb0;
   margin-bottom: 10px;
+  color:white;
+  word-break:break-word;
 }
 .chatbubble .messages li .sender {
   font-weight: 600;
@@ -194,8 +194,21 @@ body {
   float: right;
   text-align: right;
   color: #fff;
-  background-color: #e33d3d;
-  border-radius: 5px 5px 0 5px;
+  background-color: #d64541;
+  word-break:break-word;
+  border-radius: 20px 20px 0 20px;
+}
+:focus {
+  outline: 0;
+}
+#messageSupport{
+  display:flex;
+  flex-direction:row;
+  border:1px solid rgb(206, 212, 218);;
+  background: white;
+  padding:7px;
+  border-radius: 25px;
+  width: 100%;
 }
 .chatbubble .chats .input {
   position: absolute;
@@ -203,17 +216,27 @@ body {
   padding: 10px;
   left: 0;
   width: 100%;
-  background: #f0f0f0;
   display: none;
+  background-color: #f8f8f8;
+}
+*:focus {
+  outline: none  !important;
 }
 .chatbubble .chats .input .form-group {
   width: 80%;
 }
 .chatbubble .chats .input input {
-  width: 100%;
+  flex-grow:2;
+  border: none;
+  &:focus{
+     outline: 0;
+    box-shadow: none;
+  }
 }
 .chatbubble .chats .input button {
   width: 20%;
+  background: #736598;
+  border: none;
 }
 
 .chatbubble .chats {
