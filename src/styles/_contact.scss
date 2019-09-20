@@ -1,0 +1,13 @@
+#contact-content{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  section{
+      &:first-of-type{
+
+      }
+    &:last-of-type{
+
+      background: red;
+    }
+  }
+}
