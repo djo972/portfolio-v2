@@ -1,13 +1,31 @@
 #contact-content{
+  height: 100%;
   display: grid;
+  grid-template-areas: "left right"
+                                          "footer footer" ;
   grid-template-columns: 40% 60%;
+  grid-template-rows:95% 5%;
   section{
       &:first-of-type{
-
+          grid-area: left;
       }
     &:last-of-type{
-
+      grid-area: right;
       background: red;
+    }
+  }
+  footer{
+    background-color:#31353a;
+    background-image:-webkit-linear-gradient(top, #31353a, #2f3337);
+    background-image:-moz-linear-gradient(top, #31353a, #2f3337);
+    background-image:linear-gradient(top, #31353a, #2f3337);
+    grid-area: footer;
+    p{
+      font-family: 'jochamregular';
+      color:#fff;
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
     }
   }
 }
