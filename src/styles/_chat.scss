@@ -21,7 +21,6 @@ body {
 }
 body {
   color: #fff;
-  text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
@@ -137,11 +136,9 @@ body {
 }
 
 .chatbubble {
-  position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: #736598;
   transition: transform .3s ease-in-out;
 }
 .chatbubble.opened {
@@ -150,14 +147,14 @@ body {
 .chatbubble .unexpanded {
   display: block;
   padding: 10px 15px 10px;
-  height: 50px;
+  height: 10%;
   position: relative;
 }
 .chatbubble .expanded {
 border-radius: 25px;
   background-color: #f8f8f8;
   text-align: left;
-  height: 100%;
+  height: 90%;
   padding: 10px;
   color: #333;
   text-shadow: none;
@@ -173,7 +170,7 @@ border-radius: 25px;
 .chatbubble .messages {
   display: none;
   list-style: none;
-  margin: 0 0 50px;
+  margin: 0 0 10px;
   padding: 0;
 }
 .chatbubble .messages li {
@@ -211,7 +208,6 @@ border-radius: 25px;
   width: 100%;
 }
 .chatbubble .chats .input {
-  position: absolute;
   bottom: 0;
   padding: 10px;
   left: 0;

@@ -1,6 +1,5 @@
 
 // import { cube } from '/component/test.js';
-import { cube } from './component/test.js';
 import { exportChat } from './component/chat.js';
 
 
@@ -9,7 +8,7 @@ var App = function(){
     var canvas, stage, exportRoot;
     // const x = document.getElementById("clickIt");
     const inte = document.getElementById("inte");
-    function giveMeTheLight(){
+    function giveMeTheLight(){                           
         setTimeout(function() {
             setTimeout(function(){
                 $('.glow').addClass('appaer');
