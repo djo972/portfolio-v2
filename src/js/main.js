@@ -462,9 +462,8 @@ window.addEventListener('load', function () {
         // // chargementTermine();
         App.initLight();
         var scene = document.getElementById('vivacity');
-
-        // var parallaxInstance = new Parallax(scene, {
-        // });
+        var parallaxInstance = new Parallax(scene, {
+        });
     });
 
 
@@ -559,6 +558,9 @@ function test(){
                     enter({current, next, trigger}) {
                         containerInAnim(next.container);
                         exportChat();
+                        // twttr.widgets.load(
+                        //     document.getElementById("timeline")
+                        // );
                     },
 
 
