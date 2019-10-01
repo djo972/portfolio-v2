@@ -269,6 +269,14 @@ module.exports = function(grunt) {
                     livereload: true
                 }
             },
+            // nodemon: {
+            //     files:  [ 'app.js' ],
+            //     tasks:  [ 'nodemon:dev' ],
+            //     options: {
+            //         spawn: false,
+            //         livereload: true
+            //     }
+            // },
             images: {
                 files: 'src/images/**',
                 tasks: ['copy:images'],
@@ -329,10 +337,12 @@ module.exports = function(grunt) {
     // dev
     grunt.registerTask("dev",["sass:dev","concat:dist"]);
     // Start web server
-    // grunt.registerTask('serve', ['clean','connect:all','notify:server','prebuild','watch']);,
+
+
     grunt.registerTask('serve', ['clean','express:dev','notify:server','prebuild','copy:component','watch']);
+    // grunt.registerTask('serve', ['clean','notify:server','prebuild','copy:component','nodemon:dev','watch']);
     // grunt.registerTask('serve', ['clean','notify:server','prebuild','nodemon:dev','watch']);
-    // grunt.registerTask('serve', ['clean','nodemon:dev','notify:server','prebuild','watch']);
+
 
     require('load-grunt-tasks')(grunt);
     // Unit Test

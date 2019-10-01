@@ -134,13 +134,27 @@ app.get('/admin', (req, res) => {
     res.render('admin.ejs', { root: __dirname + '/views' });
 });
 app.get('/contact', (req, res) => {
-    instagram.get('tags/search', { q: 'paris' })
-        .then(data => {
-        console.log(data);
-    });
+    instagram.get('users/self/media/recent').then(data => {
+        let instagram = data;
+        let insta = instagram.data;
+        // console.log(instagram);
+        // let img1 = insta[1].images.standard_resolution.url;
+        //
+        // console.log(insta[1].images.standard_resolution.url);
+        // console.log(insta[1].images);
 
 
-    res.render('contact.ejs', { root: __dirname + '/views' });
+        res.render('contact.ejs', {
+            root: __dirname + '/views' ,
+            insta : instagram.data
+        });
+    })
+        .catch(err => {
+            // An error occured
+            console.log(err);
+        });
+
+    // res.render('contact.ejs', { root: __dirname + '/views' });
 });
 app.get('/', (req, res) => {
     // let  md = new MobileDetect(req.headers['user-agent']);
@@ -150,16 +164,12 @@ app.get('/', (req, res) => {
 app.get('/test', (req, res) => {
     res.render('test.ejs', { root: __dirname + '/views' });
 });
-
 app.get('/insta',async (req, res) => {
     instagram.get('users/self/media/recent').then(data => {
         let instagram = data;
         let insta = instagram.data;
-        console.log(instagram);
-        // let img1 = insta[1].images.standard_resolution.url;
-        //
-        // console.log(insta[1].images.standard_resolution.url);
-        // console.log(insta[1].images);
+        // console.log(instagram);
+
 
 
         res.render('insta.ejs', {

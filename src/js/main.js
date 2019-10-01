@@ -689,6 +689,7 @@ function test(){
 //         afterEnter() {}
 //     }]
 // });
+window.emojiPicker = new EmojiPicker({ assetsPath: 'images/', popupButtonClasses: 'fa fa-smile-o' }); window.emojiPicker.discover();
 $('body').on("click",function(){
     $(".folding").toggleClass('folded');
 });

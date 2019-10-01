@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <% include partials/head %>
+
 </head>
 <body id="res" data-barba="wrapper">
 <header>
@@ -16,39 +17,74 @@
                     Consequuntur delectus, dolorum ea earum enim eum illum maxime reprehenderit velit.
                     Commodi, quod.</p>
                 <a href="/">baack</a>
+
+                <a href="https://twitter.com/djo_972?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @djo_972</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
     </section>
     <section>
         <div class="phone-dt">
-            <div id="timeline">
-                <a href="https://twitter.com/djo_972?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @djo_972</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div class="phone-border-top"></div>
+            <div class="screen">
+                <div id="timeline-insta">
+                    <% for (var key in insta) { %>
+                            <div class="card-insta">
+                                <div class="insta-header">
+                                    <img   src="<%= insta[key].user.profile_picture%>"  alt="">
+                                    <div class="user">
+                                        <p><%=insta[key].user.username%></p>
+
+                                        <div class="location">
+                                            <%if (insta[key].location != null) { %>
+                                            <%=insta[key].location.name%>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="insta-content">
+                                    <img   src="<%= insta[key].images.standard_resolution.url%>"  alt="">
+                                </div>
+                                <div class="insta-footer">
+                                    <p> <%= insta[key].likes.count%>  ❤️</p>
+                                    <div class="tag">
+                                        <p><%=insta[key].user.username%> <span> <%=insta[key].caption.text%></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } %>
+                </div>
+                <div id="timeline" style="display: none">
+                    <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
             </div>
-            <div class="social-buttons">
-                <div   class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
+            <div class="phone-border-bottom">
+                <div class="social-buttons">
+                    <div   class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
                   <span class="social-button__inner">
                      <i class="fab fa-instagram"></i>
                   </span>
-                </div>
+                    </div>
 
-                <div   class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
+                    <div   class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
                   <span class="social-button__inner">
                      <i class="fab fa-twitter"></i>
                   </span>
-                </div>
-                <div href="#" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
+                    </div>
+                    <div href="#" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
                     <span class="social-button__inner">
                     <i class="fab fa-linkedin-in"></i>
                     </span>
-                </div>
-                <div href="" class="social-buttons__button social-button social-button--mail" aria-label="SnapChat">
+                    </div>
+                    <div href="" class="social-buttons__button social-button social-button--mail" aria-label="SnapChat">
                     <span class="social-button__inner">
                         <i class="far fa-envelope"></i>
                          </span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="phone-dt">
+            <div class="phone-border-top"></div>
             <div class="chatbubble">
                 <div class="unexpanded">
                     <div class="title">MESSAGE</div>
@@ -57,7 +93,7 @@
                     <div class="login-screen container">
                         <form id="loginScreenForm">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="fullname" value="djo" required>
+                                <input type="text"    class="form-control" id="fullname" value="djo" required>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control" id="email" value="tidjol972@gmail.com" required>
@@ -76,7 +112,7 @@
                         <div class="input">
                             <form class="form-inline" id="messageSupport">
                                 <div class="form-group">
-                                    <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
+                                    <input type="text" data-emojiable="true" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </form>
@@ -84,6 +120,7 @@
                     </div>
                 </div>
             </div>
+            <div class="phone-border-bottom"></div>
         </div>
     </section>
     <footer>
