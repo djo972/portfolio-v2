@@ -112,7 +112,7 @@ app.post('/session/load', (req, res, next) => {
                         creatorId: createdUser.id,
                         isPrivate: true,
                         name: createdUser.id,
-                        userIds: ['Chatkit-dashboard', createdUser.id],
+                        userIds: ['djo', createdUser.id],
                     })
                     .then(room => res.json(room))
                     .catch(err => {

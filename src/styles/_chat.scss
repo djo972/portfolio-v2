@@ -135,15 +135,12 @@ a:hover {
 }
 .chatbubble .unexpanded {
   display: block;
-  padding: 10px 15px 10px;
-  height: 10%;
   position: relative;
 }
 .chatbubble .expanded {
 border-radius: 25px;
-  background-color: #f8f8f8;
   text-align: left;
-  height: 90%;
+  height: 95%;
   padding: 10px;
   color: #333;
   text-shadow: none;
@@ -161,14 +158,22 @@ border-radius: 25px;
   list-style: none;
   margin: 0 0 10px;
   padding: 0;
+  height: 99%;
+  overflow: auto;
+  .sender{
+    margin-bottom: 5px;
+  }
 }
+
 .chatbubble .messages li {
   width: 85%;
   float: left;
   padding: 10px;
   border-radius: 20px 20px 20px 0;
   font-size: 14px;
-  background: #947cb0;
+  background-image: -moz-linear-gradient( -91deg, rgb(217,7,70) 0%, rgb(226,35,58) 56%, rgb(234,62,45) 100%);
+  background-image: -webkit-linear-gradient( -91deg, rgb(217,7,70) 0%, rgb(226,35,58) 56%, rgb(234,62,45) 100%);
+  background-image: -ms-linear-gradient( -91deg, rgb(217,7,70) 0%, rgb(226,35,58) 56%, rgb(234,62,45) 100%);
   margin-bottom: 10px;
   color:white;
   word-break:break-word;
@@ -179,8 +184,10 @@ border-radius: 25px;
 .chatbubble .messages li.support {
   float: right;
   text-align: right;
-  color: #fff;
-  background-color: #d64541;
+  color: #292929;
+  background-image: none;
+  background-color: #f8f8f8 !important;
+  border:1px solid rgb(206, 212, 218);;
   word-break:break-word;
   border-radius: 20px 20px 0 20px;
 }
@@ -198,29 +205,32 @@ border-radius: 25px;
 }
 .chatbubble .chats .input {
   bottom: 0;
-  padding: 10px;
   left: 0;
   width: 100%;
   display: none;
   background-color: #f8f8f8;
 }
-*:focus {
-  outline: none  !important;
+:focus {
+  outline: 0 !important;
+  outline-color: transparent !important;
+  outline-style:none !important;
+  box-shadow:none !important;
+  border-color:rgb(206, 212, 218) !important;
 }
 .chatbubble .chats .input .form-group {
-  width: 80%;
+  width: 85%;
 }
 .chatbubble .chats .input input {
   flex-grow:2;
   border: none;
-  &:focus{
-     outline: 0;
-    box-shadow: none;
-  }
+
 }
 .chatbubble .chats .input button {
-  width: 20%;
-  background: #736598;
+  width: 30px;
+  height: 30px;
+  float: right;
+  background: url("../images/new/send.png") no-repeat center;
+  background-size:100%;
   border: none;
 }
 
@@ -234,6 +244,7 @@ border-radius: 25px;
 .chatbubble .chats.active,
 .chatbubble .login-screen.active {
   display: block;
+  height: 90%;
 }
 
 /* Loader Credit: https://codepen.io/ashmind/pen/zqaqpB */

@@ -114,10 +114,11 @@ function exportChat() {
          * Append a message to the chat messages UI.
          */
         NewChatMessage: function(message) {
+            console.log('new');
             if (chat.messages[message.id] === undefined) {
                 const messageClass =
                     message.sender.id !== chat.userId ? 'support' : 'user';
-
+                    console.log(message);
                 chatBody.find('ul.messages').append(
                     `<li class="clearfix message ${messageClass}">
                         <div class="sender">${message.sender.name}</div>
@@ -136,7 +137,7 @@ function exportChat() {
          */
         SendMessageToSupport: function(evt) {
             evt.preventDefault();
-
+                console.log('send');
             const message = $('#newMessage')
                 .val()
                 .trim();

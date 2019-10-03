@@ -103,8 +103,16 @@
         }
 
         &:last-of-type{
+          grid-template-rows: 10% 90%;
           justify-self: left;
           align-self: end;
+          .phone-border-top{
+            border-bottom: 1px solid #f3f3f3;
+          }
+          p{
+            text-align: center;
+            line-height: 60px;
+          }
         }
       }
     }

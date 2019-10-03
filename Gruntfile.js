@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 expand:true,
                 cwd:'src/js/component',
                 src:['**/*'],
-                dest:'dist/js/component/'
+                dest:'dist/js/component'
             },
             fonts:{
                 expand:true,
@@ -282,8 +282,8 @@ module.exports = function(grunt) {
                 tasks: ['copy:images'],
             },
             scripts: {
-                files:  [ 'app.js','Grunfile.js','config.js', 'views/**/*.js', 'src/js/**'],
-                tasks: ['dev-js','replace:dev','notify:js']
+                files:  [ 'app.js','Grunfile.js','config.js', 'views/**/*.js', 'src/js/**','src/js/component/**'],
+                tasks: ['dev-js','copy:component','replace:dev','notify:js']
             },
             styles: {
                 files: '**/*.scss', // tous les fichiers Sass de n'importe quel dossier
@@ -339,7 +339,7 @@ module.exports = function(grunt) {
     // Start web server
 
 
-    grunt.registerTask('serve', ['clean','express:dev','notify:server','prebuild','copy:component','watch']);
+    grunt.registerTask('serve', ['clean','express:dev','notify:server','prebuild','watch']);
     // grunt.registerTask('serve', ['clean','notify:server','prebuild','copy:component','nodemon:dev','watch']);
     // grunt.registerTask('serve', ['clean','notify:server','prebuild','nodemon:dev','watch']);
 
