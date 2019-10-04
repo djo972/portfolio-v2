@@ -6,8 +6,10 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const uuidv4 = require('uuid/v4');
+const nodemailer  = require('nodemailer');
 const Chatkit = require('@pusher/chatkit-server');
 const MobileDetect = require('mobile-detect');
+const notifier = require('node-notifier');
 const Instagram = require('node-instagram').default;
 const PORT = process.env.PORT || 3000;
 const util = require('util');
@@ -57,13 +59,14 @@ app.post('/session/load', (req, res, next) => {
     // Attempt to create a new user with the email will serving as the ID of the user.
     // If there is no user matching the ID, we create one but if there is one we skip
     // creating and go straight into fetching the chat room for that user
-
+    console.log(req.body.name);
     let createdUser = null;
 
     chatkit
         .createUser({
             id: req.body.email,
             name: req.body.name,
+
         })
         .then(user => {
             createdUser = user;
@@ -182,7 +185,76 @@ app.get('/insta',async (req, res) => {
             console.log(err);
         });
 });
+app.post('/push', (req, res) => {
+    var  nodemailer  = require('nodemailer');
+    var  transporter = nodemailer.createTransport({
+        service:'gmail',
+        auth:{
+            user:'gio.dev972@gmail.com',
+            pass:'aanbnmhmjxmbuhbc'
+        }
+    });
+    var mailOptions = {
+        from:'gio.dev972@gmail.com',
+        to:'gio.dev972@gmail.com',
+        subject:'yo',
+        text:`hi bg`
+    };
+    transporter.sendMail(mailOptions,function(error,info){
+        if (error){
+            console.log(error);
+        }else{
+            console.log(`mail sent : ${info.response}`);
+        }
+    });
+});
+app.post('/cntact', (req, res) => {
+    const smtpTrans = nodemailer.createTransport({
+        service:'gmail',
+        auth:{
+            user:'gio.dev972@gmail.com',
+            pass:'aanbnmhmjxmbuhbc'
+            //  pass:'aanbnmhumjxmbuhbc'
+        }
+    });
 
+    const mailOpts = {
+        from: 'gio.dev972@gmail.com', // This is ignored by Gmail
+        to:"gio.dev972@gmail.com",
+        subject: 'Nouveau message du portfolio',
+        text: `${req.body.pseudo} (${req.body.mail}) says: ${req.body.msg}`,
+    };
+
+
+    // smtpTrans.sendMail(mailOpts, (error, info) => {
+    //     if (error){
+    //         console.log(error);
+    //         res.send(500);
+    //     }else{
+    //         console.log(`mailysent : ${info.response}`);
+    //         notifier.notify({
+    //             title: 'My notification',
+    //             message: `mailysent : ${info.response}`
+    //         });
+    //         done();
+    //     }
+    //     done();
+    // });
+
+
+    smtpTrans.sendMail(mailOpts, function(error, info){
+        if (error) {
+            res.send({
+                error
+            });
+            return console.log(error);
+        }
+        res.send({
+            info
+        });
+    });
+
+});
 // app.get('/insta',(req, res) => {
 //     instagram.get('users/self/media/recent').then(data => {
 //         let instagram = data;

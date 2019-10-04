@@ -693,4 +693,28 @@ window.emojiPicker = new EmojiPicker({ assetsPath: 'images/', popupButtonClasses
 $('body').on("click",function(){
     $(".folding").toggleClass('folded');
 });
+$(function(){
+    $('#select_link').click(function(e){
+        e.preventDefault();
+        console.log('select_link clicked');
 
+        var data = {};
+        data.pseudo = "djo972";
+        data.msg = "message";
+        data.mail = "djo972@gmail.com";
+
+        $.ajax({
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            url: 'http://localhost:5000/cntact',
+            success: function(info) {
+                console.log('success');
+                console.log(info);
+            },
+            error:function (error) {
+                console.log(error);
+            }
+        });
+    });
+});

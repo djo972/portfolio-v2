@@ -25,7 +25,7 @@
         <div class="phone-dt">
             <div class="phone-border-top"></div>
             <div class="screen">
-                <div id="timeline-insta">
+                <div id="timeline-insta"  style="display: none">
                     <% for (var key in insta) { %>
                             <div class="card-insta">
                                 <div class="insta-header">
@@ -55,6 +55,41 @@
                 </div>
                 <div id="timeline" style="display: none">
                     <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="contact">
+                    <form action="/cntact" id="contact-form" method="post" role="form">
+                        <fieldset>
+                            <label for="id">pseudo</label>
+                            <input
+                                    id="pseudo"
+                                    name="pseudo"
+                                    type="text"
+                                    placeholder="Your name"
+                                    value="djo972"
+                                    required>
+
+                            <label for="email">Mail</label>
+                            <input
+                                    id="mail"
+                                    name="mail"
+                                    type="text"
+                                    placeholder="Your email"
+                                    value="tidjol@gmail.com"
+                                    required>
+
+                            <label for="message">Message</label>
+                            <textarea
+                                    id="msg"
+                                    name="msg"
+                                    placeholder="Enter your message here"
+                                    rows="3"
+                                    value="terter"
+                                    required>
+                            </textarea>
+
+                            <button id="select_link"  type="submit">Submit</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
             <div class="phone-border-bottom">

@@ -1,6 +1,9 @@
 // (function() {
 //   'use strict';
 function exportChat() {
+    function sendNotif() {
+
+    }
     const PUSHER_INSTANCE_LOCATOR = 'v1:us1:c0266633-91fb-4f9a-8567-34afe5f59db9';
 
     // ----------------------------------------------------
@@ -138,6 +141,18 @@ function exportChat() {
         SendMessageToSupport: function(evt) {
             evt.preventDefault();
                 console.log('send');
+
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:5000/push',
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(xhr, status, err) {
+                    console.log(xhr.responseText);
+                }
+            });
             const message = $('#newMessage')
                 .val()
                 .trim();
