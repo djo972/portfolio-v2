@@ -24,7 +24,7 @@
     <section>
         <div class="phone-dt">
             <div class="phone-border-top"></div>
-            <div class="screen">
+            <div class="screen" style="display: none">
                 <div id="timeline-insta"  style="display: none">
                     <% for (var key in insta) { %>
                             <div class="card-insta">
@@ -57,60 +57,165 @@
                     <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div class="contact">
-                    <form action="/cntact" id="contact-form" method="post" role="form">
+                    <div class="load gmail" style="display: none">
+                        <% include partials/loading %>
+                    </div>
+                    <form  style="display: block" action="/cntact" id="contact-form" method="post" role="form">
+                        <div class="toolbar-form">
+                                <p>Nouveau message</p>
+                            <button><i class="material-icons">attachment</i></button>
+                            <button id="select_link"  type="submit"><i class="material-icons">send</i></button>
+
+                        </div>
                         <fieldset>
-                            <label for="id">pseudo</label>
-                            <input
-                                    id="pseudo"
-                                    name="pseudo"
-                                    type="text"
-                                    placeholder="Your name"
-                                    value="djo972"
-                                    required>
+                            <div class="form-group">
+                                <label for="email">De</label>
+                                <input
+                                        id="mail"
+                                        name="mail"
+                                        type="text"
+                                        placeholder="Your email"
+                                        value="tidjol@gmail.com"
+                                        required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">À</label>
+                                <input id="mail" name="mail" type="text" placeholder="Your email" value="tidjol@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Objet</label>
+                                <input type="text" value="Say hello ! :D">
+                            </div>
+                                <textarea id="msg" name="msg" placeholder="Rédigez votre message" rows="3"  required></textarea>
 
-                            <label for="email">Mail</label>
-                            <input
-                                    id="mail"
-                                    name="mail"
-                                    type="text"
-                                    placeholder="Your email"
-                                    value="tidjol@gmail.com"
-                                    required>
 
-                            <label for="message">Message</label>
-                            <textarea
-                                    id="msg"
-                                    name="msg"
-                                    placeholder="Enter your message here"
-                                    rows="3"
-                                    value="terter"
-                                    required>
-                            </textarea>
 
-                            <button id="select_link"  type="submit">Submit</button>
+
                         </fieldset>
                     </form>
                 </div>
             </div>
+            <div class="screen">
+
+                <!--
+                        //	skills
+                        ///////////////////////////////////-->
+                <div class="page__style skills">
+                    <div class="page__description">
+                        <div id="timeline" >
+                            <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="page__style about">
+                    <div class="page__description">
+                        <div class="contact">
+                            <div class="loadin gmail" >
+                                <% include partials/loading %>
+                            </div>
+                            <form style="display: none" action="/cntact" id="contact-form" method="post" role="form">
+                                <div class="toolbar-form">
+                                    <p>Nouveau message</p>
+                                    <button><i class="material-icons">attachment</i></button>
+                                    <button id="select_link"  type="submit"><i class="material-icons">send</i></button>
+
+                                </div>
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label for="email">De</label>
+                                        <input
+                                                id="mail"
+                                                name="mail"
+                                                type="text"
+                                                placeholder="Your email"
+                                                value="tidjol@gmail.com"
+                                                required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">À</label>
+                                        <input id="mail" name="mail" type="text" placeholder="Your email" value="tidjol@gmail.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Objet</label>
+                                        <input type="text" value="Say hello ! :D">
+                                    </div>
+                                    <textarea id="msg" name="msg" placeholder="Rédigez votre message" rows="3"  required></textarea>
+
+
+
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                        //	home
+                        ///////////////////////////////////-->
+                <div class="page__style home">
+                    <div class="page__description">
+                        <div id="home">
+
+                            <div class="box"></div>
+
+                            <h1>likendin</h1>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="page__style projects">
+                    <div class="page__description">
+                        <div id="timeline-insta" >
+                            <% for (var key in insta) { %>
+                                <div class="card-insta">
+                                    <div class="insta-header">
+                                        <img   src="<%= insta[key].user.profile_picture%>"  alt="">
+                                        <div class="user">
+                                            <p><%=insta[key].user.username%></p>
+
+                                            <div class="location">
+                                                <%if (insta[key].location != null) { %>
+                                                <%=insta[key].location.name%>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="insta-content">
+                                        <img   src="<%= insta[key].images.standard_resolution.url%>"  alt="">
+                                    </div>
+                                    <div class="insta-footer">
+                                        <p> <%= insta[key].likes.count%>  ❤️</p>
+                                        <div class="tag">
+                                            <p><%=insta[key].user.username%> <span> <%=insta[key].caption.text%></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="phone-border-bottom">
                 <div class="social-buttons">
-                    <div   class="social-buttons__button social-button social-button--instagram" aria-label="instagram">
+                    <div   class="social-buttons__button social-button social-button--instagram  projects_link" aria-label="instagram">
                   <span class="social-button__inner">
                      <i class="fab fa-instagram"></i>
                   </span>
                     </div>
 
-                    <div   class="social-buttons__button social-button social-button--twitter" aria-label="twitter">
+                    <div   class="social-buttons__button social-button social-button--twitter  skills_link" aria-label="twitter">
                   <span class="social-button__inner">
                      <i class="fab fa-twitter"></i>
                   </span>
                     </div>
-                    <div href="#" class="social-buttons__button social-button social-button--linkedin" aria-label="LinkedIn">
+                    <div href="#" class="social-buttons__button social-button social-button--linkedin  home_link" aria-label="LinkedIn">
                     <span class="social-button__inner">
                     <i class="fab fa-linkedin-in"></i>
                     </span>
                     </div>
-                    <div href="" class="social-buttons__button social-button social-button--mail" aria-label="SnapChat">
+                    <div href="" class="social-buttons__button social-button social-button--mail  actived about_link" aria-label="contact">
                     <span class="social-button__inner">
                         <i class="far fa-envelope"></i>
                          </span>
@@ -118,13 +223,12 @@
                 </div>
             </div>
         </div>
-        <div class="phone-dt">
+        <div class="phone-dt" styl>
             <div class="phone-border-top">
                <p>Message</p>
             </div>
             <div class="chatbubble">
                 <div class="unexpanded">
-
                 </div>
                 <div class="expanded chat-window">
                     <div class="login-screen container">
@@ -148,7 +252,7 @@
                         </ul>
                         <div class="input">
                             <form class="form-inline" id="messageSupport">
-                                <div class="form-group">
+                                <div class="form-group" style="position: relative">
                                     <input type="text" data-emojiable="true" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
                                 </div>
                                 <button type="submit" class="btn btn-primary"></button>

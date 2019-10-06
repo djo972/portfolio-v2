@@ -66,7 +66,6 @@ app.post('/session/load', (req, res, next) => {
         .createUser({
             id: req.body.email,
             name: req.body.name,
-
         })
         .then(user => {
             createdUser = user;
@@ -115,7 +114,18 @@ app.post('/session/load', (req, res, next) => {
                         creatorId: createdUser.id,
                         isPrivate: true,
                         name: createdUser.id,
+
+
+
+
+                        ////////////////////////////////////////////////////////////////////////////////////////
+
                         userIds: ['djo', createdUser.id],
+
+                        ////////////////////////////////////////////////////////////////////////////////////////
+
+
+
                     })
                     .then(room => res.json(room))
                     .catch(err => {
@@ -222,7 +232,7 @@ app.post('/cntact', (req, res) => {
         from: 'gio.dev972@gmail.com', // This is ignored by Gmail
         to:"gio.dev972@gmail.com",
         subject: 'Nouveau message du portfolio',
-        text: `${req.body.pseudo} (${req.body.mail}) says: ${req.body.msg}`,
+        text: `(${req.body.mail}) says: ${req.body.msg}`,
     };
 
 

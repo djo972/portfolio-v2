@@ -1,0 +1,106 @@
+<div class="page__style projects">
+    <div class="page__description">
+        <div id="projects">
+            <div id="timeline-insta"  style="display: none">
+                <% for (var key in insta) { %>
+                    <div class="card-insta">
+                        <div class="insta-header">
+                            <img   src="<%= insta[key].user.profile_picture%>"  alt="">
+                            <div class="user">
+                                <p><%=insta[key].user.username%></p>
+
+                                <div class="location">
+                                    <%if (insta[key].location != null) { %>
+                                    <%=insta[key].location.name%>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="insta-content">
+                            <img   src="<%= insta[key].images.standard_resolution.url%>"  alt="">
+                        </div>
+                        <div class="insta-footer">
+                            <p> <%= insta[key].likes.count%>  ❤️</p>
+                            <div class="tag">
+                                <p><%=insta[key].user.username%> <span> <%=insta[key].caption.text%></span></p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+		//	skills
+		///////////////////////////////////-->
+<div class="page__style skills">
+    <div class="page__description">
+        <div id="skills">
+            <div id="timeline" style="display: none">
+                <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page__style contact">
+    <div class="page__description">
+        <div id="contact">
+            <div class="contact">
+                <div class="load gmail" style="display: none">
+                    <% include partials/loading %>
+                </div>
+                <form  style="display: block" action="/cntact" id="contact-form" method="post" role="form">
+                    <div class="toolbar-form">
+                        <p>Nouveau message</p>
+                        <button><i class="material-icons">attachment</i></button>
+                        <button id="select_link"  type="submit"><i class="material-icons">send</i></button>
+
+                    </div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="email">De</label>
+                            <input
+                                    id="mail"
+                                    name="mail"
+                                    type="text"
+                                    placeholder="Your email"
+                                    value="tidjol@gmail.com"
+                                    required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">À</label>
+                            <input id="mail" name="mail" type="text" placeholder="Your email" value="tidjol@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Objet</label>
+                            <input type="text" value="Say hello ! :D">
+                        </div>
+                        <textarea id="msg" name="msg" placeholder="Rédigez votre message" rows="3"  required></textarea>
+
+
+
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+		//	home
+		///////////////////////////////////-->
+<div class="page__style home">
+    <div class="page__description">
+        <div id="home">
+
+            <div class="box"></div>
+
+            <h1>likendin</h1>
+
+        </div>
+    </div>
+</div>

@@ -23,6 +23,7 @@ function exportChat() {
 
     const chatPage = $(document);
     const chatWindow = $('.chatbubble');
+    const chatMessage = $('.messages');
     const chatHeader = chatWindow.find('.unexpanded');
     const chatBody = chatWindow.find('.chat-window');
 
@@ -50,6 +51,20 @@ function exportChat() {
          * Show the appropriate display screen. Login screen
          * or Chat screen.
          */
+
+        addMessageRobots:function(){
+
+            setTimeout(function(){
+                chatBody.find('ul.messages').append(
+                    `<li class="clearfix message deta support">
+                        <div class="sender">mr Robot</div>
+                        <div class="message">Hello ! Djo n'est pas en ligne mais une notification lui a été envoyé. Merci de patienter  </div>
+                    </li>`
+                );
+                }, 3000);
+
+        },
+
         ShowAppropriateChatDisplay: function() {
             chat.room && chat.room.id
                 ? helpers.ShowChatRoomDisplay()
@@ -83,7 +98,7 @@ function exportChat() {
                 .connect()
                 .then(currentUser => {
                     chat.currentUser = currentUser;
-
+                    console.log(chat.currentUser);
                     currentUser
                         .fetchMessages({
                             roomId: chat.room.id,
@@ -93,6 +108,16 @@ function exportChat() {
                             messages => {
                                 chatBody.find('.loader-wrapper').hide();
                                 chatBody.find('.input, .messages').show();
+                                console.log(messages.length);
+
+                                let isMessage = messages.length;
+
+                                isMessage === 0 ? (
+                                    helpers.addMessageRobots()
+                                ) : (
+                                   console.log('car')
+                                );
+
 
                                 messages.forEach(message => helpers.NewChatMessage(message));
 
@@ -117,21 +142,32 @@ function exportChat() {
          * Append a message to the chat messages UI.
          */
         NewChatMessage: function(message) {
-            console.log('new');
+
             if (chat.messages[message.id] === undefined) {
+                // console.log('1');
+
                 const messageClass =
                     message.sender.id !== chat.userId ? 'support' : 'user';
-                    console.log(message);
+                    // console.log(message);
                 chatBody.find('ul.messages').append(
                     `<li class="clearfix message ${messageClass}">
                         <div class="sender">${message.sender.name}</div>
                         <div class="message">${message.text}</div>
                     </li>`
                 );
-
                 chat.messages[message.id] = message;
+                chatMessage.scrollTop(chatMessage[0].scrollHeight);
+                // chatMessage[0].scrollIntoView(false);
+                // setTimeout(function(){
+                //     chatBody.scrollTop(chatBody[0].scrollHeight);
+                //     chatMessage.scrollTop(chatMessage[0].scrollHeight) ;
+                //     }, 3000);
 
-                chatBody.scrollTop(chatBody[0].scrollHeight);
+
+
+
+            }else{
+                console.log('2');
             }
         },
 
@@ -141,8 +177,6 @@ function exportChat() {
         SendMessageToSupport: function(evt) {
             evt.preventDefault();
                 console.log('send');
-
-
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:5000/push',
@@ -168,6 +202,8 @@ function exportChat() {
             );
 
             $('#newMessage').val('');
+            $('.emoji-wysiwyg-editor').val('');
+            $('.emoji-wysiwyg-editor').text('');
         },
 
         /**
@@ -181,6 +217,12 @@ function exportChat() {
                 .val()
                 .trim()
                 .toLowerCase();
+
+            //
+            // const name = 'djo972';
+            // const email = 'tels@gmail.com'
+            //     .toLowerCase();
+
 
             // Disable the form
             chatBody
@@ -200,7 +242,6 @@ function exportChat() {
             } else {
                 alert('Enter a valid name and email.');
             }
-
             evt.preventDefault();
         },
     };

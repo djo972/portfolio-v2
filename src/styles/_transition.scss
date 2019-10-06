@@ -23,9 +23,7 @@
   overflow: auto;
 }
 .page__style .page__description {
-  color: #fff;
-  font-weight: 300;
-  text-align: center;
+  height: 100%;
 }
 //.page__style .btn_nav {
 //  background: #002a32;
@@ -66,13 +64,13 @@
 }
 /*  Projects
 -----------------------------------*/
-.projects {
-  background: #bd5de9;
+.projects ,.instagram{
+  background: #e4405f;
 }
 /*  Skills
 -----------------------------------*/
-.skills {
-  background: #5de974;
+.skills,.twitter {
+  background: #55acee;
 }
 /*  About
 -----------------------------------*/

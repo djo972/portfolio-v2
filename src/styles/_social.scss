@@ -80,6 +80,7 @@ $social-button-colors: (
   }
 
   &:focus,
+  &.actived,
   &:hover {
     color: $social-button-active-color;
 

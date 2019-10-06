@@ -461,9 +461,9 @@ window.addEventListener('load', function () {
         // La page est integralement chargee
         // // chargementTermine();
         App.initLight();
-        var scene = document.getElementById('vivacity');
-        var parallaxInstance = new Parallax(scene, {
-        });
+        // var scene = document.getElementById('vivacity');
+        // var parallaxInstance = new Parallax(scene, {
+        // });
     });
 
 
@@ -475,25 +475,25 @@ const y = document.getElementById("hoverPara");
 // y.addEventListener("mouseover", RespondMouseOver);
 // y.addEventListener("mouseout", RespondMouseOut);
 
-function RespondMouseOver() {
-    document.getElementById("effect").innerHTML +=
-        "MouseOver Event" + "<br>";
-}
-
-function RespondMouseOut() {
-    document.getElementById("effect").innerHTML +=
-        "MouseOut Event" + "<br>";
-}
-
-function RespondClick() {
-    document.getElementById("effect").innerHTML +=
-        "Click Event" + "<br>";
-}
-
-Array.prototype.forEach.call(
-    document.querySelectorAll('[id^=dealsButton_]'), function(e) {
-        e.addEventListener('click', one);
-    });
+// function RespondMouseOver() {
+//     document.getElementById("effect").innerHTML +=
+//         "MouseOver Event" + "<br>";
+// }
+//
+// function RespondMouseOut() {
+//     document.getElementById("effect").innerHTML +=
+//         "MouseOut Event" + "<br>";
+// }
+//
+// function RespondClick() {
+//     document.getElementById("effect").innerHTML +=
+//         "Click Event" + "<br>";
+// }
+//
+// Array.prototype.forEach.call(
+//     document.querySelectorAll('[id^=dealsButton_]'), function(e) {
+//         e.addEventListener('click', one);
+//     });
 // **************************************************************************
 
 // *****************Transition PAGE********************
@@ -689,7 +689,18 @@ function test(){
 //         afterEnter() {}
 //     }]
 // });
-window.emojiPicker = new EmojiPicker({ assetsPath: 'images/', popupButtonClasses: 'fa fa-smile-o' }); window.emojiPicker.discover();
+
+
+
+
+    window.emojiPicker = new EmojiPicker({
+    assetsPath: 'images/',
+    popupButtonClasses: 'fa fa-smile-beam' });
+    window.emojiPicker.discover();
+
+
+
+
 $('body').on("click",function(){
     $(".folding").toggleClass('folded');
 });
@@ -699,7 +710,6 @@ $(function(){
         console.log('select_link clicked');
 
         var data = {};
-        data.pseudo = "djo972";
         data.msg = "message";
         data.mail = "djo972@gmail.com";
 
@@ -717,4 +727,51 @@ $(function(){
             }
         });
     });
+});
+
+$('.btn_nav,.social-buttons__button').click(function() {
+    // animate content
+    $('.page__style').addClass('animate_content');
+    $('.page__description').fadeOut(100).delay(2800).fadeIn();
+
+    setTimeout(function() {
+        $('.page__style').removeClass('animate_content');
+    }, 3200);
+
+    //remove fadeIn class after 1500ms
+    setTimeout(function() {
+        $('.page__style').removeClass('fadeIn');
+    }, 1500);
+
+});
+
+// on click show page after 1500ms
+$('.home_link').click(function() {
+    setTimeout(function() {
+        $('.home').addClass('fadeIn');
+    }, 1500);
+});
+
+$('.projects_link').click(function() {
+    setTimeout(function() {
+        $('.projects').addClass('fadeIn');
+    }, 1500);
+});
+
+$('.skills_link').click(function() {
+    setTimeout(function() {
+        $('.skills').addClass('fadeIn');
+    }, 1500);
+});
+
+$('.about_link').click(function() {
+    setTimeout(function() {
+        $('.about').addClass('fadeIn');
+    }, 1500);
+});
+
+$('.contact_link').click(function() {
+    setTimeout(function() {
+        $('.contact').addClass('fadeIn');
+    }, 1500);
 });
