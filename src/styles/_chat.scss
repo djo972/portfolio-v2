@@ -125,6 +125,12 @@ a:hover {
   }
 }
 #loginScreenForm{
+  color: white;
+  font-weight: 700;
+  button{
+    background-color: #324192;
+    border: none;
+  }
   h2{
     text-align: center;
     font-weight: 700;
@@ -138,9 +144,11 @@ a:hover {
 
     }
     input{
+      color: white;
       padding-left:0 ;
       border: none;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid white;
+      background: transparent;
       border-radius: 0;
     }
   }
@@ -160,7 +168,7 @@ a:hover {
   position: relative;
 }
 .chatbubble .expanded {
-  background: $messenger-color;
+  background-image: -webkit-linear-gradient(-91deg, #d90746 0%, #e2233a 56%, #ea3e2d 100%);;
 
   text-align: left;
   height: 95%;
