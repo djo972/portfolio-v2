@@ -18,7 +18,7 @@
                     Commodi, quod.</p>
                 <a href="/">baack</a>
 
-                <a href="https://twitter.com/djo_972?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @djo_972</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
             </div>
     </section>
     <section>
@@ -54,6 +54,9 @@
                     <% } %>
                 </div>
                 <div id="timeline" style="display: none">
+                    <div class="wid">
+                        <a href="https://twitter.com/djo_972?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-dnt="true" data-show-count="false">Follow @djo_972</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
                     <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div class="contact">
@@ -103,6 +106,10 @@
                 <div class="page__style skills">
                     <div class="page__description">
                         <div id="timeline" >
+                            <div class="wid">
+                                <a href="https://twitter.com/djo_972?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @djo_972</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+
                             <a class="twitter-timeline" data-lang="fr" data-height="201202" data-theme="dark" data-link-color="#9266CC" href="https://twitter.com/djo_972/lists/web?ref_src=twsrc%5Etfw">A Twitter List by djo_972</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
                     </div>
@@ -113,7 +120,7 @@
                             <div class="loadin gmail" >
                                 <% include partials/loading %>
                             </div>
-                            <form style="display: none" action="/cntact" id="contact-form" method="post" role="form">
+                            <form  action="/cntact" id="contact-form" method="post" role="form">
                                 <div class="toolbar-form">
                                     <p>Nouveau message</p>
                                     <button><i class="material-icons">attachment</i></button>
@@ -158,7 +165,7 @@
 
                             <div class="box"></div>
 
-                            <h1>likendin</h1>
+                            <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="fr_FR" data-type="horizontal" data-theme="dark" data-vanity="giovanny-pied"><a class="LI-simple-link" href='https://fr.linkedin.com/in/giovanny-pied?trk=profile-badge'>Giovanny Pied</a></div>
 
                         </div>
                     </div>
@@ -199,7 +206,7 @@
 
             <div class="phone-border-bottom">
                 <div class="social-buttons">
-                    <div   class="social-buttons__button social-button social-button--instagram  projects_link" aria-label="instagram">
+                    <div   class="social-buttons__button social-button social-button--instagram  projects_link actived" aria-label="instagram">
                   <span class="social-button__inner">
                      <i class="fab fa-instagram"></i>
                   </span>
@@ -215,7 +222,7 @@
                     <i class="fab fa-linkedin-in"></i>
                     </span>
                     </div>
-                    <div href="" class="social-buttons__button social-button social-button--mail  actived about_link" aria-label="contact">
+                    <div href="" class="social-buttons__button social-button social-button--mail  about_link" aria-label="contact">
                     <span class="social-button__inner">
                         <i class="far fa-envelope"></i>
                          </span>
@@ -223,21 +230,30 @@
                 </div>
             </div>
         </div>
-        <div class="phone-dt" styl>
+        <div class="phone-dt" >
             <div class="phone-border-top">
-               <p>Message</p>
+                <div class="message-title">
+                    <i class="material-icons">message</i>
+                </div>
             </div>
             <div class="chatbubble">
                 <div class="unexpanded">
                 </div>
                 <div class="expanded chat-window">
+
                     <div class="login-screen container">
                         <form id="loginScreenForm">
+
                             <div class="form-group">
-                                <input type="text"    class="form-control" id="fullname" value="djo" required>
+                                <label for="fullname">mon nom est </label>
+<!--                                <input type="text"  placeholder="votre nom"  class="form-control" id="fullname" value="djo" required>-->
+                                <input type="text"  placeholder="votre nom"  class="form-control" id="fullname"  required>
                             </div>
+
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" value="tidjol972@gmail.com" required>
+                                <label for="email">mon email est </label>
+<!--                                <input type="email" placeholder="votre email"  class="form-control" id="email" value="tidjol972@gmail.com" required>-->
+                                <input type="email" placeholder="votre email"  class="form-control" id="email"  required>
                             </div>
                             <button type="submit" class="btn btn-block btn-primary">Start Chat</button>
                         </form>
@@ -268,6 +284,7 @@
         <p>© 2014 - pied Giovanny- code & design par moi.</p>
     </footer>
     <%include partials/script.ejs%>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </main>
 </body>
 </html>

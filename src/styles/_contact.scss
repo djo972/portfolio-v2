@@ -21,6 +21,7 @@
 
     &__button {
       margin: 10px 5px 0;
+      cursor:pointer;
     }
   }
   section{
@@ -56,7 +57,18 @@
           #timeline{
             width: 100%;
             overflow: auto;
+            .wid{
+              position: fixed;
+            }
           }
+          #home{
+            height: 100%;
+            .LI-profile-badge{
+              height: 100% !important;
+              background: #303336;
+            }
+          }
+
           #timeline-insta{
             background-color: white;
             .card-insta{
@@ -158,6 +170,7 @@
 
             form{
               overflow: hidden;
+              opacity: 0;
             }
             form,fieldset{
               height: 100%;
@@ -253,6 +266,20 @@
           align-self: end;
           .phone-border-top{
             border-bottom: 1px solid #f3f3f3;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            .message-title{
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              background: white;
+              position: absolute;
+              top: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
           }
           p{
             text-align: center;

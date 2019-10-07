@@ -730,9 +730,12 @@ $(function(){
 });
 
 $('.btn_nav,.social-buttons__button').click(function() {
-    // animate content
+if (!$(this).hasClass("actived")){
+    $('.social-buttons__button').removeClass('actived');
+    $(this).addClass('actived');
     $('.page__style').addClass('animate_content');
     $('.page__description').fadeOut(100).delay(2800).fadeIn();
+
 
     setTimeout(function() {
         $('.page__style').removeClass('animate_content');
@@ -742,11 +745,14 @@ $('.btn_nav,.social-buttons__button').click(function() {
     setTimeout(function() {
         $('.page__style').removeClass('fadeIn');
     }, 1500);
+}
+
 
 });
 
 // on click show page after 1500ms
-$('.home_link').click(function() {
+$('.home_link').not('.actived').click(function() {
+
     setTimeout(function() {
         $('.home').addClass('fadeIn');
     }, 1500);
@@ -768,6 +774,16 @@ $('.about_link').click(function() {
     setTimeout(function() {
         $('.about').addClass('fadeIn');
     }, 1500);
+
+    let loadin = $('.loadin');
+    let form = $('form#contact-form');
+    let tl4 = new TimelineMax({
+        delay:10
+    });
+    tl4.to(loadin,1,{scale:0})
+        .to(loadin,1,{display:'none'})
+        .to(form,0.5,{opacity:1},2);
+
 });
 
 $('.contact_link').click(function() {
