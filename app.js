@@ -55,6 +55,9 @@ app.get('/auth/instagram/callback', async (req, res) => {
         res.json(err);
     }
 });
+
+
+// bidule for chatkit
 app.post('/session/load', (req, res, next) => {
     // Attempt to create a new user with the email will serving as the ID of the user.
     // If there is no user matching the ID, we create one but if there is one we skip
@@ -143,6 +146,8 @@ app.post('/session/auth', (req, res) => {
     const authData = chatkit.authenticate({ userId: req.query.user_id });
     res.status(authData.status).send(authData.body);
 });
+
+// page res
 app.get('/admin', (req, res) => {
     res.render('admin.ejs', { root: __dirname + '/views' });
 });
@@ -265,20 +270,7 @@ app.post('/cntact', (req, res) => {
     });
 
 });
-// app.get('/insta',(req, res) => {
-//     instagram.get('users/self/media/recent').then(data => {
-//         let instagram = data;
-//         let insta = instagram.data;
-//         let img1 = insta[1].images.standard_resolution.url;
-//
-//             console.log(insta[1].images.standard_resolution.url);
-//             console.log(insta[1].images);
-//         res.render('index.ejs', {
-//             root: __dirname + '/views' ,
-//             insta : instagram.data
-//         });
-//     });
-// });
+
 // ----------------------------------------------------------------------------
 // Start Express Application
 // ----------------------------------------------------------------------------

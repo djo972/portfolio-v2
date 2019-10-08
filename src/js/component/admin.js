@@ -74,6 +74,12 @@
               roomId: chat.currentRoom.id,
               hooks: {
                 onMessage: message => helpers.displayChatMessage(message),
+                onUserStartedTyping: user => {
+                  console.log(`User ${user.name} started typing`);
+                },
+                onUserStoppedTyping: user => {
+                  console.log(`User ${user.name} stopped typing`);
+                }
               },
             });
           });
@@ -104,7 +110,18 @@
 
       $('#replyMessage input').val('');
     },
-
+    SendTypingEvent: function(evt) {
+      evt.preventDefault();
+      console.log('typping');
+      const message = $('#replyMessage input')
+      chat.currentUser.isTypingIn({ roomId: chat.currentRoom.id })
+          .then(() => {
+            console.log('Success!');
+          })
+          .catch(err => {
+            console.log(`Error sending typing indicator: ${err}`);
+          });
+    },
     /**
      * Load the pusher chat manager
      */
@@ -143,5 +160,6 @@
 
   chatBody.ready(helpers.loadChatManager);
   chatReplyMessage.on('submit', helpers.replyMessage);
+  chatReplyMessage.on('keyup', helpers.SendTypingEvent);
   chatRoomsList.on('click', 'li', helpers.loadChatRoom);
 })();

@@ -371,6 +371,8 @@ switch(pathname) {
         break;
     case "/contact":
         exportChat();
+        moove();
+        emoticonShow();
         break;
 }
 
@@ -693,12 +695,45 @@ function test(){
 
 
 
+function emoticonShow(){
     window.emojiPicker = new EmojiPicker({
-    assetsPath: 'images/',
-    popupButtonClasses: 'fa fa-smile-beam' });
+        assetsPath: 'images/',
+        popupButtonClasses: 'fa fa-smile-beam' });
     window.emojiPicker.discover();
+}
 
 
+function mooveIcon(e,a) {
+
+        console.log('icon');
+
+    let element = document.getElementsByClassName('message-title');
+    console.log(element);
+
+    if( element == undefined){
+        let a = 0;
+    }
+
+    if (element.length > 1)
+        console.log('0');
+        console.log(element[0]);
+        element[0].classList.add("active");
+
+    setTimeout(function(){
+        if ( element[0].classList.contains('active')){
+            console.log("de");
+            element[0].classList.remove("active");
+        }
+        else{
+            console.log("der");
+            return;
+        }
+    }, a);
+}
+function moove(){
+        console.log('moove');
+    setInterval(function(){mooveIcon(1, 1000); }, 5000);
+}
 
 
 $('body').on("click",function(){
@@ -791,3 +826,5 @@ $('.contact_link').click(function() {
         $('.contact').addClass('fadeIn');
     }, 1500);
 });
+
+

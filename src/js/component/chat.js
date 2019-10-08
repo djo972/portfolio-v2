@@ -58,7 +58,8 @@ function exportChat() {
                 chatBody.find('ul.messages').append(
                     `<li class="clearfix message deta support">
                         <div class="sender">mr Robot</div>
-                        <div class="message">Hello ! Djo n'est pas en ligne mais une notification lui a été envoyé. Merci de patienter  </div>
+                        <div class="message">Hello ! Djo n'est pas en ligne mais une notification va lui etre envoyé lors de l'envoi de votre premier message.  Merci </div>
+                         <div class="userSeed"></div>
                     </li>`
                 );
                 }, 3000);
@@ -84,6 +85,7 @@ function exportChat() {
          */
         ShowChatRoomDisplay: function() {
             chatBody.find('.chats').addClass('active');
+            chatBody.addClass('active');
             chatBody.find('.login-screen').removeClass('active');
 
             const chatManager = new Chatkit.ChatManager({
@@ -95,7 +97,11 @@ function exportChat() {
             });
 
             chatManager
-                .connect()
+                .connect({
+                    onPresenceChanged: (state, user) => {
+                        console.log(`User ${user.name} is ${state.current}`);
+                    }
+                })
                 .then(currentUser => {
                     chat.currentUser = currentUser;
                     console.log(chat.currentUser);
@@ -109,7 +115,6 @@ function exportChat() {
                                 chatBody.find('.loader-wrapper').hide();
                                 chatBody.find('.input, .messages').show();
                                 console.log(messages.length);
-
                                 let isMessage = messages.length;
 
                                 isMessage === 0 ? (
@@ -125,7 +130,15 @@ function exportChat() {
                                     roomId: chat.room.id,
                                     hooks: {
                                         onMessage: message => helpers.NewChatMessage(message),
-                                    },
+                                        onUserStartedTyping: user => {
+                                            console.log(`User ${user.name} started typing`);
+                                            chatBody.find('.typing-content').show();
+                                        },
+                                        onUserStoppedTyping: user => {
+                                            console.log(`User ${user.name} stopped typing`);
+                                            chatBody.find('.typing-content').hide();
+                                        }
+                                    }
                                 });
                             },
                             err => {
@@ -153,6 +166,7 @@ function exportChat() {
                     `<li class="clearfix message ${messageClass}">
                         <div class="sender">${message.sender.name}</div>
                         <div class="message">${message.text}</div>
+                        <div class="userSeed"></div>
                     </li>`
                 );
                 chat.messages[message.id] = message;
@@ -205,10 +219,22 @@ function exportChat() {
             $('.emoji-wysiwyg-editor').val('');
             $('.emoji-wysiwyg-editor').text('');
         },
-
+        SendTypingEvent: function(evt) {
+            evt.preventDefault();
+            console.log('typping');
+            const message = $('#newMessage');
+            chat.currentUser.isTypingIn({ roomId: chat.room.id })
+                .then(() => {
+                    console.log('Success!');
+                })
+                .catch(err => {
+                    console.log(`Error sending typing indicator: ${err}`);
+                });
+        },
         /**
          * Logs user into a chat session
          */
+
         LogIntoChatSession: function(evt) {
             const name = $('#fullname')
                 .val()
@@ -238,6 +264,7 @@ function exportChat() {
                     chat.userId = email;
                     chat.room = response.data;
                     helpers.ShowAppropriateChatDisplay();
+                    console.log(response);
                 });
             } else {
                 alert('Enter a valid name and email.');
@@ -255,6 +282,7 @@ function exportChat() {
 
     chatBody.find('#loginScreenForm').on('submit', helpers.LogIntoChatSession);
     chatBody.find('#messageSupport').on('submit', helpers.SendMessageToSupport);
+    chatBody.find('#messageSupport').on('keyup', helpers.SendTypingEvent);
 
 }
 export { exportChat };

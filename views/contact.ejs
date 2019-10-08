@@ -231,7 +231,7 @@
         <div class="phone-dt" >
             <div class="phone-border-top">
                 <div class="message-title">
-                    <i class="material-icons">message</i>
+<!--                    <i class="material-icons">message</i>-->
                 </div>
             </div>
             <div class="chatbubble">
@@ -243,15 +243,15 @@
                         <form id="loginScreenForm">
 
                             <div class="form-group">
-                                <label for="fullname">mon nom est </label>
-<!--                                <input type="text"  placeholder="votre nom"  class="form-control" id="fullname" value="djo" required>-->
-                                <input type="text"  placeholder="votre nom"  class="form-control" id="fullname"  required>
+                                <label for="fullname">Mon nom est </label>
+                                <input type="text"  placeholder="votre nom"  class="form-control" id="fullname" value="djo" required>
+<!--                                <input type="text" autocomplete="off"  placeholder="votre nom"  class="form-control" id="fullname"  required>-->
                             </div>
 
                             <div class="form-group">
-                                <label for="email">mon email est </label>
-<!--                                <input type="email" placeholder="votre email"  class="form-control" id="email" value="tidjol972@gmail.com" required>-->
-                                <input type="email" placeholder="votre email"  class="form-control" id="email"  required>
+                                <label for="email">Mon email est </label>
+                                <input type="email" placeholder="votre email"  class="form-control" id="email" value="tidjol972@gmail.com" required>
+<!--                                <input type="email"  autocomplete="off"placeholder="votre email"  class="form-control" id="email"  required>-->
                             </div>
                             <button type="submit" class="btn btn-block btn-primary">Start Chat</button>
                         </form>
@@ -264,6 +264,10 @@
                         </div>
                         <ul class="messages clearfix">
                         </ul>
+                        <div class="typing-content">
+                            <div class="userSeed"></div>
+                            <div class="loader"></div>
+                        </div>
                         <div class="input">
                             <form class="form-inline" id="messageSupport">
                                 <div class="form-group" style="position: relative">
